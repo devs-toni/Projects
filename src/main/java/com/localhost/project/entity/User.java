@@ -44,9 +44,6 @@ public class User implements Serializable{
 	@NotNull (message = "La contraseña es obligatorio")
 	private String password;
 	
-    @Transient
-    private String passwordConfirm;
-	
 	private String bycicle;
 
 	public Long getId() {
@@ -95,14 +92,6 @@ public class User implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public String getPasswordConfirm() {
-		return passwordConfirm;
-	}
-
-	public void setPasswordConfirm(String passwordConfirm) {
-		this.passwordConfirm = passwordConfirm;
 	}
 
 	public String getBycicle() {
