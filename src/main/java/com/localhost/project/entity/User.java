@@ -38,17 +38,14 @@ public class User implements Serializable{
 	
 	private Date date;
 	
-	@NotNull (message = "El email es obligatorio")
-	private String email;
+	@NotNull (message = "El username es obligatorio")
+	private String username;
 
 	@NotNull (message = "La contraseña es obligatorio")
 	private String password;
 	
     @Transient
     private String passwordConfirm;
-
-    @ManyToMany
-    private Set<Role> roles;
 	
 	private String bycicle;
 
@@ -84,12 +81,12 @@ public class User implements Serializable{
 		this.date = date;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -106,14 +103,6 @@ public class User implements Serializable{
 
 	public void setPasswordConfirm(String passwordConfirm) {
 		this.passwordConfirm = passwordConfirm;
-	}
-
-	public Set<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
 	}
 
 	public String getBycicle() {
@@ -133,7 +122,7 @@ public class User implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		return Objects.equals(email, other.email);
+		return Objects.equals(username, other.username);
 	}
 
 	@Override

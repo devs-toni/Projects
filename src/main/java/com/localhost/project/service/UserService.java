@@ -1,10 +1,23 @@
 package com.localhost.project.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.localhost.project.entity.User;
+import com.localhost.project.repository.UserRepository;
 
-public interface UserService {
+@Service
+public class UserService {
+
+	@Autowired
+	UserRepository userRepository;
 	
-    void save(User user);
+    public void save(User user) {
+    	userRepository.save(user);
+    }
 
-    User findByUsername(String username);
+    public User findByUsername(String username) {
+    	return userRepository.findByUsername(username);
+
+    }
 }
