@@ -29,11 +29,11 @@ public class User implements Serializable{
 	private Long id;
 	
 	@NotNull (message = "El nombre es obligatorio")
-	@Size (min = 3, max = 15, message = "El nombre debe tener enter 3-15 caracteres")
+	@Size (min = 3, max = 15, message = "El nombre debe tener entre 3-15 caracteres")
 	private String name;
 	
 	@NotNull (message = "El apellido es obligatorio")
-	@Size (min = 5, max = 15, message = "El nombre debe tener enter 5-15 caracteres")
+	@Size (min = 5, max = 15, message = "El apellido debe tener entre 5-40 caracteres")
 	private String surname;
 	
 	private Date date;
@@ -41,8 +41,13 @@ public class User implements Serializable{
 	@NotNull (message = "El username es obligatorio")
 	private String username;
 
-	@NotNull (message = "La contraseña es obligatorio")
+	@NotNull (message = "La contraseña es obligatoria")
+	@Size (min = 4, max = 15, message = "La contraseña debe tener entre 4-15 caracteres")
 	private String password;
+	
+	@NotNull (message = "La contraseña es obligatoria")
+	@Transient
+	private String checkPassword;
 	
 	private String bycicle;
 
@@ -92,6 +97,14 @@ public class User implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getCheckPassword() {
+		return checkPassword;
+	}
+
+	public void setCheckPassword(String checkPassword) {
+		this.checkPassword = checkPassword;
 	}
 
 	public String getBycicle() {
