@@ -27,7 +27,7 @@ public class UserController {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		String encodedPassword = passwordEncoder.encode(user.getPassword());
 		user.setPassword(encodedPassword);
-
+		
 		userService.save(user);
 		return "register_complete";
 	}
@@ -37,7 +37,7 @@ public class UserController {
 		return "login";
 	}
 
-	@GetMapping("/login-success")
+	@GetMapping("/process_login")
 	public String loginSuccess() {
 		return "home";
 	}

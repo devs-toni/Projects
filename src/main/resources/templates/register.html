@@ -11,7 +11,6 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
@@ -30,13 +29,13 @@
 						class="fab fa-facebook-f"></i>   Login via facebook
 					</a>
 				</p>
-				<form th:action="@{/register_success}" method="post" th:object="${user}">
+				<form th:action="@{/process_register}" method="post" th:object="${user}">
 					<div class="form-group input-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"> <i class="fa fa-user"></i>
 							</span>
 						</div>
-						<input name="" class="form-control" placeholder="Nombre"
+						<input th:name="name" class="form-control" placeholder="Nombre"
 							type="text">
 					</div>
 					<div class="form-group input-group">
@@ -44,7 +43,7 @@
 							<span class="input-group-text"> <i class="fa fa-user"></i>
 							</span>
 						</div>
-						<input name="" class="form-control" placeholder="Apellidos"
+						<input th:name="surname" class="form-control" placeholder="Apellidos"
 							type="text">
 					</div>
 					<!-- form-group// -->
@@ -53,7 +52,7 @@
 							<span class="input-group-text"> <i class="fa fa-envelope"></i>
 							</span>
 						</div>
-						<input name="" class="form-control" placeholder="Email / Username"
+						<input th:name="username" class="form-control" placeholder="Email / Username"
 							type="email">
 					</div>
 					<div class="form-group input-group">
@@ -61,7 +60,7 @@
 							<span class="input-group-text"> <i class="fa fa-lock"></i>
 							</span>
 						</div>
-						<input class="form-control" placeholder="Create password"
+						<input th:name="password" class="form-control" placeholder="Create password"
 							type="password">
 					</div>
 					<!-- form-group// -->
@@ -70,7 +69,7 @@
 							<span class="input-group-text"> <i class="fa fa-lock"></i>
 							</span>
 						</div>
-						<input class="form-control" placeholder="Repeat password"
+						<input th:name="password" class="form-control" placeholder="Repeat password"
 							type="password">
 					</div>
 					<!-- form-group// -->
