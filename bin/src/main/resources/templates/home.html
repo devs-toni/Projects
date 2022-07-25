@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Perfil</title>
+</head>
+<body>
+
+	<div>
+		<p th:text="">[[${#request.userPrincipal.principal.fullName}]]</p>
+	</div>
+	<div>
+		<form th:action="@{/invalidate/session}" method="post">
+			<input type="submit" value="Destroy Session" />
+		</form>
+	</div>
+</body>
+</html>

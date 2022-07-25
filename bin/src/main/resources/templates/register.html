@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Registrarse - Bikers</title>
+<script src="../static/js/facebook.js"></script>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+<link rel="stylesheet" href="../static/css/form.css">
+<script>
+	function checkLoginState() {
+		FB.getLoginStatus(function(response) {
+			statusChangeCallback(response);
+		});
+	}
+
+	function statusChangeCallback(response) {
+		console.log('statusChangeCallback');
+		console.log(response);
+		// The response object is returned with a status field that lets the
+		// app know the current login status of the person.
+		// Full docs on the response object can be found in the documentation
+		// for FB.getLoginStatus().
+		if (response.status === 'connected') {
+			// Logged into your app and Facebook.
+			console.log('Welcome!  Fetching your information.... ');
+			FB.api('/me', function(response) {
+				console.log('Successful login for: ' + response.name);
+				//document.getElementById('status').innerHTML = 'Thanks for logging in, '
+				//	+ response.name + '!';
+			});
+		} else {
+			// The person is not logged into your app or we are unable to tell.
+			document.getElementById('status').innerHTML = 'Please log '
+					+ 'into this app.';
+		}
+	}
+</script>
+</head>
+<body>
+	<div class="container">
+		<br>
+		<div class="card bg-light">
+			<article class="card-body mx-auto" style="max-width: 400px;">
+				<h4 class="card-title mt-3 text-center">Registrarse</h4>
+				<p class="text-center">Registrate con una cuenta totalmente
+					gratuita</p>
+				<div class="text-center">
+					<div class="fb-login-button" data-width="" data-size="large"
+						data-button-type="login_with" data-layout="rounded"
+						data-auto-logout-link="false" data-use-continue-as="false"
+						scope="public_profile,email" onlogin="checkLoginState();"></div>
+					<br> <br>
+				</div>
+
+				<form th:action="@{/process_register}" method="post"
+					th:object="${user}" id="form_register">
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"> <i class="fa fa-user"></i>
+							</span>
+						</div>
+						<input th:name="name" class="form-control" placeholder="Nombre"
+							type="text" required>
+					</div>
+					<div style="text-align: center; color: red;" class="form-group">
+						<small th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+					</div>
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"> <i class="fa fa-user"></i>
+							</span>
+						</div>
+						<input th:name="surname" class="form-control"
+							placeholder="Apellidos" type="text" required>
+					</div>
+					<div style="text-align: center; color: red;" class="form-group">
+						<small th:if="${#fields.hasErrors('surname')}"
+							th:errors="*{surname}"></small>
+					</div>
+					<!-- form-group// -->
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"> <i class="fa fa-envelope"></i>
+							</span>
+						</div>
+						<input th:name="username" class="form-control"
+							placeholder="Email / Username" type="email" required>
+					</div>
+
+					<div style="text-align: center; color: red;" class="form-group">
+						<small th:if="${#fields.hasErrors('username')}"
+							th:errors="*{username}"></small>
+					</div>
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"> <i class="fa fa-lock"></i>
+							</span>
+						</div>
+						<input th:name="password" id="pass_one" class="form-control"
+							placeholder="Create password" type="password" required>
+					</div>
+					<div style="text-align: center; color: red;" class="form-group">
+						<small th:if="${#fields.hasErrors('password')}"
+							th:errors="*{password}"></small>
+					</div>
+					<!-- form-group// -->
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"> <i class="fa fa-lock"></i>
+							</span>
+						</div>
+						<input th:name="checkPassword" id="pass_two" class="form-control"
+							placeholder="Repeat password" type="password" required>
+					</div>
+					<div class="form-group" style="text-align: center;">
+						<small id="pass_err"
+							style="color: red; font-weight: bold; text-align: center;"></small>
+					</div>
+
+					<!-- form-group// -->
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary btn-block"
+							value="Enviar" />
+					</div>
+
+					<div style="text-align: center" class="form-group"
+						th:if="${userExist}">
+						<small style="color: red; font-family: Helvetica;"
+							th:text="${'El correo electrónico proporcionado ya está registrado'}"></small>
+					</div>
+					<div style="text-align: center" class="form-group"
+						th:if="${passError}">
+						<small style="color: red; font-family: Helvetica;"
+							th:text="${'Las contraseñas no coinciden'}"></small>
+					</div>
+
+
+					<!-- form-group// -->
+					<p class="text-center">
+						Ya tienes una cuenta? <a href="@{/login}">Iniciar Sesión</a>
+					</p>
+				</form>
+			</article>
+		</div>
+	</div>
+	<footer>
+		<a th:href="@{/politica}">nuestra política de privacidad</a>
+	</footer>
+	<script async defer crossorigin="anonymous"
+		src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v14.0&appId=4893919530737327&autoLogAppEvents=1"
+		nonce="e1vIHCmf"></script>
+</body>
+</html>
