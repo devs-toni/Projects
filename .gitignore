@@ -35,3 +35,4 @@ build/
 *.properties
 *.properties
 src/main/resources/application.properties
+src/main/resources/static/js/facebook.js
