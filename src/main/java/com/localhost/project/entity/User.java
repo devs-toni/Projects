@@ -19,9 +19,6 @@ import javax.validation.constraints.Size;
 @Table(name = "user")
 public class User implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7191772507237259119L;
 
 	@Id

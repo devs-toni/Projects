@@ -29,7 +29,6 @@ public class UserController {
 	@PostMapping("/process_register")
 	public String processRegister(Model model, @Valid User user, BindingResult result) {
 		if (userService.findByUsername(user.getUsername()) != null) {
-
 			model.addAttribute("userExist", true);
 			return "register";
 		}
