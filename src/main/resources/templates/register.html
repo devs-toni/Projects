@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Registrarse - Bikers</title>
-<script src="../static/js/facebook.js"></script>
+
+<link rel="stylesheet" href="../static/css/form.css">
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -11,11 +12,17 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script"
+	rel="stylesheet">
+<link
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet"
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	crossorigin="anonymous">
 
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-<link rel="stylesheet" href="../static/css/form.css">
-<script>
+<!-- <script>
 	function checkLoginState() {
 		FB.getLoginStatus(function(response) {
 			statusChangeCallback(response);
@@ -43,120 +50,99 @@
 					+ 'into this app.';
 		}
 	}
-</script>
+</script> -->
 </head>
 <body>
 	<div class="container">
-		<br>
-		<div class="card bg-light">
-			<article class="card-body mx-auto" style="max-width: 400px;">
-				<h4 class="card-title mt-3 text-center">Registrarse</h4>
-				<p class="text-center">Registrate con una cuenta totalmente
-					gratuita</p>
-				<div class="text-center">
-					<div class="fb-login-button" data-width="" data-size="large"
-						data-button-type="login_with" data-layout="rounded"
-						data-auto-logout-link="false" data-use-continue-as="false"
-						scope="public_profile,email" onlogin="checkLoginState();"></div>
-					<br> <br>
+		<div class="row">
+			<div class="col-md-5 mx-auto">
+				<div id="second">
+					<div class="myform form ">
+						<div class="logo mb-3">
+							<div class="col-md-12 text-center">
+								<h1>Registro</h1>
+							</div>
+						</div>
+						<form th:action="@{/process_register}" method="post"
+							th:object="${user}" id="form_register">
+							<div class="form-group">
+								<label for="exampleInputEmail1">Nombre</label> <input
+									th:name="name" class="form-control" placeholder="Nombre"
+									type="text" required>
+							</div>
+							<div style="text-align: center; color: red;" class="form-group">
+								<small th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+							</div>
+
+							<div class="form-group">
+								<label for="exampleInputEmail1">Apellidos</label> <input
+									th:name="surname" class="form-control" placeholder="Apellidos"
+									type="text" required>
+							</div>
+							<div style="text-align: center; color: red;" class="form-group">
+								<small th:if="${#fields.hasErrors('surname')}"
+									th:errors="*{surname}"></small>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Email</label> <input
+									th:name="username" class="form-control"
+									placeholder="Email / Username" type="email" required>
+							</div>
+
+							<div style="text-align: center; color: red;" class="form-group">
+								<small th:if="${#fields.hasErrors('username')}"
+									th:errors="*{username}"></small>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Password</label> <input
+									th:name="password" id="pass_one" class="form-control"
+									placeholder="Create password" type="password" required>
+							</div>
+							<div style="text-align: center; color: red;" class="form-group">
+								<small th:if="${#fields.hasErrors('password')}"
+									th:errors="*{password}"></small>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Password</label><input
+									th:name="checkPassword" id="pass_two" class="form-control"
+									placeholder="Repeat password" type="password" required>
+							</div>
+							<div class="form-group" style="text-align: center;">
+								<small id="pass_err"
+									style="color: red; font-weight: bold; text-align: center;"></small>
+							</div>
+							<div class="col-md-12 text-center mb-3">
+								<button type="submit"
+									class=" btn btn-block mybtn btn-primary tx-tfm">Registrarse</button>
+							</div>
+							<div style="text-align: center" class="form-group"
+								th:if="${userExist}">
+								<small style="color: red; font-family: Helvetica;"
+									th:text="${'El correo electrónico proporcionado ya está registrado'}"></small>
+							</div>
+							<div style="text-align: center" class="form-group"
+								th:if="${passError}">
+								<small style="color: red; font-family: Helvetica;"
+									th:text="${'Las contraseñas no coinciden'}"></small>
+							</div>
+							<div class="col-md-12 ">
+								<div class="form-group">
+									<p class="text-center">
+										<a href="@{/login}" id="signin">Ya tienes una cuenta?</a>
+									</p>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
-
-				<form th:action="@{/process_register}" method="post"
-					th:object="${user}" id="form_register">
-					<div class="form-group input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"> <i class="fa fa-user"></i>
-							</span>
-						</div>
-						<input th:name="name" class="form-control" placeholder="Nombre"
-							type="text" required>
-					</div>
-					<div style="text-align: center; color: red;" class="form-group">
-						<small th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
-					</div>
-					<div class="form-group input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"> <i class="fa fa-user"></i>
-							</span>
-						</div>
-						<input th:name="surname" class="form-control"
-							placeholder="Apellidos" type="text" required>
-					</div>
-					<div style="text-align: center; color: red;" class="form-group">
-						<small th:if="${#fields.hasErrors('surname')}"
-							th:errors="*{surname}"></small>
-					</div>
-					<!-- form-group// -->
-					<div class="form-group input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"> <i class="fa fa-envelope"></i>
-							</span>
-						</div>
-						<input th:name="username" class="form-control"
-							placeholder="Email / Username" type="email" required>
-					</div>
-
-					<div style="text-align: center; color: red;" class="form-group">
-						<small th:if="${#fields.hasErrors('username')}"
-							th:errors="*{username}"></small>
-					</div>
-					<div class="form-group input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"> <i class="fa fa-lock"></i>
-							</span>
-						</div>
-						<input th:name="password" id="pass_one" class="form-control"
-							placeholder="Create password" type="password" required>
-					</div>
-					<div style="text-align: center; color: red;" class="form-group">
-						<small th:if="${#fields.hasErrors('password')}"
-							th:errors="*{password}"></small>
-					</div>
-					<!-- form-group// -->
-					<div class="form-group input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text"> <i class="fa fa-lock"></i>
-							</span>
-						</div>
-						<input th:name="checkPassword" id="pass_two" class="form-control"
-							placeholder="Repeat password" type="password" required>
-					</div>
-					<div class="form-group" style="text-align: center;">
-						<small id="pass_err"
-							style="color: red; font-weight: bold; text-align: center;"></small>
-					</div>
-
-					<!-- form-group// -->
-					<div class="form-group">
-						<input type="submit" class="btn btn-primary btn-block"
-							value="Enviar" />
-					</div>
-
-					<div style="text-align: center" class="form-group"
-						th:if="${userExist}">
-						<small style="color: red; font-family: Helvetica;"
-							th:text="${'El correo electrónico proporcionado ya está registrado'}"></small>
-					</div>
-					<div style="text-align: center" class="form-group"
-						th:if="${passError}">
-						<small style="color: red; font-family: Helvetica;"
-							th:text="${'Las contraseñas no coinciden'}"></small>
-					</div>
-
-
-					<!-- form-group// -->
-					<p class="text-center">
-						Ya tienes una cuenta? <a href="@{/login}">Iniciar Sesión</a>
-					</p>
-				</form>
-			</article>
+			</div>
 		</div>
 	</div>
-	<footer>
-		<a th:href="@{/politica}">nuestra política de privacidad</a>
-	</footer>
-	<script async defer crossorigin="anonymous"
+
+
+	<!-- <script async defer crossorigin="anonymous"
 		src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v14.0&appId=4893919530737327&autoLogAppEvents=1"
-		nonce="e1vIHCmf"></script>
+		nonce="e1vIHCmf"></script> -->
 </body>
 </html>
+

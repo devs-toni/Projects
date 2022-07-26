@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.localhost.project.entity.User;
 import com.localhost.project.service.UserService;
@@ -52,7 +51,7 @@ public class UserController {
 		return "login";
 	}
 
-	@GetMapping("/process_login")
+	@PostMapping("/process_login")
 	public String loginSuccess() {
 		return "home";
 	}

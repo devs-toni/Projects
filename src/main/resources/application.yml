@@ -1,0 +1,50 @@
+server:
+  port: 443
+  servlet:
+    context-path: /
+    session:
+      cookie:
+        same-site: none
+  ssl:
+    enabled: true
+    key-store: localhost.p12
+    key-store-password: changeit
+    keyStoreType: pkcs12
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: AntonioRufino1234
+    url: jdbc:mysql://localhost:3306/bikers?useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mail:
+    host: smtp.gmail.com
+    password: ''
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    username: ''
+  thymeleaf:
+    cache: false
+    mode: HTML
+ 
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: 423230556249325
+            clientSecret: 3d29ce1b049c8293164435f30acc0188
+            scope:
+            - email
+            - public_profile
+

@@ -7,7 +7,9 @@
 <body>
 
 	<div>
-		<p th:text="">[[${#request.userPrincipal.principal.fullName}]]</p>
+		<th:block sec:authorize="isAuthenticated()">
+		<b><a th:href="@{/user}" sec:authentication="principal.fullName"></a></b>
+		<p></p>
 	</div>
 	<div>
 		<form th:action="@{/invalidate/session}" method="post">
