@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Notas Bikers</title>
+</head>
+<body>
+
+	<div>
+		<h2>Notes</h2>
+		<ul th:if="${notes} != null" th:each="note : ${notes}">
+			<li th:text="${note}"></li>
+		</ul>
+	</div>
+	<div>
+		<a th:href="@{/login-complete}">Home</a>
+	</div>
+</body>
+</html>

@@ -60,5 +60,11 @@ public class UserController {
 	public String loginSuccess() {
 		return "home";
 	}
+	
+	@GetMapping("/login-error")
+	public String loginError(Model model) {
+		model.addAttribute("errorLogin", "Email/Contraseña Incorrectos");
+		return "login";
+	}
 
 }

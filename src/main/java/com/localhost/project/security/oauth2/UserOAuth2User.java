@@ -1,13 +1,15 @@
 package com.localhost.project.security.oauth2;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Map;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
-public class UserOAuth2User implements OAuth2User{
+public class UserOAuth2User implements OAuth2User, Serializable{
 
+	private static final long serialVersionUID = -6429611803938204840L;
 	private OAuth2User oauth2User;	 
 	
 	

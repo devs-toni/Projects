@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 
 import com.localhost.project.security.oauth2.UserOAuth2UserService;
 
@@ -31,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable()
 				.authorizeRequests()
-					.antMatchers("/login", "/do_login", "/process_login","/login-complete").permitAll()
+					.antMatchers("/login", "/do_login", "/process_login","/login-complete","/login-error").permitAll()
 					.antMatchers("/oauth2/authorization/facebook", "oauth2/authorization/google").permitAll()
 					.antMatchers("/index", "/register", "/process_register","/error").permitAll()
 				.anyRequest()
@@ -40,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.formLogin()
 					.loginPage("/login")
 					.permitAll()
-					.failureUrl("/login?error")
+					.failureUrl("/login-error")
 					.defaultSuccessUrl("/login-complete")
 					.and()
 				.oauth2Login()
@@ -90,5 +91,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.authenticationProvider(authProvider());
 	}
+
 
 }
