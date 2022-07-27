@@ -7,14 +7,14 @@ server:
         same-site: none
   ssl:
     enabled: true
-    key-store: localhost.p12
-    key-store-password: changeit
+    key-store:
+    key-store-password: 
     keyStoreType: pkcs12
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: AntonioRufino1234
+    username: 
+    password: 
     url: jdbc:mysql://localhost:3306/bikers?useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
 
   jpa:
@@ -42,8 +42,8 @@ spring:
       client:
         registration:
           facebook:
-            client-id: 423230556249325
-            clientSecret: 3d29ce1b049c8293164435f30acc0188
+            client-id: 
+            clientSecret: 
             scope:
             - email
             - public_profile
