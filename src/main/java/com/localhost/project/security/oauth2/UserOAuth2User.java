@@ -8,12 +8,13 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 
 public class UserOAuth2User implements OAuth2User{
 
-	private OAuth2User oauth2User;
-	 
+	private OAuth2User oauth2User;	 
 	
 	
 	public UserOAuth2User(OAuth2User oauth2User) {
 		this.oauth2User = oauth2User;
+		System.out.println(oauth2User.getName());
+		System.out.println(oauth2User.getAttribute("email").toString());
 	}
 
 	@Override

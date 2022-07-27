@@ -6,15 +6,9 @@
 </head>
 <body>
 
-	<div>
-		<th:block sec:authorize="isAuthenticated()">
-		<b><a th:href="@{/user}" sec:authentication="principal.fullName"></a></b>
-		<p></p>
-	</div>
-	<div>
-		<form th:action="@{/invalidate/session}" method="post">
-			<input type="submit" value="Destroy Session" />
-		</form>
-	</div>
+	<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Sign Out" />
+	</form>
 </body>
 </html>

@@ -3,30 +3,35 @@ package com.localhost.project.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.localhost.project.entity.User;
-import com.localhost.project.service.UserService;
+import com.localhost.project.entity.UserLogin;
+import com.localhost.project.service.UserLoginService;
 
 @Controller
 public class UserController {
-	
+
+	/*************************************************************************/ /* Variables */
+
 	@Autowired
-	UserService userService;
+	UserLoginService userService;
+
+	/*************************************************************************/ /* Mapeos */	
+	
+	/* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */ 
 
 	@GetMapping("/register")
 	public String register(Model model) {
-		model.addAttribute("user", new User());
+		model.addAttribute("userLogin", new UserLogin());
 		return "register";
 	}
 
 	@PostMapping("/process_register")
-	public String processRegister(Model model, @Valid User user, BindingResult result) {
+	public String processRegister(Model model, @Valid UserLogin user, BindingResult result) {
 		if (userService.findByUsername(user.getUsername()) != null) {
 			model.addAttribute("userExist", true);
 			return "register";
@@ -38,20 +43,20 @@ public class UserController {
 		}
 		if (result.hasErrors()) {
 			return "register";
-		}		
-		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		String encodedPassword = passwordEncoder.encode(user.getPassword());
-		user.setPassword(encodedPassword);		
-		userService.save(user);		
+		}
+		userService.save(user);
 		return "register_complete";
 	}
+	
+	
+	/* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */
 
 	@GetMapping("/login")
 	public String login() {
 		return "login";
 	}
 
-	@PostMapping("/process_login")
+	@GetMapping("/login-complete")
 	public String loginSuccess() {
 		return "home";
 	}

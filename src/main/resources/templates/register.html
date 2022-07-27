@@ -4,18 +4,16 @@
 <meta charset="utf-8">
 <title>Registrarse - Bikers</title>
 
-<link rel="stylesheet" href="../static/css/form.css">
+<!-- ---------------------------- BOOTSTRAP Y JQUERY --------------------------------------------->
+
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Kaushan+Script"
-	rel="stylesheet">
+	
+<!-- ---------------------------- ICONOS REDES SOCIALES ------------------------------------------>
+
 <link
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 	rel="stylesheet"
@@ -64,10 +62,10 @@
 							</div>
 						</div>
 						<form th:action="@{/process_register}" method="post"
-							th:object="${user}" id="form_register">
+							th:object="${userLogin}" id="form_register">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Nombre</label> <input
-									th:name="name" class="form-control" placeholder="Nombre"
+									th:name="name" th:value="*{name}" class="form-control" placeholder="Nombre"
 									type="text" required>
 							</div>
 							<div style="text-align: center; color: red;" class="form-group">
@@ -76,7 +74,7 @@
 
 							<div class="form-group">
 								<label for="exampleInputEmail1">Apellidos</label> <input
-									th:name="surname" class="form-control" placeholder="Apellidos"
+									th:name="surname" th:value="*{surname}" class="form-control" placeholder="Apellidos"
 									type="text" required>
 							</div>
 							<div style="text-align: center; color: red;" class="form-group">
@@ -85,7 +83,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email</label> <input
-									th:name="username" class="form-control"
+									th:name="username" th:value="*{username}" class="form-control"
 									placeholder="Email / Username" type="email" required>
 							</div>
 
@@ -95,7 +93,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Password</label> <input
-									th:name="password" id="pass_one" class="form-control"
+									th:name="password" th:value="*{password}" id="pass_one" class="form-control"
 									placeholder="Create password" type="password" required>
 							</div>
 							<div style="text-align: center; color: red;" class="form-group">
@@ -104,7 +102,7 @@
 							</div>
 							<div class="form-group">
 								<label for="exampleInputEmail1">Password</label><input
-									th:name="checkPassword" id="pass_two" class="form-control"
+									th:name="checkPassword" th:value="*{checkPassword}" id="pass_two" class="form-control"
 									placeholder="Repeat password" type="password" required>
 							</div>
 							<div class="form-group" style="text-align: center;">
@@ -128,7 +126,7 @@
 							<div class="col-md-12 ">
 								<div class="form-group">
 									<p class="text-center">
-										<a href="@{/login}" id="signin">Ya tienes una cuenta?</a>
+										<a th:href="@{/login}" id="signin">Ya tienes una cuenta?</a>
 									</p>
 								</div>
 							</div>

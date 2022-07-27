@@ -1,52 +1,49 @@
 package com.localhost.project.entity;
 
-import java.io.Serializable;
-import java.util.Date;
 import java.util.Objects;
-import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "user")
-public class User implements Serializable{
-	
+public class UserLogin {
+
 	private static final long serialVersionUID = 7191772507237259119L;
 
+	/**********************************************************************/ /* Variables de Login */
+
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotNull (message = "El nombre es obligatorio")
-	@Size (min = 3, max = 15, message = "El nombre debe tener entre 3-15 caracteres")
-	private String name;
-	
-	@NotNull (message = "El apellido es obligatorio")
-	@Size (min = 5, max = 15, message = "El apellido debe tener entre 5-40 caracteres")
-	private String surname;
-	
-	private Date date;
-	
-	@NotNull (message = "El username es obligatorio")
+
+	@NotNull(message = "El username es obligatorio")
 	private String username;
 
-	@NotNull (message = "La contraseña es obligatoria")
-	@Size (min = 4, max = 15, message = "La contraseña debe tener entre 4-15 caracteres")
+	@NotNull(message = "La contraseña es obligatoria")
+	@Size(min = 4, message = "La contraseña debe tener al menos 4 caracteres")
 	private String password;
-	
-	@NotNull (message = "La contraseña es obligatoria")
+
+	/**********************************************************************/ /* Variables de Usuario */
+
+	@NotNull(message = "El nombre es obligatorio")
+	@Size(min = 3, max = 15, message = "El nombre debe tener entre 3-15 caracteres")
+	private String name;
+
+	@NotNull(message = "El apellido es obligatorio")
+	@Size(min = 5, max = 15, message = "El apellido debe tener entre 5-40 caracteres")
+	private String surname;
+
+	@NotNull(message = "La contraseña es obligatoria")
 	@Transient
 	private String checkPassword;
-	
-	private String bycicle;
+
+	/**********************************************************************/ /* Getter & Setter */
 
 	public Long getId() {
 		return id;
@@ -54,30 +51,6 @@ public class User implements Serializable{
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
 	}
 
 	public String getUsername() {
@@ -96,6 +69,22 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
 	public String getCheckPassword() {
 		return checkPassword;
 	}
@@ -104,13 +93,7 @@ public class User implements Serializable{
 		this.checkPassword = checkPassword;
 	}
 
-	public String getBycicle() {
-		return bycicle;
-	}
-
-	public void setBycicle(String bycicle) {
-		this.bycicle = bycicle;
-	}
+	/**********************************************************************/ /* Otros */
 
 	@Override
 	public boolean equals(Object obj) {
@@ -120,7 +103,7 @@ public class User implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
+		UserLogin other = (UserLogin) obj;
 		return Objects.equals(username, other.username);
 	}
 
