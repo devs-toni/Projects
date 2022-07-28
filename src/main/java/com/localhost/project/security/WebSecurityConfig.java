@@ -22,10 +22,6 @@ import com.localhost.project.security.oauth2.UserOAuth2UserService;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	/*
-	 * @Autowired private CustomOidcUserService customOidcUserService;
-	 */
-
 	/**********************************************************************************************/ /* Configuration */
 
 	@Override
