@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
+
 <head>
 <meta charset="UTF-8">
-<title>Perfil</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<script src="https://code.jquery.com/jquery-3.6.1.js"
+	integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+	crossorigin="anonymous"></script>
+<link type="text/css" rel="stylesheet" href="../static/css/bikers.css"
+	th:href="@{css/bikers.css}">
 </head>
+
 <body>
-
-	<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-
-
-	<div>
-		<form th:action="@{/addNote}" method="post">
-			<textarea name="note" cols="40" rows="2"></textarea>
-			<br> <input type="submit" value="Add Note" />
-		</form>
-	</div>
-
-	<div>
-		<form th:action="@{/logout}" method="post">
-			<input type="submit" value="Sign Out" />
-		</form>
-	</div>
+	<header class="header">
+		<button class="button">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+				fill="currentColor" class="svg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+					d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+		</button>
+			<h1 th:inline="text">@[[${#httpServletRequest.remoteUser}]]!</h1>
+		
+		<nav class="nav">
+			<ul class="ul">
+				<li class="li"><a th:href="@{/logout}">Cerrar Sesión</a></li>
+			</ul>
+		</nav>
+	</header>
+	<script type="text/javascript" src="../static/js/bikers.js"
+		th:src="@{js/bikers.js}"></script>
 </body>
 </html>

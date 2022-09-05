@@ -36,7 +36,7 @@ public class UserLogin {
 	private String name;
 
 	@NotNull(message = "El apellido es obligatorio")
-	@Size(min = 5, max = 15, message = "El apellido debe tener entre 5-40 caracteres")
+	@Size(min = 3, max = 15, message = "El apellido debe tener entre 3-40 caracteres")
 	private String surname;
 
 	@NotNull(message = "La contraseña es obligatoria")

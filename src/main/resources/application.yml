@@ -8,13 +8,13 @@ server:
   ssl:
     enabled: true
     key-store: localhost.p12
-    key-store-password: 
+    key-store-password: changeit
     keyStoreType: pkcs12
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: 
-    password: 
+    username: root
+    password: AntonioRufino1234
     url: jdbc:mysql://localhost:3306/bikers?useSSL=true&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
 
   session:
@@ -49,8 +49,8 @@ spring:
       client:
         registration:
           facebook:
-            client-id: 
-            clientSecret: 
+            client-id: 423230556249325
+            clientSecret: 3d29ce1b049c8293164435f30acc0188
             scope:
             - email
             - public_profile
@@ -62,5 +62,9 @@ spring:
             scope:
             - https://www.googleapis.com/auth/userinfo.email
             - https://www.googleapis.com/auth/userinfo.profile
+            
+app:
+  logfile: C:\Users\Usuario\Desktop\logBikers.html
+  debug: true
 
 

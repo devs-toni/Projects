@@ -98,5 +98,20 @@
     "name": "spring.session.store.type",
     "type": "java.lang.String",
     "description": "A description for 'spring.session.store.type'"
+  },
+  {
+    "name": "logfile",
+    "type": "java.lang.String",
+    "description": "A description for 'logfile'"
+  },
+  {
+    "name": "app.logfile",
+    "type": "java.lang.String",
+    "description": "A description for 'app.logfile'"
+  },
+  {
+    "name": "app.debug",
+    "type": "java.lang.String",
+    "description": "A description for 'app.debug'"
   }
 ]}

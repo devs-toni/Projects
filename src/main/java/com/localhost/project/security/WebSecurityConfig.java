@@ -3,6 +3,9 @@ package com.localhost.project.security;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.server.MimeMappings;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,14 +26,13 @@ import com.localhost.project.security.oauth2.UserOAuth2UserService;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	/**********************************************************************************************/ /* Configuration */
-
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable()
 				.authorizeRequests()
-					.antMatchers("/login", "/do_login", "/process_login","/login-complete","/login-error").permitAll()
-					.antMatchers("/oauth2/authorization/facebook", "oauth2/authorization/google").permitAll()
-					.antMatchers("/index", "/register", "/process_register","/error").permitAll()
+					.antMatchers("/resources/**","/js/**","/css/**","/images/**").permitAll()
+					.antMatchers("/login", "/do_login", "/process_login","/login-complete","/login-error","/oauth2/authorization/facebook", "oauth2/authorization/google","/index", "/register", "/process_register","/error").permitAll()
 				.anyRequest()
 					.authenticated()
 					.and()
