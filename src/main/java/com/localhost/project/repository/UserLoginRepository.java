@@ -9,5 +9,4 @@ import com.localhost.project.entity.UserLogin;
 public interface UserLoginRepository extends JpaRepository<UserLogin, Long>{
 
 	UserLogin findByUsername(String username);
-	
 }

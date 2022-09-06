@@ -42,6 +42,17 @@ public class UserLogin {
 	@NotNull(message = "La contraseña es obligatoria")
 	@Transient
 	private String checkPassword;
+	
+	/**********************************************************************/ /* Constructor */
+	
+	public UserLogin() {}
+	
+	public UserLogin(String username,String password, String name) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.name = name;
+	}
 
 	/**********************************************************************/ /* Getter & Setter */
 

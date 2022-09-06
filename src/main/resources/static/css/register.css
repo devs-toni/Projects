@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.container-register {
+	width: 400px;
+}
+
+@media screen and (max-width:600px) {
+	.container-register {
+		width: 600px;
+		background-color: black;
+	}
+}

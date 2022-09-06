@@ -3,6 +3,7 @@ package com.localhost.project.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -48,7 +49,6 @@ public class UserController {
 		return "register_complete";
 	}
 	
-	
 	/* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */
 
 	@GetMapping("/login")
@@ -56,12 +56,12 @@ public class UserController {
 		return "login";
 	}
 
-	@GetMapping("/login-complete")
+	@GetMapping("/login_complete")
 	public String loginSuccess() {
 		return "home";
 	}
 	
-	@GetMapping("/login-error")
+	@GetMapping("/login_error")
 	public String loginError(Model model) {
 		model.addAttribute("errorLogin", "Email/Contraseña Incorrectos");
 		return "login";
