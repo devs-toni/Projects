@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Registrarse - Bikers</title>
 
 <!-- ---------------------------- BOOTSTRAP Y JQUERY --------------------------------------------->
@@ -29,7 +30,7 @@
 				</div>
 			</div>
 			<form th:action="@{/process_register}" method="post"
-				th:object="${userLogin}" id="form_register">
+				th:object="${userLogin}" id="form-register">
 				<div class="form-group">
 					<label for="exampleInputEmail1">Nombre</label> <input
 						th:name="name" th:value="*{name}" class="form-control"

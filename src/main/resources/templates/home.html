@@ -5,30 +5,50 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home</title>
-<script src="https://code.jquery.com/jquery-3.6.1.js"
-	integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-	crossorigin="anonymous"></script>
-<link type="text/css" rel="stylesheet" href="../static/css/bikers.css"
-	th:href="@{css/bikers.css}">
+<title>Bikers</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link type="text/css" rel="stylesheet" href="../static/css/home.css"
+	th:href="@{css/home.css}">
+
 </head>
 
 <body>
 	<header class="header">
-		<button class="button">
+		<button class="button options">
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-				fill="currentColor" class="svg" viewBox="0 0 16 16">
+				fill="currentColor" class="svg" id="options" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
 					d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
             </svg>
 		</button>
-			<h1 class="h1 "th:inline="text">@[[${#httpServletRequest.getUserPrincipal.getName}]]!</h1>
-		
-		<nav class="nav">
+		<button class="button profile">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+				fill="currentColor" class="bi bi-person-circle svg" id="profile"
+				viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+  <path fill-rule="evenodd"
+					d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+</svg>
+		</button>
+		<h2 class="h2" th:inline="text">[[${#httpServletRequest.getUserPrincipal.getName}]]</h2>
+		<nav class="nav-options">
 			<ul class="ul">
-				<li class="li"><a th:href="@{/logout}">Cerrar Sesión</a></li>
+				<li class="li"><a>Carreras</a></li>
+				<li class="li"><a>Tracks</a></li>
+				<li class="li"><a>Eventos</a></li>
 			</ul>
 		</nav>
+		<nav class="nav-profile">
+			<ul class="ul">
+				<li class="li"><a th:href="@{/logout}">Mi Perfil</a></li>
+				<li class="li"><a th:href="@{/logout}">Prueba</a></li>
+				<li class="li"><a th:href="@{/logout}">Cerrar Sesión</a></li>
+
+			</ul>
+		</nav>
+
 	</header>
 	<script type="text/javascript" src="../static/js/bikers.js"
 		th:src="@{js/bikers.js}"></script>
