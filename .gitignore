@@ -38,3 +38,4 @@ src/main/resources/application.properties
 src/main/resources/static/js/facebook.js
 src/main/resources/application.yml
 *.yml
+src/main/resources/application.yml
