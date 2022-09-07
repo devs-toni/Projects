@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.localhost.project.entity.UserLogin;
-import com.localhost.project.service.UserLoginService;
+import com.localhost.project.service.UserService;
 
 @Controller
 public class UserController {
@@ -19,7 +19,7 @@ public class UserController {
 	/*************************************************************************/ /* Variables */
 
 	@Autowired
-	UserLoginService userService;
+	UserService userService;
 
 	/*************************************************************************/ /* Mapeos */	
 	

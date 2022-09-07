@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
-
+import org.springframework.stereotype.Service;
+@Service
 public class Logger {
 
 	@Value("${app.logfile}")
@@ -20,6 +21,7 @@ public class Logger {
 			try {
 				if (debug) {
 					file.write(new Date().toString() + " - " + entry + "<br />");
+					System.out.println(entry);
 					file.close();
 				}
 			} catch (IOException e) {

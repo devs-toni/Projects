@@ -6,18 +6,20 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
 import com.localhost.project.entity.UserLogin;
-import com.localhost.project.repository.UserLoginRepository;
+import com.localhost.project.repository.UserRepository;
+import com.localhost.project.security.PasswordGenerator;
 
-@Service("userLoginService")
-public class UserLoginService implements UserDetailsService {
+@Service("UserLoginService")
+public class UserService implements UserDetailsService {
 
 	/*********************************************************************************/ /* Repositorio */
 
 	@Autowired
-	UserLoginRepository userRepository;
+	UserRepository userRepository;
 
 	/*********************************************************************************/ /* OtrasVariables */
 

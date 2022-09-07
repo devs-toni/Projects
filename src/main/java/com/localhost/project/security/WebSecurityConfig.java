@@ -3,12 +3,8 @@ package com.localhost.project.security;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.server.MimeMappings;
-import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,9 +13,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.SecurityFilterChain;
 
-import com.localhost.project.security.oauth2.UserOAuth2UserService;
+import com.localhost.project.service.OAuth2UserService;
 
 @Configuration
 @EnableWebSecurity
@@ -46,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 					.loginPage("/login")
 					.defaultSuccessUrl("/login_complete")
 					.userInfoEndpoint()
-					.userService(userOAuth2UserService)
+					.userService(OAuth2UserService)
 					.and()
 				.and()
 				.logout()
@@ -64,11 +59,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	/*****************************************************************************************************/ /* Beans */
 
-	@Resource(name = "userLoginService")
+	@Resource(name = "UserLoginService")
 	private UserDetailsService userDetailsService;
 
 	@Autowired
-	private UserOAuth2UserService userOAuth2UserService;
+	private OAuth2UserService OAuth2UserService;
 
 	/*******************************************************************************************************/ /* Auth */
 
