@@ -30,12 +30,12 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	color: white;
-	background-color: rgb(128, 128, 128);
+	background-color: #222222;
 }
 
 .header .button {
 	display: none;
-	background-color: rgb(128, 128, 128);
+	background-color: #222222;
 	border: none;
 	padding: 3%;
 }
@@ -48,7 +48,7 @@ body {
 
 .header .h2 {
 	margin-left: 5%;
-	font-size: 1.8em;
+	font-size: 1.6em;
 	font-weight: bold;
 }
 
@@ -66,8 +66,14 @@ body {
 }
 
 .header .li {
-	margin: 0 2em;
-	font-size: 1.5em;
+	width: 150px;
+	margin: 1rem 0 0 0;
+	font-size: 1.3em;
+}
+
+.header .li a {
+	text-decoration: none;
+	color: white;
 }
 
 .container-text {
@@ -87,7 +93,32 @@ body {
 	font-size: 3.4em;
 }
 
-@media screen and (max-width:600px) {
+.comments {
+	margin: 4rem 0 0 10em;
+	width: 60%;
+	display:flex;
+	flex-flow: row wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items:start;
+
+}
+
+.comments label {
+	font-size: 1.5rem;
+	margin: .5rem;
+}
+
+.comments p {
+	margin: 2rem 0;
+	font-size: 1.5rem;
+}
+
+.comments .ul {
+	list-style-type: none;
+}
+
+@media screen and (max-width:1200px) {
 	.header .button {
 		display: block;
 		cursor: pointer;
@@ -95,7 +126,7 @@ body {
 	.header .h2 {
 		display: none;
 	}
-	.header .nav-options {
+	.header .nav {
 		overflow: hidden;
 		width: 100%;
 		height: 0;
@@ -106,32 +137,15 @@ body {
 		justify-content: center;
 		pointer-events: none;
 	}
-	.header .nav-profile {
-		overflow: hidden;
-		width: 100%;
-		height: 0;
-		transition: all .5s ease;
-		display: flex;
-		flex-flow: column nowrap;
-		align-items: center;
-		justify-content: center;
-		pointer-events: none;
-	}
-	.header .nav-options.activo {
-		height: 50vh;
-		pointer-events: auto;
-	}
-	.header .nav-profile.activo {
-		height: 50vh;
+	.header .nav.activo {
+		height: 30vh;
 		pointer-events: auto;
 	}
 	.header .ul {
 		flex-direction: column;
+		text-align: center;
 	}
 	.header .li {
 		margin: 1rem 0;
-	}
-	.container-text {
-		font-size: 6vw;
 	}
 }

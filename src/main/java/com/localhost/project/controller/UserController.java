@@ -55,11 +55,6 @@ public class UserController {
 	public String login() {
 		return "login";
 	}
-
-	@GetMapping("/login_complete")
-	public String loginSuccess() {
-		return "home";
-	}
 	
 	@GetMapping("/login_error")
 	public String loginError(Model model) {
