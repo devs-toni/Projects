@@ -38,7 +38,7 @@ public class UserController {
 		return "register";
 	}
 
-	@PostMapping("/process_register")
+	@PostMapping("/process-register")
 	public String processRegister(Model model, @Valid UserLogin user, BindingResult result,
 			RedirectAttributes redirect) {
 		if (userService.findByUsername(user.getUsername()) != null) {
@@ -65,37 +65,30 @@ public class UserController {
 		return "login";
 	}
 
-	@GetMapping("/perform_login")
+	@GetMapping("/perform-login")
 	public String performLogin(RedirectAttributes redirect, @Param("username") String username,
 			@Param("password") String password, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		UserLogin user = userService.findByUsername(username);
-		session.setAttribute("user", user.getId());
 		if (user != null && encoder.matches(password, user.getPassword())) {
-			redirect.addFlashAttribute("user", user.getName() + " " + user.getSurname());
+			session.setAttribute("user", user.getId());
 			return "redirect:/home";
 		} else {
-			return "redirect:/login_error";
+			return "redirect:/login-error";
 		}
 	}
 
-	@GetMapping("/perform_oauth_login")
+	@GetMapping("/perform-oauth-login")
 	public String performOauthLogin(HttpServletRequest request, RedirectAttributes redirect) {
 		HttpSession session = request.getSession();
 		String email = achieveEmail(session.getAttribute("SPRING_SECURITY_CONTEXT"));
 		UserLogin user = userService.findByUsername(email);
-		String surname = user.getSurname();
 		session.setAttribute("user", user.getId());
-		if (surname != null) {
-			redirect.addFlashAttribute("user", user.getName() + " " + user.getSurname());
-			return "redirect:/home";
-		} else {
-			redirect.addFlashAttribute("user", user.getName());
-			return "redirect:/home";
-		}
+		return "redirect:/home";
+		
 	}
 
-	@GetMapping("/login_error")
+	@GetMapping("/login-error")
 	public String loginError(Model model) {
 		model.addAttribute("errorLogin", "Email/Contraseña Incorrectos");
 		return "login";

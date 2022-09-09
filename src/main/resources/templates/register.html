@@ -7,7 +7,7 @@
 
 <!-- ---------------------------- BOOTSTRAP Y JQUERY --------------------------------------------->
 
-<link rel="stylesheet" type="text/css" href="../static/css/register.css" th:href="@{css/register.css}">
+<link rel="stylesheet" type="text/css" href="../static/css/forms.css" th:href="@{css/forms.css}">
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -29,7 +29,7 @@
 					<h1>Registro</h1>
 				</div>
 			</div>
-			<form th:action="@{/process_register}" method="post"
+			<form th:action="@{/process-register}" method="post"
 				th:object="${userLogin}" id="form-register">
 				<div class="form-group">
 					<label for="exampleInputEmail1">Nombre</label> <input

@@ -8,8 +8,8 @@
 <title>Iniciar Sesión - Bikers</title>
 
 <!-- ---------------------------- BOOTSTRAP Y JQUERY --------------------------------------------->
-<link rel="stylesheet" type="text/css" href="../static/css/register.css"
-	th:href="@{css/register.css}">
+<link rel="stylesheet" type="text/css" href="../static/css/forms.css"
+	th:href="@{css/forms.css}">
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -31,7 +31,7 @@
 				<h1>Login</h1>
 			</div>
 		</div>
-		<form th:action="@{/perform_login}" method="get" name="login"
+		<form th:action="@{/perform-login}" method="get" name="login"
 			id="form-register">
 			<div class="form-group">
 				<label for="exampleInputEmail1">Email</label> <input type="email"
@@ -86,7 +86,7 @@
 		</form>
 		<div th:if="${register}">
 			<div
-				class="alert alert-success alert-dismissible fade show p-4 w-50 alerta"
+				class="alert alert-success alert-dismissible fade show p-4 mt-3 alerta"
 				role="alert">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 					fill="currentColor" class="bi bi-check-square mr-3"

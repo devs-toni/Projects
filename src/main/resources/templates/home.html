@@ -35,24 +35,7 @@
 			</ul>
 		</nav>
 	</header>
-
-	<div class="comments">
-		<form th:action="@{/comment}" method="post">
-			<div class="form-group">
-				<label for="comments">Introducir comentario:</label>
-				<textarea name="comment" class="form-control" id="comments" rows="4"
-					cols="100"></textarea>
-				<input type="submit" class="btn bg-dark text-white mt-3 p-2"
-					value="Publicar" />
-			</div>
-		</form>
-		<p class="p">Comentarios</p>
-		<ul class="ul" th:if="${comments != null}" th:each="comment : ${comments}">
-			<li th:text="${comment}"></li>
-
-		</ul>
-
-	</div>
+	
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
