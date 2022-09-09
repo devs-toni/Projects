@@ -1,17 +1,21 @@
 package com.localhost.project.entity;
 
+import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
+@Table(name="users")
 public class UserLogin {
 
 	private static final long serialVersionUID = 7191772507237259119L;
@@ -40,6 +44,10 @@ public class UserLogin {
 	@Transient
 	private String checkPassword;
 	
+	private String profileImage;
+	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Activity> activities;
 	/**********************************************************************/ /* Constructor */
 	
 	public UserLogin() {}

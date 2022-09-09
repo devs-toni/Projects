@@ -82,7 +82,7 @@ body {
 	font-size: 3.4em;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:900px) {
 	.header .button {
 		display: block;
 		cursor: pointer;

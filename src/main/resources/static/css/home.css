@@ -1,6 +1,3 @@
-@charset "ISO-8859-1";
-
-@charset "UTF-8";
 
 a {
 	text-decoration: none;
@@ -12,13 +9,6 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: "Helvetica", "sans-serif";
-}
-
-.index {
-	background-image: url(/images/background.jpg);
-	background-position: center center;
-	background-attachment: fixed;
-	background-size: cover;
 }
 
 .header {
@@ -93,32 +83,28 @@ body {
 	font-size: 3.4em;
 }
 
-.comments {
-	margin: 4rem 0 0 10em;
-	width: 60%;
+.main {
+	margin: 5vw 15vw;
+	padding: 1.3em;
 	display:flex;
-	flex-flow: row wrap;
 	flex-direction: column;
-	justify-content: center;
-	align-items:start;
-
+	flex-flow: column wrap;
+	align-items: flex-start;
+	border: 1px solid black;
 }
 
-.comments label {
+.main .h2 {
+	width:100%;
 	font-size: 1.5rem;
-	margin: .5rem;
+	padding-bottom: 1.5vw;
+	border-bottom: 1px solid black
 }
 
-.comments p {
-	margin: 2rem 0;
-	font-size: 1.5rem;
+.main .activities {
+	
 }
 
-.comments .ul {
-	list-style-type: none;
-}
-
-@media screen and (max-width:1200px) {
+@media screen and (max-width:900px) {
 	.header .button {
 		display: block;
 		cursor: pointer;
