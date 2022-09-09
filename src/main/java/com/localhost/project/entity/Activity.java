@@ -6,8 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -27,18 +25,13 @@ public class Activity {
 	private String description;
 	
 	private ArrayList<String> images;
-	
-	@ManyToOne()
-	@JoinColumn(name = "user_id")
-	private UserLogin user;
 
 	/**********************************************************************/ /* Constructor */
 
-	public Activity(String title, String description, UserLogin user) {
+	public Activity(String title, String description) {
 		super();
 		this.title = title;
 		this.description = description;
-		this.user = user;
 	}
 
 	/**********************************************************************/ /* Getter & Setter */
@@ -75,18 +68,11 @@ public class Activity {
 		this.images = images;
 	}
 
-	public UserLogin getUser() {
-		return user;
-	}
-
-	public void setUser(UserLogin user) {
-		this.user = user;
-	}
 	
 	
 	@Override
 	public String toString() {
-		return "Activity [title=" + title + ", user=" + user + "]";
+		return "Activity [title=" + title + "]";
 	}
 	
 }
