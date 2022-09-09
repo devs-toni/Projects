@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.localhost.project.service.OAuth2UserService;
+import com.localhost.project.security.oauth.OAuth2UserService;
 
 @Configuration
 @EnableWebSecurity
@@ -27,19 +27,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable()
 				.authorizeRequests()
 					.antMatchers("/resources/**","/js/**","/css/**","/images/**").permitAll()
-					.antMatchers("/login", "/do_login", "/process_login","/home","/login-error","/oauth2/authorization/facebook","oauth2/authorization/google","/index","/register","/process_register","/error").permitAll()
+					.antMatchers("/login","/perform_login","perform_oauth_login","/home","/login_error","/oauth2/authorization/facebook","oauth2/authorization/google","/index","/register","/process_register","/error").permitAll()
 				.anyRequest()
 					.authenticated()
 					.and()
 				.formLogin()
 					.loginPage("/login")
+					.loginProcessingUrl("/perform_login")
 					.permitAll()
-					.failureUrl("/login_error")
-					.defaultSuccessUrl("/home")
 					.and()
 				.oauth2Login()
 					.loginPage("/login")
-					.defaultSuccessUrl("/home")
+					.defaultSuccessUrl("/perform_oauth_login")
 					.userInfoEndpoint()
 					.userService(OAuth2UserService)
 					.and()

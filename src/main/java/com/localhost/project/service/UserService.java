@@ -6,12 +6,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
 import com.localhost.project.entity.UserLogin;
 import com.localhost.project.repository.UserRepository;
-import com.localhost.project.security.PasswordGenerator;
 
 @Service("UserLoginService")
 public class UserService implements UserDetailsService {
@@ -29,6 +27,10 @@ public class UserService implements UserDetailsService {
 
 	public void save(UserLogin user) {
 		user.setPassword(encoder.encode(user.getPassword()));
+		userRepository.save(user);
+	}
+	
+	public void saveOauth(UserLogin user) {
 		userRepository.save(user);
 	}
 

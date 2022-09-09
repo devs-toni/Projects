@@ -1,9 +1,14 @@
 package com.localhost.project.controller;
 
+import java.util.StringTokenizer;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.data.repository.query.Param;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,10 +26,11 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+	BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-	/*************************************************************************/ /* Mapeos */	
-	
-	/* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */ 
+	/*************************************************************************/ /* Mapeos */
+
+	/* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */
 
 	@GetMapping("/register")
 	public String register(Model model) {
@@ -33,7 +39,8 @@ public class UserController {
 	}
 
 	@PostMapping("/process_register")
-	public String processRegister(Model model, @Valid UserLogin user, BindingResult result, RedirectAttributes redirect) {
+	public String processRegister(Model model, @Valid UserLogin user, BindingResult result,
+			RedirectAttributes redirect) {
 		if (userService.findByUsername(user.getUsername()) != null) {
 			model.addAttribute("userExist", true);
 			return "register";
@@ -50,18 +57,63 @@ public class UserController {
 		userService.save(user);
 		return "redirect:/login";
 	}
-	
+
 	/* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */
 
 	@GetMapping("/login")
 	public String login() {
 		return "login";
 	}
-	
+
+	@GetMapping("/perform_login")
+	public String performLogin(RedirectAttributes redirect, @Param("username") String username,
+			@Param("password") String password, HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		UserLogin user = userService.findByUsername(username);
+		session.setAttribute("user", user.getId());
+		if (user != null && encoder.matches(password, user.getPassword())) {
+			redirect.addFlashAttribute("user", user.getName() + " " + user.getSurname());
+			return "redirect:/home";
+		} else {
+			return "redirect:/login_error";
+		}
+	}
+
+	@GetMapping("/perform_oauth_login")
+	public String performOauthLogin(HttpServletRequest request, RedirectAttributes redirect) {
+		HttpSession session = request.getSession();
+		String email = achieveEmail(session.getAttribute("SPRING_SECURITY_CONTEXT"));
+		UserLogin user = userService.findByUsername(email);
+		String surname = user.getSurname();
+		session.setAttribute("user", user.getId());
+		if (surname != null) {
+			redirect.addFlashAttribute("user", user.getName() + " " + user.getSurname());
+			return "redirect:/home";
+		} else {
+			redirect.addFlashAttribute("user", user.getName());
+			return "redirect:/home";
+		}
+	}
+
 	@GetMapping("/login_error")
 	public String loginError(Model model) {
 		model.addAttribute("errorLogin", "Email/Contraseña Incorrectos");
 		return "login";
+	}
+
+	private String achieveEmail(Object context) {
+		String email = "";
+		String strContext = String.valueOf(context);
+		StringTokenizer tokenizer = new StringTokenizer(strContext, "[");
+		while (tokenizer.hasMoreElements()) {
+			String str = tokenizer.nextToken();
+			if (str.contains("@")) {
+				str = str.replace("Principal=", "");
+				str = str.replace(", Credentials=", "");
+				email = str;
+			}
+		}
+		return email;
 	}
 
 }

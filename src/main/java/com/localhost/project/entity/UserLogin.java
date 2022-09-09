@@ -25,21 +25,18 @@ public class UserLogin {
 	@NotNull(message = "El username es obligatorio")
 	private String username;
 
-	@NotNull(message = "La contraseña es obligatoria")
 	@Size(min = 4, message = "La contraseña debe tener al menos 4 caracteres")
 	private String password;
 
 	/**********************************************************************/ /* Variables de Usuario */
 
 	@NotNull(message = "El nombre es obligatorio")
-	@Size(min = 3, max = 15, message = "El nombre debe tener entre 3-15 caracteres")
+	@Size(min = 3, max = 40, message = "El nombre debe tener entre 3-40 caracteres")
 	private String name;
 
-	@NotNull(message = "El apellido es obligatorio")
-	@Size(min = 3, max = 15, message = "El apellido debe tener entre 3-40 caracteres")
+	@Size(min = 3, max = 40, message = "El apellido debe tener entre 3-40 caracteres")
 	private String surname;
 
-	@NotNull(message = "La contraseña es obligatoria")
 	@Transient
 	private String checkPassword;
 	
@@ -47,10 +44,9 @@ public class UserLogin {
 	
 	public UserLogin() {}
 	
-	public UserLogin(String username,String password, String name) {
+	public UserLogin(String username, String name) {
 		super();
 		this.username = username;
-		this.password = password;
 		this.name = name;
 	}
 
