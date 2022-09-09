@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.localhost.project.entity.UserLogin;
 import com.localhost.project.service.UserService;
@@ -32,7 +33,7 @@ public class UserController {
 	}
 
 	@PostMapping("/process_register")
-	public String processRegister(Model model, @Valid UserLogin user, BindingResult result) {
+	public String processRegister(Model model, @Valid UserLogin user, BindingResult result, RedirectAttributes redirect) {
 		if (userService.findByUsername(user.getUsername()) != null) {
 			model.addAttribute("userExist", true);
 			return "register";
@@ -45,8 +46,9 @@ public class UserController {
 		if (result.hasErrors()) {
 			return "register";
 		}
+		redirect.addFlashAttribute("register", true);
 		userService.save(user);
-		return "register_complete";
+		return "redirect:/login";
 	}
 	
 	/* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */
