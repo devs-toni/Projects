@@ -72,6 +72,7 @@ public class UserController {
 		UserLogin user = userService.findByUsername(username);
 		if (user != null && encoder.matches(password, user.getPassword())) {
 			session.setAttribute("user", user.getId());
+			redirect.addFlashAttribute("askImage", true);
 			return "redirect:/home";
 		} else {
 			return "redirect:/login-error";
@@ -84,6 +85,7 @@ public class UserController {
 		String email = achieveEmail(session.getAttribute("SPRING_SECURITY_CONTEXT"));
 		UserLogin user = userService.findByUsername(email);
 		session.setAttribute("user", user.getId());
+		redirect.addFlashAttribute("askImage", true);
 		return "redirect:/home";
 		
 	}
