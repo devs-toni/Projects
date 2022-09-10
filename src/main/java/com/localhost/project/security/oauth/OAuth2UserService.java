@@ -30,8 +30,8 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
 	public void saveOAuthUser (OAuthUser oAuthUser) {
 		UserLogin user = userService.findByUsername(oAuthUser.getAttribute("email").toString());
 		if (user == null) {
-			UserLogin newUser = new UserLogin(oAuthUser.getEmail(), oAuthUser.getName());
-			userService.saveOauth(newUser);
+			UserLogin newUser = new UserLogin(oAuthUser.getEmail(), oAuthUser.getName(), true);
+			userService.save(newUser);
 			logger.debug("Se ha guardado un OAuth2User: " + newUser.getUsername());
 		} else {
 			logger.debug("El email: " + user.getUsername() + " ya existe en BBDD");

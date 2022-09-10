@@ -54,6 +54,7 @@ public class UserController {
 			return "register";
 		}
 		redirect.addFlashAttribute("register", true);
+		user.setIsOauth(false);
 		userService.save(user);
 		return "redirect:/login";
 	}

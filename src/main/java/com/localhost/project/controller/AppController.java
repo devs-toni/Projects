@@ -30,6 +30,14 @@ public class AppController {
 	public String loginSuccess(Model model, HttpServletRequest request) {
 		UserLogin user = userService.gerUserInSession(request);
 		String surname = user.getSurname();
+		String profileImage = user.getProfileImage();
+		model.addAttribute("id", user.getId());
+		if (profileImage != null) {
+			model.addAttribute("image", user.getProfileImage());
+		} else {
+			model.addAttribute("image", null);
+		}
+		
 		if (surname != null) {
 			model.addAttribute("user", user.getName() + " " + surname);
 			return "home";

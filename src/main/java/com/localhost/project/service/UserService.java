@@ -26,23 +26,14 @@ public class UserService implements UserDetailsService {
 	BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
 	/*********************************************************************************/ /* Funciones Útiles */
-
+	
 	public void save(UserLogin user) {
-		user.setPassword(encoder.encode(user.getPassword()));
-		userRepository.save(user);
-	}
-
-	public void saveOauth(UserLogin user) {
-		userRepository.save(user);
-	}
-
-	public Boolean validateUserLogin(String username, String password) {
-		UserLogin user = userRepository.findByUsername(username);
-		if (user != null) {
-			if (encoder.matches(password, user.getPassword()))
-				return true;
+		if (user.getIsOauth()) {
+			userRepository.save(user);
+		} else {
+			user.setPassword(encoder.encode(user.getPassword()));
+			userRepository.save(user);
 		}
-		return false;
 	}
 
 	public UserLogin gerUserInSession(HttpServletRequest request) {
@@ -57,6 +48,10 @@ public class UserService implements UserDetailsService {
 
 	public UserLogin findById(Long id) {
 		return userRepository.findById(id).get();
+	}
+	
+	public void updateImageProfile(String image, Long id) {
+		userRepository.updateProfileImage(image, id);
 	}
 
 	/*********************************************************************************/ /* Implementaciones */

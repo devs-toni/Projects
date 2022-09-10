@@ -113,5 +113,15 @@
     "name": "app.debug",
     "type": "java.lang.String",
     "description": "A description for 'app.debug'"
+  },
+  {
+    "name": "spring.web.resources.static-locations[1]",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.web.resources.static-locations[1]'"
+  },
+  {
+    "name": "spring.web.resources.static-locations[0]",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.web.resources.static-locations[0]'"
   }
 ]}

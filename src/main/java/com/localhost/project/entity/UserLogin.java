@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -28,6 +29,9 @@ public class UserLogin {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(name = "isOAuth")
+	private Boolean isOauth;
 
 	@NotNull(message = "El username es obligatorio")
 	private String username;
@@ -46,20 +50,21 @@ public class UserLogin {
 
 	@Transient
 	private String checkPassword;
-	
+	@Column(name = "image")
 	private String profileImage;
 	
-	@OneToMany
-	@JoinTable
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinTable (name = "user_activities",joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {@JoinColumn(name = "activity_id")})
 	private List<Activity> activities;
 	/**********************************************************************/ /* Constructor */
 	
 	public UserLogin() {}
 	
-	public UserLogin(String username, String name) {
+	public UserLogin(String username, String name, Boolean isOAuth) {
 		super();
 		this.username = username;
 		this.name = name;
+		this.isOauth = isOAuth;
 	}
 
 	/**********************************************************************/ /* Getter & Setter */
@@ -110,6 +115,30 @@ public class UserLogin {
 
 	public void setCheckPassword(String checkPassword) {
 		this.checkPassword = checkPassword;
+	}
+
+	public String getProfileImage() {
+		return profileImage;
+	}
+
+	public void setProfileImage(String profileImage) {
+		this.profileImage = profileImage;
+	}
+
+	public Boolean getIsOauth() {
+		return isOauth;
+	}
+
+	public void setIsOauth(Boolean isOauth) {
+		this.isOauth = isOauth;
+	}
+
+	public List<Activity> getActivities() {
+		return activities;
+	}
+
+	public void setActivities(List<Activity> activities) {
+		this.activities = activities;
 	}
 
 	/**********************************************************************/ /* Otros */

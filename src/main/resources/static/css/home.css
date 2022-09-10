@@ -36,8 +36,22 @@ body {
 	fill: white;
 }
 
-.header .h2 {
-	margin-left: 5%;
+.header .profile {
+	margin-left:1%;
+	width: 40%;
+	display:flex;
+	flex-direction: row;
+	align-items:center;
+}
+
+.header .profile .img {
+	width:5vh;
+	height:5vh;
+}
+
+.header .profile .h2 {
+	margin-left: 3%;
+	margin-top: 1%;
 	font-size: 1.6em;
 	font-weight: bold;
 }

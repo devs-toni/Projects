@@ -33,7 +33,13 @@
 					d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
             </svg>
 		</button>
-		<h2 class="h2" th:text="${user}"></h2>
+		<div class="profile">
+			<img class="img" th:if="${image != null}"
+				th:src="@{'images/profile/' + ${id} + '/' + ${image}}"
+				alt="Foto de Perfil" />
+			<h2 class="h2" th:text="${user}"></h2>
+		</div>
+
 		<nav class="nav">
 			<ul class="ul">
 				<li class="li"><a th:href="@{/home}">Home</a></li>
@@ -58,21 +64,26 @@
 		aria-labelledby="modalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Subir foto de perfil</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<form th:action="@{/upload-image}" method="post">
-						Selecciona una imagen: <input type="file" name="profile-image" id="file" class="form-control ms-2"/>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary"
-						data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal">Upload</button>
-				</div>
+				<form th:action="@{/upload-image}" method="post"
+					enctype="multipart/form-data">
+					<div class="modal-header bg-dark text-white">
+						<h5 class="modal-title" id="exampleModalLabel">Sube una foto
+							de tu bicicleta para tu perfil!</h5>
+						<button type="button" class="btn-close btn-close-white"
+							data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body mt-1 mb-5">
+						Selecciona una imagen: <input type="file" name="image" id="file"
+							accept="image/png, image/jpeg, image/jpg"
+							class="form-control mt-3 text-center" />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger"
+							data-bs-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary"
+							data-bs-toggle="modal">Upload</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

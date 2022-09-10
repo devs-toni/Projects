@@ -6,14 +6,15 @@ import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
 @Service
 public class Logger {
-
+	
 	@Value("${app.logfile}")
 	private String logfile;
 	@Value("${app.debug}")
 	private Boolean debug;
-
+	
 	public void debug(String entry) {
 		FileWriter file;
 		try {
