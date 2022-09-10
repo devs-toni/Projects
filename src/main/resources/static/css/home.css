@@ -1,4 +1,3 @@
-
 a {
 	text-decoration: none;
 	color: white;
@@ -37,23 +36,23 @@ body {
 }
 
 .header .profile {
-	margin-left:1%;
-	width: 40%;
-	display:flex;
+	margin-left: 1%; width : 40%;
+	display: flex;
 	flex-direction: row;
-	align-items:center;
+	align-items: center;
+	width: 40%;
 }
 
 .header .profile .img {
-	width:5vh;
-	height:5vh;
+	width: 5vh;
+	height: 5vh;
 }
 
 .header .profile .h2 {
 	margin-left: 3%;
-	margin-top: 1%;
-	font-size: 1.6em;
+	margin-top: 1%; font-size : 1.6em;
 	font-weight: bold;
+	font-size: 1.6em;
 }
 
 .header .nav-options .nav-profile {
@@ -100,7 +99,7 @@ body {
 .main {
 	margin: 5vw 15vw;
 	padding: 1.3em;
-	display:flex;
+	display: flex;
 	flex-direction: column;
 	flex-flow: column wrap;
 	align-items: flex-start;
@@ -108,14 +107,30 @@ body {
 }
 
 .main .h2 {
-	width:100%;
+	width: 100%;
 	font-size: 1.5rem;
 	padding-bottom: 1.5vw;
-	border-bottom: 1px solid black
+	border-bottom: 1px solid black;
 }
 
 .main .activities {
 	
+}
+
+.div-preview {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	margin-top: 2vh;
+	margin-left: 1vw;
+}
+
+.div-preview .preview {
+	padding: 12px;
+	width: 8vh;
+	height: 8vh;
+	border: 1px solid #514e4e;
+	border-radius: 10px;
 }
 
 @media screen and (max-width:900px) {

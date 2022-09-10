@@ -64,7 +64,7 @@
 		aria-labelledby="modalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
-				<form th:action="@{/upload-image}" method="post"
+				<form th:action="@{/upload-image}" method="post" id="form"
 					enctype="multipart/form-data">
 					<div class="modal-header bg-dark text-white">
 						<h5 class="modal-title" id="exampleModalLabel">Sube una foto
@@ -72,16 +72,27 @@
 						<button type="button" class="btn-close btn-close-white"
 							data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="modal-body mt-1 mb-5">
-						Selecciona una imagen: <input type="file" name="image" id="file"
+
+					<div class="modal-body mt-1 mb-2">
+						Selecciona una imagen: <input type="file" name="image" id="fileupload"
+							onchange="sendPreview();"
 							accept="image/png, image/jpeg, image/jpg"
 							class="form-control mt-3 text-center" />
+						<div class="div-preview" id="preview-photo">
+
+						</div>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger"
-							data-bs-dismiss="modal">Close</button>
-						<button type="submit" class="btn btn-primary"
-							data-bs-toggle="modal">Upload</button>
+
+					<div class="modal-footer d-flex justify-content-between">
+						<div class="">
+							<input type="checkbox" class="ms-1 me-2" />No volver a mostrar
+						</div>
+						<div>
+							<button type="button" class="btn btn-danger"
+								data-bs-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary"
+								data-bs-toggle="modal">Upload</button>
+						</div>
 					</div>
 				</form>
 			</div>
