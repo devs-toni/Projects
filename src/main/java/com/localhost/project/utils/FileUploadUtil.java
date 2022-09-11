@@ -17,21 +17,32 @@ public class FileUploadUtil {
 	@Autowired
 	private Logger logger;
 
-	public void save(String uploadDir, String fileName, MultipartFile file) throws IOException {
+	public void save(String uploadDir, String fileName, MultipartFile file) {
 		Path uploadPath = Paths.get(uploadDir);
 
-		if (!Files.exists(uploadPath)) {
-			Files.createDirectories(uploadPath);
-			logger.debug("Creando directorio de usuario para foto de perfil");
-		}
-
 		try (InputStream inputStream = file.getInputStream()) {
+			if (!Files.exists(uploadPath)) {
+				Files.createDirectories(uploadPath);
+				logger.debug("Creando directorio de usuario para foto de perfil");
+			}
+
 			Path filePath = uploadPath.resolve(fileName);
 			Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
 			logger.debug("La imagen de perfil se ha insertado correctamente en el directorio");
 
 		} catch (IOException ioe) {
-			throw new IOException("Could not save image file: " + fileName, ioe);
+			logger.debug("Could not save image file: " + fileName);
+		}
+	}
+
+	public void delete(String deleteDir, String fileName) {
+		Path deletePath = Paths.get(deleteDir);
+
+		try {
+			Path filePath = deletePath.resolve(fileName);		
+			Files.delete(filePath);
+		} catch (IOException ioe) {
+			logger.debug("Could not save image file: " + fileName);
 		}
 	}
 }

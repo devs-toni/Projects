@@ -15,13 +15,6 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
-
-<script type="text/javascript">
-	function openExplorer() {
-		var thePath = 'C:\\Windows';
-		window.open('file://' + thePath, 'explorer');
-	}
-</script>
 </head>
 <body>
 	<!------------------- Navbar --------------------------------------------->
@@ -70,26 +63,25 @@
 						<h5 class="modal-title" id="exampleModalLabel">Sube una foto
 							de tu bicicleta para tu perfil!</h5>
 						<button type="button" class="btn-close btn-close-white"
-							data-bs-dismiss="modal" aria-label="Close"></button>
+							data-bs-dismiss="modal" aria-label="Close" onclick="evaluateCheckbox()"></button>
 					</div>
 
 					<div class="modal-body mt-1 mb-2">
-						Selecciona una imagen: <input type="file" name="image" id="fileupload"
-							onchange="sendPreview();"
+						Selecciona una imagen: <input type="file" name="image"
+							id="fileupload" onchange="sendPreview()"
 							accept="image/png, image/jpeg, image/jpg"
 							class="form-control mt-3 text-center" />
-						<div class="div-preview" id="preview-photo">
-
-						</div>
+						<div class="div-preview" id="preview-photo"></div>
 					</div>
 
 					<div class="modal-footer d-flex justify-content-between">
 						<div class="">
-							<input type="checkbox" class="ms-1 me-2" />No volver a mostrar
+							<input type="checkbox" name="checkbox" id="checkbox"
+								class="ms-1 me-2" />No volver a mostrar
 						</div>
 						<div>
 							<button type="button" class="btn btn-danger"
-								data-bs-dismiss="modal">Close</button>
+								data-bs-dismiss="modal" onclick="evaluateCheckbox()">Close</button>
 							<button type="submit" class="btn btn-primary"
 								data-bs-toggle="modal">Upload</button>
 						</div>

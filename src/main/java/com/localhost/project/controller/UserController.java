@@ -1,115 +1,73 @@
 package com.localhost.project.controller;
 
-import java.util.StringTokenizer;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.localhost.project.controller.rest.FileUploadController;
 import com.localhost.project.entity.UserLogin;
 import com.localhost.project.service.UserService;
+import com.localhost.project.utils.FileUploadUtil;
 
 @Controller
 public class UserController {
 
-	/*************************************************************************/ /* Variables */
-
 	@Autowired
 	UserService userService;
-	BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+	@Autowired
+	FileUploadUtil fileUploadUtil;
 
-	/*************************************************************************/ /* Mapeos */
-
-	/* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */ /* REGISTRO */
-
-	@GetMapping("/register")
-	public String register(Model model) {
-		model.addAttribute("userLogin", new UserLogin());
-		return "register";
-	}
-
-	@PostMapping("/process-register")
-	public String processRegister(Model model, @Valid UserLogin user, BindingResult result,
-			RedirectAttributes redirect) {
-		if (userService.findByUsername(user.getUsername()) != null) {
-			model.addAttribute("userExist", true);
-			return "register";
+	@GetMapping("/home")
+	public String loginSuccess(Model model, HttpServletRequest request) {
+		UserLogin user = userService.gerUserInSession(request);
+		String surname = user.getSurname();
+		String profileImage = user.getProfileImage();
+		model.addAttribute("id", user.getId());
+		if (profileImage != null) {
+			model.addAttribute("image", user.getProfileImage());
+		} else {
+			model.addAttribute("image", null);
 		}
 
-		if (!user.getPassword().equals(user.getCheckPassword())) {
-			model.addAttribute("passError", true);
-			return "register";
+		if (surname != null) {
+			model.addAttribute("user", user.getName() + " " + surname);
+			return "home";
+		} else {
+			model.addAttribute("user", user.getName());
+			return "home";
 		}
-		if (result.hasErrors()) {
-			return "register";
-		}
-		redirect.addFlashAttribute("register", true);
-		user.setIsOauth(false);
-		userService.save(user);
-		return "redirect:/login";
 	}
 
-	/* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */ /* LOGIN */
-
-	@GetMapping("/login")
-	public String login() {
-		return "login";
-	}
-
-	@GetMapping("/perform-login")
-	public String performLogin(RedirectAttributes redirect, @Param("username") String username,
-			@Param("password") String password, HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		UserLogin user = userService.findByUsername(username);
-		if (user != null && encoder.matches(password, user.getPassword())) {
-			session.setAttribute("user", user.getId());
-			redirect.addFlashAttribute("askImage", true);
+	@PostMapping("/upload-image")
+	public String uploadImage(@RequestParam("image") MultipartFile image, HttpServletRequest request) {
+		if (!image.getOriginalFilename().equals("")) {
+			String strImage = StringUtils.cleanPath(image.getOriginalFilename());
+			UserLogin user = userService.gerUserInSession(request);
+			userService.updateImageProfile(strImage, user.getId());
+			deletePreviews(strImage, user.getId());
 			return "redirect:/home";
 		} else {
-			return "redirect:/login-error";
+			return "redirect:/home";
 		}
 	}
 
-	@GetMapping("/perform-oauth-login")
-	public String performOauthLogin(HttpServletRequest request, RedirectAttributes redirect) {
-		HttpSession session = request.getSession();
-		String email = achieveEmail(session.getAttribute("SPRING_SECURITY_CONTEXT"));
-		UserLogin user = userService.findByUsername(email);
-		session.setAttribute("user", user.getId());
-		redirect.addFlashAttribute("askImage", true);
-		return "redirect:/home";
-		
-	}
-
-	@GetMapping("/login-error")
-	public String loginError(Model model) {
-		model.addAttribute("errorLogin", "Email/Contraseña Incorrectos");
-		return "login";
-	}
-
-	private String achieveEmail(Object context) {
-		String email = "";
-		String strContext = String.valueOf(context);
-		StringTokenizer tokenizer = new StringTokenizer(strContext, "[");
-		while (tokenizer.hasMoreElements()) {
-			String str = tokenizer.nextToken();
-			if (str.contains("@")) {
-				str = str.replace("Principal=", "");
-				str = str.replace(", Credentials=", "");
-				email = str;
+	private void deletePreviews(String filename, Long id) {
+		String image = userService.findById(id).getProfileImage();
+		if (image != null) {
+			FileUploadController.previews.add(image);
+		}
+		FileUploadController.previews.forEach(file -> {
+			if (!file.equalsIgnoreCase(filename)) {
+				fileUploadUtil.delete("src/main/resources/static/images/profile/" + id, file);
 			}
-		}
-		return email;
+		});
+		FileUploadController.previews.clear();
 	}
-
 }
