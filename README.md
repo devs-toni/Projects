@@ -1,1 +1,3 @@
-Mi primer proyecto serio, con incorporaciones visuales y continuas mejoras constantes
+Proyecto basado en la creación de una página web personalizada.
+
+
