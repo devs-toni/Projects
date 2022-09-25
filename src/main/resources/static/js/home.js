@@ -6,14 +6,14 @@ let rememberPreview;
 
 async function sendPreview() {
 	let formData = new FormData();
-	formData.append("image", $('#fileupload').prop('files')[0])
+	formData.append("image", $('#fileupload').prop('files')[0]);
 	await fetch('/loadfile', {
-		method: "POST",
+		method: 'POST',
 		body: formData
 	}).then((r) => r.json()
 	).then((list) => {
-		showPreview(list[0], list[1])
-	})
+		showPreview(list[0], list[1]);
+	});
 }
 
 function showPreview(filename, id) {

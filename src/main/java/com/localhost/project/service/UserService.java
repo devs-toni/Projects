@@ -1,5 +1,8 @@
 package com.localhost.project.service;
 
+import java.util.Date;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.localhost.project.entity.Activity;
 import com.localhost.project.entity.UserLogin;
 import com.localhost.project.repository.UserRepository;
 
@@ -62,5 +66,12 @@ public class UserService implements UserDetailsService {
 		UserDetails userDetail = User.withUsername(user.getUsername()).password(user.getPassword()).authorities("ADMIN")
 				.build();
 		return userDetail;
+	}
+	
+	
+	public void saveActivity(String description, UserLogin user, Date date) {
+		List<Activity> activities = user.getActivities();
+		activities.add(new Activity(description, user, date));
+		user.setActivities(activities);
 	}
 }

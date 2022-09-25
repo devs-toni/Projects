@@ -47,27 +47,30 @@
 	<!------------------- Cuerpo página ----------------------------------------->
 
 	<div class="main">
-		<h2 class="h2">HOME</h2>
-		<div class="activities">
-			<div class="activity-card">
-				<div class="card-head">
-					<img class="img"
-						th:src="@{'images/profile/' + ${id} + '/' + ${image}}" alt="logo" />
-					<div class="user">
-						<h4 class="h4" th:text=${user}></h4>
-						<p class="p">23 Septiembre 2022</p>
+		<form class="form" th:action="@{/publish}" th:method="post">
+			<h2 class="h2">HOME</h2>
+			<textarea id="publish-description" name="description"
+				class="textarea" rows="2" placeholder="What's Up?" required></textarea>
+			<div class="add-activity">
+				<input class="button" type="submit" value="+" />
+			</div>
+		</form>
+		<div th:if="${activities != null}" th:each="activity : ${activities}">
+			<div class="activities">
+				<div class="activity-card">
+					<div class="card-head">
+						<img class="img"
+							th:src="@{'images/profile/' + ${id} + '/' + ${image}}" alt="logo" />
+						<div class="user">
+							<h4 class="h4" th:text=${user}></h4>
+							<p class="p" th:text="${activity.date}"></p>
+						</div>
 					</div>
-				</div>
-				<div class="card-body">
-					<h4 class="h4">
-						Título de la actividad
-						</h3>
+					<div class="card-body">
+						<p class="p" th:text="${activity.description}"></p>
 						<img class="img" th:src="@{images/card-proof.jpg}"
 							alt="KTM Imagen" />
-						<p class="p">Descripción de la actividad, esto es una prueba
-							para ver que tal queda el contenido en el continenter, ya que
-							ahora mismo, no tengo ideas de que texto podría ir en esta zona,
-							conforme las cosas vayan avanzando, se irá viendo</p>
+					</div>
 				</div>
 			</div>
 		</div>

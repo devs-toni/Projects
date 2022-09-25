@@ -1,6 +1,7 @@
 package com.localhost.project.entity;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +13,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.localhost.project.service.UserService;
+
+import ch.qos.logback.core.pattern.ReplacingCompositeConverter;
+
 @Entity
 @Table(name = "activities")
 public class Activity {
@@ -22,23 +29,25 @@ public class Activity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull(message = "El nombre es obligatorio")
-	private String title;
-	
 	private String description;
 	
 	private ArrayList<String> images;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "activity_id")
+	@JoinColumn(name = "user_id")
 	private UserLogin user;
+	
+	private Date date;
 
 	/**********************************************************************/ /* Constructor */
 
-	public Activity(String title, String description) {
+	public Activity () {}
+	
+	public Activity(String description, UserLogin user, Date date) {
 		super();
-		this.title = title;
 		this.description = description;
+		this.user = user;
+		this.date = date;
 	}
 
 	/**********************************************************************/ /* Getter & Setter */
@@ -49,14 +58,6 @@ public class Activity {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
 	}
 
 	public String getDescription() {
@@ -74,12 +75,18 @@ public class Activity {
 	public void setImages(ArrayList<String> images) {
 		this.images = images;
 	}
+	
+	public Date getDate() {
+		return date;
+	}
 
-	
-	
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 	@Override
 	public String toString() {
-		return "Activity [title=" + title + "]";
+		return "Activity [title=" + description + "]";
 	}
 	
 }
