@@ -14,8 +14,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>project</name>
 	<description>SpringBoot Project</description>
+	<packaging>war</packaging>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 
 	<dependencies>
@@ -116,7 +117,7 @@
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
-			</dependency>
+		</dependency>
 	</dependencies>
 
 	<build>

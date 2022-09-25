@@ -47,8 +47,30 @@
 	<!------------------- Cuerpo página ----------------------------------------->
 
 	<div class="main">
-		<h2 class="h2">Resumen</h2>
-		<div class="activities"></div>
+		<h2 class="h2">HOME</h2>
+		<div class="activities">
+			<div class="activity-card">
+				<div class="card-head">
+					<img class="img"
+						th:src="@{'images/profile/' + ${id} + '/' + ${image}}" alt="logo" />
+					<div class="user">
+						<h4 class="h4" th:text=${user}></h4>
+						<p class="p">23 Septiembre 2022</p>
+					</div>
+				</div>
+				<div class="card-body">
+					<h4 class="h4">
+						Título de la actividad
+						</h3>
+						<img class="img" th:src="@{images/card-proof.jpg}"
+							alt="KTM Imagen" />
+						<p class="p">Descripción de la actividad, esto es una prueba
+							para ver que tal queda el contenido en el continenter, ya que
+							ahora mismo, no tengo ideas de que texto podría ir en esta zona,
+							conforme las cosas vayan avanzando, se irá viendo</p>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!------------------ Modal de carga de imagen de perfil --------------------->
@@ -63,7 +85,8 @@
 						<h5 class="modal-title" id="exampleModalLabel">Sube una foto
 							de tu bicicleta para tu perfil!</h5>
 						<button type="button" class="btn-close btn-close-white"
-							data-bs-dismiss="modal" aria-label="Close" onclick="evaluateCheckbox()"></button>
+							data-bs-dismiss="modal" aria-label="Close"
+							onclick="evaluateCheckbox()"></button>
 					</div>
 
 					<div class="modal-body mt-1 mb-2">
