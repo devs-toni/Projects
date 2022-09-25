@@ -109,19 +109,45 @@ body {
 	border-left: solid thin black;
 }
 
-.main .form {
-	width: 90%;
+.main .div-form {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	border-bottom: solid thin black;
+	width: 100%;
 }
 
-.main .form .h2 {
+.main .div-form .form {
+	width: 80%;
+}
+
+.main .div-form .form .title-preview {
 	width: 90%;
+	margin-top: 20px;
+	display:flex;
+	justify-content: space-between;
+}
+
+.main .div-form .form .title-preview .h2 {
 	font-weight: bold;
 	font-size: 1.9rem;
 	text-align: left;
-	margin-top: 20px;
 }
 
-.main .form .textarea {
+.main .div-form .form .title-preview .previews {
+	width:auto;
+	display: inline-flex;
+	justify-content: flex-end;
+	flex-direction: row-reverse;
+}
+
+.main .div-form .form .title-preview .previews .preview {
+	height:2.5rem;
+	border-radius: 5px;
+	margin-right: 1.8%;
+}
+
+.main .div-form .form .textarea {
 	width: 90%;
 	margin-top: 20px;
 	border: none;
@@ -129,29 +155,40 @@ body {
 	font-size: 1.5rem;
 }
 
-.main .form .textarea:focus {
+.main .div-form .form .textarea:focus {
 	outline: none !important;
 }
 
-.main .form .add-activity {
-	width: 94%;
+.main .div-form .form .add-activity {
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-end;
-	padding-top: 2%;
-	padding-bottom: 2%;
+	justify-content: space-between;
+	align-items: center;
 }
 
-.main .form .add-activity .button {
+.main .div-form .form .add-activity .button {
 	font-size: 54px;
 	border: none;
 	background-color: transparent;
+	padding-bottom: 1.2%;
+}
+
+.main .div-form .form .add-activity .publish-image-upload .i {
+	cursor: pointer;
+}
+
+.main .div-form .form .add-activity .publish-image-upload .label {
+	width: 100%;
+}
+
+.main .div-form .form .add-activity .publish-image-upload .input {
+	display: none;
 }
 
 .activities .activity-card {
 	width: 100%;
 	height: auto;
-	border-top: solid thin black;
+	/*border-top: solid thin black;*/
 	border-bottom: solid thin black;
 }
 

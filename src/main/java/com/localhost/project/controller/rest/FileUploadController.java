@@ -28,6 +28,8 @@ public class FileUploadController {
 	@Autowired
 	FileUploadUtil fileUploadUtil;
 	public static Set<String> previews = new HashSet<>();
+	public static Set<String> publishPreviews = new HashSet<>();
+	
 
 	@PostMapping("/loadfile")
 	public ArrayList<Object> loadPreview(@RequestParam(name = "image") MultipartFile image,
@@ -52,10 +54,29 @@ public class FileUploadController {
 	@GetMapping("/forgetimage")
 	public void forgetImage() {
 		try {
-			FileInputStream props = new FileInputStream("resources/application.yml");
-			
+			FileInputStream props = new FileInputStream("resources/application.yml");	
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@PostMapping("/loadfilepublish")
+	public ArrayList<Object> loadPreviewPublish(@RequestParam(name = "image") MultipartFile image,
+			HttpServletRequest request) {
+		String strImage = "";
+		UserLogin user = null;
+		user = userService.gerUserInSession(request);
+
+		if (!image.getOriginalFilename().equals("")) {
+			strImage = StringUtils.cleanPath(image.getOriginalFilename());
+			user = userService.gerUserInSession(request);
+			String upload = "src/main/resources/static/images/activities/" + user.getId();
+			fileUploadUtil.save(upload, strImage, image);
+			publishPreviews.add(strImage);
+		}
+		ArrayList<Object> response = new ArrayList<>();
+		response.add(strImage);
+		response.add(user.getId());
+		return response;
 	}
 }

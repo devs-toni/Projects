@@ -1,5 +1,6 @@
 package com.localhost.project.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -69,9 +70,9 @@ public class UserService implements UserDetailsService {
 	}
 	
 	
-	public void saveActivity(String description, UserLogin user, Date date) {
+	public void saveActivity(String description, UserLogin user, Date date, ArrayList<String> images) {
 		List<Activity> activities = user.getActivities();
-		activities.add(new Activity(description, user, date));
+		activities.add(new Activity(description, user, date, images));
 		user.setActivities(activities);
 	}
 }

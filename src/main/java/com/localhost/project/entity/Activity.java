@@ -43,11 +43,12 @@ public class Activity {
 
 	public Activity () {}
 	
-	public Activity(String description, UserLogin user, Date date) {
+	public Activity(String description, UserLogin user, Date date, ArrayList<String> images) {
 		super();
 		this.description = description;
 		this.user = user;
 		this.date = date;
+		this.images = images;
 	}
 
 	/**********************************************************************/ /* Getter & Setter */

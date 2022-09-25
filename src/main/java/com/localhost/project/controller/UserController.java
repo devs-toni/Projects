@@ -1,6 +1,8 @@
 package com.localhost.project.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -78,10 +80,18 @@ public class UserController {
 	}
 	
 	@PostMapping("/publish")
-	private String publish(@RequestParam(name = "description") String description, HttpServletRequest request) {
+	private String publish(@RequestParam("image") MultipartFile[] images,
+						   @RequestParam(name = "description") String description, 
+						   HttpServletRequest request) {
+		ArrayList<String> publishImages = new ArrayList<>();
+		if (images != null) {
+			for (MultipartFile image : images) {
+				publishImages.add(image.getOriginalFilename());
+			}
+		}
 		UserLogin user = userService.gerUserInSession(request);
 		Date date = new Date();
-		userService.saveActivity(description, user, date);
+		userService.saveActivity(description, user, date, publishImages);
 		return "redirect:/home";
 	}
 }
