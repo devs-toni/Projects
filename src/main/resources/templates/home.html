@@ -48,9 +48,8 @@
 	<div class="main">
 		<div class="div-form">
 			<form class="form" th:action="@{/publish}" th:method="post" enctype="multipart/form-data">
-				<div class="title-preview">
+				<div class="title-preview" id="title">
 					<h2 class="h2">HOME</h2>
-					<div id="title-prev" class="previews"></div>
 				</div>
 				<textarea id="publish-description" name="description"
 					class="textarea" rows="2" placeholder="What's Up?" required></textarea>
@@ -71,7 +70,7 @@
 			<div class="activities">
 				<div class="activity-card">
 					<div class="card-head">
-						<img class="img"
+						<img class="img" th:if="@{'images/profile/' + ${id} + '/' + ${image} != null}"
 							th:src="@{'images/profile/' + ${id} + '/' + ${image}}" alt="logo" />
 						<div class="user">
 							<h4 class="h4" th:text=${user}></h4>
@@ -80,8 +79,14 @@
 					</div>
 					<div class="card-body">
 						<p class="p" th:text="${activity.description}"></p>
-						<img class="img" th:if="${activity.images != null}" th:each="strImage : ${activity.images}"
+						<div class="div-images" th:if="${activity.images != null && activity.images.size() == 1}">
+							<img class="img"  th:each="strImage : ${activity.images}"
 							th:src="@{'images/activities/' + ${id} + '/' + ${strImage}}" alt="imagen" />
+						</div>
+						<div class="div-images" th:if="${activity.images != null && activity.images.size() >= 2}">
+							<img class="imgs"  th:each="strImage : ${activity.images}"
+							th:src="@{'images/activities/' + ${id} + '/' + ${strImage}}" alt="imagen" />
+						</div>
 					</div>
 				</div>
 			</div>

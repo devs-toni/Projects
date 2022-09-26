@@ -69,7 +69,6 @@ public class UserService implements UserDetailsService {
 		return userDetail;
 	}
 	
-	
 	public void saveActivity(String description, UserLogin user, Date date, ArrayList<String> images) {
 		List<Activity> activities = user.getActivities();
 		activities.add(new Activity(description, user, date, images));

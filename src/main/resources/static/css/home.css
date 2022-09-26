@@ -144,7 +144,18 @@ body {
 .main .div-form .form .title-preview .previews .preview {
 	height:2.5rem;
 	border-radius: 5px;
-	margin-right: 1.8%;
+	margin-right: -2px;
+}
+
+.main .div-form .form .title-preview .previews .remove {
+	margin-top: 0;
+	display: inline-flex;
+	align-items: end;
+	margin-right: 4%;
+}
+
+.main .div-form .form .title-preview .previews .remove:hover {
+	cursor:pointer;
 }
 
 .main .div-form .form .textarea {
@@ -229,10 +240,23 @@ body {
 	margin-bottom: 30px;
 }
 
-.activities .activity-card .card-body .img {
-	max-width: 88%;
+.activities .activity-card .card-body .div-images {
+	display:flex;
+	justify-content:center;
+	flex-wrap: wrap;
+}
+
+.activities .activity-card .card-body .div-images .img {
+	max-width: 40rem;
 	margin: 4% 6% 0 6%;
 	border-radius: 40px;
+}
+
+.activities .activity-card .card-body .div-images .imgs {
+	max-width: 20rem;
+	margin: 2px 2px 2px 2px;
+	border-radius: 40px;
+	flex-shrink:1;
 }
 
 .activities .activity-card .card-body .p {

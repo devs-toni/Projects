@@ -1,5 +1,6 @@
 package com.localhost.project.utils;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -44,5 +45,10 @@ public class FileUploadUtil {
 		} catch (IOException ioe) {
 			logger.debug("Could not save image file: " + fileName);
 		}
+	}
+	
+	public void delete(String pathName) {
+		File file = new File(pathName);		
+		file.delete();
 	}
 }
