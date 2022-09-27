@@ -82,9 +82,12 @@ public class FileUploadController {
 	}
 	
 	@PostMapping("/deletefilepublish")
-	public void deletePreviewPublish(@RequestParam(name = "image") String path) {
-		String file = path.replace("https://localhost/", "src/main/resources/static/");
-		System.out.println(file);
-		fileUploadUtil.delete(file);
+	public void deletePreviewPublish(@RequestParam(name = "image") String path, HttpServletRequest request) {
+		UserLogin user = userService.gerUserInSession(request);
+		String file = path.replace("https://localhost/", "");
+		file = "src/main/resources/static/images/activities/" + user.getId() + "/" + file;
+		if (userService.imageIsUsed(path) == null) {
+			fileUploadUtil.delete(file);
+		}
 	}
 }

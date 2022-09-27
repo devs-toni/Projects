@@ -12,7 +12,7 @@ async function sendPreview() {
 		body: formData
 	}).then((r) => r.json()
 	).then((list) => {
-				console.log(list);
+		console.log(list);
 		showPreview(list[0], list[1]);
 	});
 }
@@ -42,58 +42,73 @@ function evaluateCheckbox() {
 	}
 }
 
+let finalFileListArray;
 async function sendPublishPreview() {
 	let formData = new FormData();
-	let length = $('#file-publish-upload').prop('files').length; 
-	for (let i = 0 ; i<length; i++){
+	let length = $('#file-publish-upload').prop('files').length;
+
+	for (let i = 0; i < length; i++) {
 		formData.append("image", $('#file-publish-upload').prop('files')[i]);
 	}
-	
 	await fetch('/loadfilepublish', {
 		method: 'POST',
 		body: formData
 	}).then((r) => r.json()
 	).then((list) => {
-		for (let e of list){
-			if (list.indexOf(e) > 0){
-				showPublishPreview(e, list[0]);
-			}
-		}		
+		showPublishPreview(list, list[0]);
 	});
+
 }
 
-function showPublishPreview(filename, id) {
-
-	let $title = $('#title');
-	let $preview = document.createElement('div');
-	$preview.setAttribute('id', 'title-prev');
-	$preview.classList.add('previews');
-	$title.append($preview);
-	
-	$('#title-prev').append(
-		$('<i></i>')
-			.attr('id', 'remove')
-			.attr('onclick', 'deletePublishPreview(event)')
-			.addClass('bi').addClass('bi-x-lg').addClass('remove')
-	)
-	
-	$('#title-prev').append(
-		$('<img/>')
-			.attr('id', 'preview')
-			.attr('src', 'images/activities/' + id + '/' + filename)
-			.addClass('preview')
-	)
+function showPublishPreview(list, id) {
+	let $titleprev = document.getElementById('title-prev');
+	$titleprev.innerHTML = '';
+	for (let e of list) {
+		if (list.indexOf(e) !== 0) {
+			let $prev = document.createElement('div');
+			$prev.setAttribute('id', 'prev');
+			$titleprev.classList.add('previews');
+			$titleprev.append($prev);
+			let $remove = document.createElement('i');
+			$remove.setAttribute('id', 'remove');
+			$remove.setAttribute('onclick', 'deletePublishPreview(event)');
+			$remove.classList.add('bi');
+			$remove.classList.add('bi-x-lg');
+			$remove.classList.add('remove');
+			let $image = document.createElement('img');
+			$image.setAttribute('id', 'preview');
+			$image.setAttribute('src', 'images/activities/' + id + '/' + e);
+			$image.setAttribute('name', e);
+			$image.classList.add('preview');
+			$prev.append($image);
+			$prev.append($remove)
+		};
+	}
 }
 
 async function deletePublishPreview(e) {
+	let finalStringListArray = [];
+	let $inputFiles = $('#file-publish-upload').prop('files');
+	let fileListArray = Array.from($inputFiles);
 	let formData = new FormData();
 	let target = e.target.parentNode;
-	let $image = target.getElementsByTagName('img')[0].currentSrc;
-	target.remove();	
-	formData.append("image", $image);
+	let imageName = target.getElementsByTagName('img')[0].getAttribute('name');
+	target.remove();
+	if (!finalFileListArray) {
+		finalFileListArray = fileListArray.filter(e => e.name !== imageName);
+		for (let e of finalFileListArray) {
+			finalStringListArray.push(e.name);
+		}
+	} else {
+		finalFileListArray = finalFileListArray.filter(e => e.name !== imageName);
+		for (let e of finalFileListArray) {
+			finalStringListArray.push(e.name);
+		}
+	}
+	$('input[name=final]').val(finalStringListArray);
+	formData.append("image", imageName);
 	await fetch('/deletefilepublish', {
-		method:'POST',
+		method: 'POST',
 		body: formData
 	});
-	console.log($('#file-publish-upload').prop('files'));
 }

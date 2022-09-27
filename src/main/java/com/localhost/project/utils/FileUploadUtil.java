@@ -50,5 +50,6 @@ public class FileUploadUtil {
 	public void delete(String pathName) {
 		File file = new File(pathName);		
 		file.delete();
+		logger.debug("La imagen " + file + " ha sido eliminada");
 	}
 }

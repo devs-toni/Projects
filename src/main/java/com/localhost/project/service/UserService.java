@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.localhost.project.entity.Activity;
 import com.localhost.project.entity.UserLogin;
+import com.localhost.project.repository.ActivityRepository;
 import com.localhost.project.repository.UserRepository;
 
 @Service("UserLoginService")
@@ -25,6 +26,8 @@ public class UserService implements UserDetailsService {
 
 	@Autowired
 	UserRepository userRepository;
+	@Autowired
+	ActivityRepository activityRepository;
 
 	/*********************************************************************************/ /* OtrasVariables */
 
@@ -73,5 +76,9 @@ public class UserService implements UserDetailsService {
 		List<Activity> activities = user.getActivities();
 		activities.add(new Activity(description, user, date, images));
 		user.setActivities(activities);
+	}
+	
+	public String imageIsUsed (String image) {
+		return activityRepository.findByImages(image);
 	}
 }

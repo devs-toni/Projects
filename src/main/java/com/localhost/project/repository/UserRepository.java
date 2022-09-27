@@ -22,5 +22,5 @@ public interface UserRepository extends JpaRepository<UserLogin, Long>{
 	@Transactional
 	@Query ("update UserLogin u set u.profileImage=:image where u.id =:id")
 	void updateProfileImage(String image, Long id);
-	
+		
 }

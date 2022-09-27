@@ -82,11 +82,16 @@ public class UserController {
 	@PostMapping("/publish")
 	private String publish(@RequestParam("image") MultipartFile[] images,
 						   @RequestParam(name = "description") String description, 
+						   @RequestParam(name = "final") String[] imagesFinal,
 						   HttpServletRequest request) {
 		ArrayList<String> publishImages = new ArrayList<>();
 		if (images != null) {
 			for (MultipartFile image : images) {
-				publishImages.add(image.getOriginalFilename());
+				for (String str : imagesFinal) {
+					if (str.equals(image.getOriginalFilename())) {
+						publishImages.add(image.getOriginalFilename());
+					}
+				}
 			}
 		}
 		UserLogin user = userService.gerUserInSession(request);
