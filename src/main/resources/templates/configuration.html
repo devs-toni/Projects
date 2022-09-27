@@ -8,8 +8,7 @@
 <link type="text/css" rel="stylesheet"
 	href="../static/css/configuration.css"
 	th:href="@{css/configuration.css}">
-<link type="text/css" rel="stylesheet"
-	href="../static/css/home.css"
+<link type="text/css" rel="stylesheet" href="../static/css/home.css"
 	th:href="@{css/home.css}">
 <link type="text/css" rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
@@ -49,6 +48,28 @@
 
 	<!------------------- Cuerpo página ----------------------------------------->
 
+	<div class="settings">
+		<div id="menu" class="menu site">
+			<ul class="ul">
+				<li class="li"><button id="cuenta" class="button" onclick="show(event)">Cuenta</button></li>
+				<li class="li"><button class="button" onclick="">Editar
+						perfil</button></li>
+				<li class="li"><button class="button" onclick="">Cuenta</button></li>
+				<li class="li"><button class="button" onclick="">Cuenta</button></li>
+				<li class="li"><button class="button" onclick="">Cuenta</button></li>
+				<li class="li"><button class="button" onclick="">Cuenta</button></li>
+			</ul>
+		</div>
+		<div id="principal" class="principal" hidden>
+			<h2 class="title">Ajustes</h2>
+			<div class="type"></div>
+		</div>
+	</div>
+
+
+
+
+
 
 
 
@@ -60,7 +81,7 @@
 		th:src="@{js/bikers.js}"></script>
 	<script type="text/javascript" src="../static/js/configuration.js"
 		th:src="@{js/configuration.js}"></script>
-			<script type="text/javascript" src="../static/js/home.js"
+	<script type="text/javascript" src="../static/js/home.js"
 		th:src="@{js/home.js}"></script>
 </body>
 </html>
