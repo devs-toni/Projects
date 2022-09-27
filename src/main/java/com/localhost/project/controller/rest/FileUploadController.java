@@ -86,8 +86,6 @@ public class FileUploadController {
 		UserLogin user = userService.gerUserInSession(request);
 		String file = path.replace("https://localhost/", "");
 		file = "src/main/resources/static/images/activities/" + user.getId() + "/" + file;
-		if (userService.imageIsUsed(path) == null) {
-			fileUploadUtil.delete(file);
-		}
+		//fileUploadUtil.delete(file);
 	}
 }

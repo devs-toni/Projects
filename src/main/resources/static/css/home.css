@@ -114,7 +114,6 @@ body {
 	justify-content: center;
 	width: 100%;
 	border-bottom: solid thin black;
-	width: 100%;
 }
 
 .main .div-form .form {
@@ -199,7 +198,6 @@ body {
 .activities .activity-card {
 	width: 100%;
 	height: auto;
-	/*border-top: solid thin black;*/
 	border-bottom: solid thin black;
 }
 

@@ -77,8 +77,4 @@ public class UserService implements UserDetailsService {
 		activities.add(new Activity(description, user, date, images));
 		user.setActivities(activities);
 	}
-	
-	public String imageIsUsed (String image) {
-		return activityRepository.findByImages(image);
-	}
 }
