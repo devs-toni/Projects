@@ -71,16 +71,12 @@ body {
 	border-bottom: 2px solid white;
 }
 
-.principal .type {
-	
+.profile, .account {
+	height: auto;
 }
 
 .div-name, .div-image, .div-mail, .div-pass {
 	width: 25%;
 	display: flex;
 	justify-content: space-between
-}
-
-.principal .profile .div-image {
-	
 }

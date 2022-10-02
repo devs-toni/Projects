@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Ajustes</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -46,21 +46,21 @@
 		</nav>
 	</header>
 
-	<!------------------- Cuerpo p�gina ----------------------------------------->
+	<!------------------- Cuerpo página ----------------------------------------->
 
 	<div class="settings">
 		<div id="menu" class="menu site">
 			<ul class="ul">
-				<li class="li"><button id="prof" class="button"	onclick="show(event)">Perfil</button></li>
-				<li class="li"><button id="edit" class="button"	onclick="show(event)">Cuenta</button></li>
-				<li class="li"><button id="" class="button" onclick="show(event)">Cuenta</button></li>
+				<li class="li"><button id="prof" class="button"	onclick="show(event)">Configuración del perfil</button></li>
+				<li class="li"><button id="edit" class="button"	onclick="show(event)">Configuración de la cuenta</button></li>
+				<li class="li"><button id="" class="button" onclick="show(event)">Configuración de permisos</button></li>
 			</ul>
 		</div>
 		<div id="principal" class="principal" hidden>
 			<h2 class="title">Ajustes</h2>
 			<br />
 			<div id="profile" class="profile">
-				<h4>Tu Perfil</h4>
+				<h4>Perfil</h4>
 				<br />
 				<div class="div-name">
 					<label for="nameSettings">Nombre: </label>
@@ -73,16 +73,16 @@
 				</div>
 			</div>
 			<div id="account" class="account">
-				<h4>Tu Cuenta</h4>
+				<h4>Cuenta</h4>
 				<br />
 				<div class="div-mail">
-				<label for="ac">Email: </label>
-				<input id="ac" type="text" th:value="${user.username}" />
+					<label for="ac">Email: </label>
+					<input id="ac" type="text" th:value="${user.username}" />
 				</div>
 				<br />
 				<div class="div-pass">
-				<label for="passSentings">Password: </label>
-				<input id="passSettings" />
+					<label for="passSentings">Contraseña: </label>
+					<input id="passSettings" />
 				</div>
 			</div>
 		</div>
