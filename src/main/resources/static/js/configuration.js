@@ -8,15 +8,17 @@ function show(e) {
 
 	if (!$('#principal').attr('hidden')) {
 		switch (e.target.id) {
-			case "cuenta":
-				cuenta();
+			case "account":
+				profile();
 				break;
-			case "profile":
+			case "edit":
 				break;
 		}
 	}
 }
 
-function cuenta() {
-	console.log("MOSTRANDO AJUSTES DE LA CUENTA")
+function profile() {
+	let $profile = document.getElementById('profile');
+	$profile.setAttribute('hidden', true);
+	
 }
