@@ -80,3 +80,16 @@ body {
 	display: flex;
 	justify-content: space-between
 }
+
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: .5%;
+	margin-top: 3%;
+	background-color: #514e4e; 
+}
+
+.footer .p-footer {
+	color: white;
+}
