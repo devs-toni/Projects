@@ -1,7 +1,5 @@
 package com.localhost.project.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.localhost.project.entity.Activity;
 import com.localhost.project.entity.UserLogin;
 import com.localhost.project.service.UserService;
 import com.localhost.project.utils.FileUploadUtil;
@@ -27,20 +24,17 @@ public class SettingsController {
 		UserLogin user = userService.gerUserInSession(request);
 		String surname = user.getSurname();
 		String profileImage = user.getProfileImage();
-		model.addAttribute("id", user.getId());
-		List<Activity> activities = user.getActivities();
-		model.addAttribute("activities", activities);
+		model.addAttribute("user", user);
 		if (profileImage != null) {
 			model.addAttribute("image", user.getProfileImage());
 		} else {
 			model.addAttribute("image", null);
 		}
-
 		if (surname != null) {
-			model.addAttribute("user", user.getName() + " " + surname);
+			model.addAttribute("username", user.getName() + " " + surname);
 			return "configuration";
 		} else {
-			model.addAttribute("user", user.getName());
+			model.addAttribute("username", user.getName());
 			return "configuration";
 		}
 	}

@@ -30,9 +30,9 @@
 		</button>
 		<div class="profile">
 			<img class="img" th:if="${image != null}"
-				th:src="@{'images/profile/' + ${id} + '/' + ${image}}"
+				th:src="@{'images/profile/' + ${user.id} + '/' + ${image}}"
 				alt="Foto de Perfil" />
-			<h2 class="h2" th:text="${user}"></h2>
+			<h2 class="h2" th:text="${username}"></h2>
 		</div>
 
 		<nav class="nav">
@@ -51,19 +51,39 @@
 	<div class="settings">
 		<div id="menu" class="menu site">
 			<ul class="ul">
-				<li class="li"><button id="account" class="button" onclick="show(event)">Cuenta</button></li>
-				<li class="li"><button class="button" onclick="">Editar
-						perfil</button></li>
-				<li class="li"><button class="button" onclick="">Cuenta</button></li>
-				<li class="li"><button class="button" onclick="">Cuenta</button></li>
-				<li class="li"><button class="button" onclick="">Cuenta</button></li>
-				<li class="li"><button class="button" onclick="">Cuenta</button></li>
+				<li class="li"><button id="prof" class="button"	onclick="show(event)">Perfil</button></li>
+				<li class="li"><button id="edit" class="button"	onclick="show(event)">Cuenta</button></li>
+				<li class="li"><button id="" class="button" onclick="show(event)">Cuenta</button></li>
 			</ul>
 		</div>
 		<div id="principal" class="principal" hidden>
 			<h2 class="title">Ajustes</h2>
+			<br />
 			<div id="profile" class="profile">
-			
+				<h4>Tu Perfil</h4>
+				<br />
+				<div class="div-name">
+					<label for="nameSettings">Nombre: </label>
+					<input id="nameSettings" type="text" th:value="${username}" />
+				</div>
+				<br />
+				<div class="div-image">
+					<label for="imageSettings">Imagen de perfil: </label>
+					<input id="imageSettings" type="text" th:value="${user.profileImage}" />
+				</div>
+			</div>
+			<div id="account" class="account">
+				<h4>Tu Cuenta</h4>
+				<br />
+				<div class="div-mail">
+				<label for="ac">Email: </label>
+				<input id="ac" type="text" th:value="${user.username}" />
+				</div>
+				<br />
+				<div class="div-pass">
+				<label for="passSentings">Password: </label>
+				<input id="passSettings" />
+				</div>
 			</div>
 		</div>
 	</div>

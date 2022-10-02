@@ -8,7 +8,8 @@ body {
 
 .settings {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	align-items: center;
 }
 
 .menu{
@@ -23,20 +24,6 @@ body {
 	padding: 0 20px;
 	border: 4px solid white;
 	box-sizing: content-box;
-}
-
-.site {
-	width: 10% !important;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: start;
-	margin: 3% auto !important;
-	background-color: #222222;
-	text-align: center;
-	padding: 0 20px;
-	border: 4px solid white;
-	box-sizing: content-box;	
 }
 
 .menu .ul {
@@ -85,5 +72,15 @@ body {
 }
 
 .principal .type {
+	
+}
+
+.div-name, .div-image, .div-mail, .div-pass {
+	width: 25%;
+	display: flex;
+	justify-content: space-between
+}
+
+.principal .profile .div-image {
 	
 }
