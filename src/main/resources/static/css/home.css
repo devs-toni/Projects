@@ -8,6 +8,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: "Helvetica", "sans-serif";
+	background-color: black !important;
 }
 
 .header {
@@ -19,12 +20,12 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	color: white;
-	background-color: #222222;
+	background-color: black;
 }
 
 .header .button {
 	display: none;
-	background-color: #222222;
+	background-color: black;
 	border: none;
 	padding: 3%;
 }
@@ -93,7 +94,7 @@ body {
 }
 
 .h1 {
-	color: rgb(128, 128, 128);
+	color: white;
 	font-family: "Helvetica", "sans-serif";
 	font-size: 3.4em;
 }
@@ -105,15 +106,17 @@ body {
 	flex-direction: column;
 	flex-flow: column wrap;
 	align-items: center;
-	border-right: solid thin black;
-	border-left: solid thin black;
+	border-right: solid thin white;
+	border-left: solid thin white;
+	border-top: solid thin white;
 }
 
 .main .div-form {
-	display: flex;
+	color: white; display : flex;
 	justify-content: center;
 	width: 100%;
-	border-bottom: solid thin black;
+	border-bottom: solid thin white;
+	display: flex;
 }
 
 .main .div-form .form {
@@ -123,7 +126,7 @@ body {
 .main .div-form .form .title-preview {
 	width: 90%;
 	margin-top: 20px;
-	display:flex;
+	display: flex;
 	justify-content: space-between;
 }
 
@@ -134,14 +137,14 @@ body {
 }
 
 .main .div-form .form .title-preview .previews {
-	width:auto;
+	width: auto;
 	display: inline-flex;
 	justify-content: flex-end;
 	flex-direction: row-reverse;
 }
 
 .main .div-form .form .title-preview .previews .preview {
-	height:2.5rem;
+	height: 2.5rem;
 	border-radius: 5px;
 	margin-right: -2px;
 }
@@ -154,7 +157,7 @@ body {
 }
 
 .main .div-form .form .title-preview .previews .remove:hover {
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .main .div-form .form .textarea {
@@ -163,6 +166,8 @@ body {
 	border: none;
 	resize: none;
 	font-size: 1.5rem;
+	background-color: black;
+	color: white;
 }
 
 .main .div-form .form .textarea:focus {
@@ -174,17 +179,16 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	border-top: solid thin #626262;
+	color: orange;
 }
 
 .main .div-form .form .add-activity .button {
-	font-size: 54px;
+	font-size: 44px;
 	border: none;
 	background-color: transparent;
 	padding-bottom: 1.2%;
-}
-
-.main .div-form .form .add-activity .publish-image-upload .i {
-	cursor: pointer;
+	color: orange;
 }
 
 .main .div-form .form .add-activity .publish-image-upload .label {
@@ -198,7 +202,8 @@ body {
 .activities .activity-card {
 	width: 100%;
 	height: auto;
-	border-bottom: solid thin black;
+	border-bottom: solid thin white;
+	color: white;
 }
 
 .activities .activity-card .card-head {
@@ -239,8 +244,8 @@ body {
 }
 
 .activities .activity-card .card-body .div-images {
-	display:flex;
-	justify-content:center;
+	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
 }
 
@@ -254,7 +259,7 @@ body {
 	max-width: 20rem;
 	margin: 2px 2px 2px 2px;
 	border-radius: 40px;
-	flex-shrink:1;
+	flex-shrink: 1;
 }
 
 .activities .activity-card .card-body .p {
@@ -280,12 +285,12 @@ body {
 }
 
 .footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	position: absolute;
+	bottom: 0px;
+	right: 5px;
 	padding: .5%;
 	margin-top: 3%;
-	background-color: #514e4e; 
+	background-color: black;
 }
 
 .footer .p-footer {

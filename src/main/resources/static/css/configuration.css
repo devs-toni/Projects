@@ -82,12 +82,12 @@ body {
 }
 
 .footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	position: absolute;
+	bottom: 0px;
+	right: 5px;
 	padding: .5%;
 	margin-top: 3%;
-	background-color: #514e4e; 
+	background-color: black;
 }
 
 .footer .p-footer {

@@ -45,7 +45,9 @@ public class UserService implements UserDetailsService {
 	}
 
 	public UserLogin gerUserInSession(HttpServletRequest request) {
-		return userRepository.findById(Long.valueOf(String.valueOf(request.getSession().getAttribute("user")))).get();
+		if (Long.valueOf(String.valueOf(request.getSession().getAttribute("user"))) != null) {
+			return userRepository.findById(Long.valueOf(String.valueOf(request.getSession().getAttribute("user")))).get();
+		} else return null;
 	}
 
 	/*********************************************************************************/ /* Búsquedas BBDD */
