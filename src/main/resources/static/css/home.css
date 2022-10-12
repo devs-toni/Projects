@@ -106,16 +106,16 @@ body {
 	flex-direction: column;
 	flex-flow: column wrap;
 	align-items: center;
-	border-right: solid thin white;
-	border-left: solid thin white;
-	border-top: solid thin white;
+	border-right: solid thin #626262;
+	border-left: solid thin #626262;
+	border-top: solid thin #626262;
 }
 
 .main .div-form {
 	color: white; display : flex;
 	justify-content: center;
 	width: 100%;
-	border-bottom: solid thin white;
+	border-bottom: solid thin #626262;
 	display: flex;
 }
 
@@ -202,7 +202,7 @@ body {
 .activities .activity-card {
 	width: 100%;
 	height: auto;
-	border-bottom: solid thin white;
+	border-bottom: solid thin #626262;
 	color: white;
 }
 
