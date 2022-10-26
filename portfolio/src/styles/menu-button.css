@@ -1,0 +1,14 @@
+.menu-button {
+    padding: 18px;
+    font-size: 1.3em;
+    font-family: monospace;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: inherit;
+}
+
+.menu-button:hover {
+    font-weight: bolder;
+    text-shadow: 1px 1px white;
+}

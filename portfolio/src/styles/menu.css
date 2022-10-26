@@ -1,0 +1,7 @@
+.menu-div {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(31, 29, 29);
+}
