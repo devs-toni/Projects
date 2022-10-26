@@ -1,0 +1,71 @@
+server:
+  port: 443
+  servlet:
+    context-path: /
+    session:
+      cookie:
+        same-site: none
+  ssl:
+    enabled: true
+    key-store: localhost.p12
+    key-store-password: changeit
+    keyStoreType: pkcs12
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: AntonioRufino1234
+    url: jdbc:mysql://127.0.0.1:3306/bikers?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+
+  session:
+    store:
+      type:
+        jdbc
+    jdbc: 
+      initialize-schema: always
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mail:
+    host: smtp.gmail.com
+    password: ''
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    username: ''
+  thymeleaf:
+    cache: false
+    mode: HTML
+ 
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: 423230556249325
+            clientSecret: 3d29ce1b049c8293164435f30acc0188
+            scope:
+            - email
+            - public_profile
+            
+          google:
+            client-id: 12659462331-c19a68mtpb6o0uo3osuj0gdksgu573ih.apps.googleusercontent.com
+            client-secret: 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 
+            redirect-uri: https://localhost/login/oauth2/code/google
+            scope:
+            - https://www.googleapis.com/auth/userinfo.email
+            - https://www.googleapis.com/auth/userinfo.profile    
+            
+  web:
+    resources:
+      static-locations[0]: "file:src/main/resources/static/"
+      static-locations[1]: "classpath:/static/"      
+app:
+  logfile: C:\Users\Usuario\Desktop\logBikers.html
+  debug: true

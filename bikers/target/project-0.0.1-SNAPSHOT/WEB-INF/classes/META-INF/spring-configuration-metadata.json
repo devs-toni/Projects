@@ -1,0 +1,131 @@
+{
+  "groups": [],
+  "properties": [
+    {
+      "name": "app.debug",
+      "type": "java.lang.String",
+      "description": "A description for 'app.debug'"
+    },
+    {
+      "name": "app.logfile",
+      "type": "java.lang.String",
+      "description": "A description for 'app.logfile'"
+    },
+    {
+      "name": "logfile",
+      "type": "java.lang.String",
+      "description": "A description for 'logfile'"
+    },
+    {
+      "name": "security.oauth2.client.accessTokenUri",
+      "type": "java.lang.String",
+      "description": "A description for 'security.oauth2.client.accessTokenUri'"
+    },
+    {
+      "name": "security.oauth2.client.authenticationScheme",
+      "type": "java.lang.String",
+      "description": "A description for 'security.oauth2.client.authenticationScheme'"
+    },
+    {
+      "name": "security.oauth2.client.client-id.your -facebook -app -iD",
+      "type": "java.lang.String",
+      "description": "A description for 'security.oauth2.client.client-id.your -facebook -app -iD'"
+    },
+    {
+      "name": "security.oauth2.client.clientAuthenticationScheme",
+      "type": "java.lang.String",
+      "description": "A description for 'security.oauth2.client.clientAuthenticationScheme'"
+    },
+    {
+      "name": "security.oauth2.client.clientSecret.your -facebook -app secret -iD",
+      "type": "java.lang.String",
+      "description": "A description for 'security.oauth2.client.clientSecret.your -facebook -app secret -iD'"
+    },
+    {
+      "name": "security.oauth2.client.tokenName",
+      "type": "java.lang.String",
+      "description": "A description for 'security.oauth2.client.tokenName'"
+    },
+    {
+      "name": "security.oauth2.client.userAuthorizationUri",
+      "type": "java.lang.String",
+      "description": "A description for 'security.oauth2.client.userAuthorizationUri'"
+    },
+    {
+      "name": "security.oauth2.registration.facebook.accessTokenUri",
+      "type": "java.lang.String",
+      "description": "A description for 'security.oauth2.registration.facebook.accessTokenUri'"
+    },
+    {
+      "name": "security.oauth2.registration.facebook.client-id",
+      "type": "java.lang.String",
+      "description": "A description for 'security.oauth2.registration.facebook.client-id'"
+    },
+    {
+      "name": "security.oauth2.registration.facebook.clientSecret",
+      "type": "java.lang.String",
+      "description": "A description for 'security.oauth2.registration.facebook.clientSecret'"
+    },
+    {
+      "name": "security.oauth2.resource.user-info-uri",
+      "type": "java.lang.String",
+      "description": "A description for 'security.oauth2.resource.user-info-uri'"
+    },
+    {
+      "name": "spring.security.oauth2.client.acces-token-uri",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.security.oauth2.client.acces-token-uri'"
+    },
+    {
+      "name": "spring.security.oauth2.client.authentication-scheme",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.security.oauth2.client.authentication-scheme'"
+    },
+    {
+      "name": "spring.security.oauth2.client.client-authentication-scheme",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.security.oauth2.client.client-authentication-scheme'"
+    },
+    {
+      "name": "spring.security.oauth2.client.client-id",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.security.oauth2.client.client-id'"
+    },
+    {
+      "name": "spring.security.oauth2.client.client-secret",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.security.oauth2.client.client-secret'"
+    },
+    {
+      "name": "spring.security.oauth2.client.token-name",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.security.oauth2.client.token-name'"
+    },
+    {
+      "name": "spring.security.oauth2.client.user-authorization-uri",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.security.oauth2.client.user-authorization-uri'"
+    },
+    {
+      "name": "spring.security.oauth2.resource.userInfoUri",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.security.oauth2.resource.userInfoUri'"
+    },
+    {
+      "name": "spring.session.store.type",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.session.store.type'"
+    },
+    {
+      "name": "spring.web.resources.static-locations[0]",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.web.resources.static-locations[0]'"
+    },
+    {
+      "name": "spring.web.resources.static-locations[1]",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.web.resources.static-locations[1]'"
+    }
+  ],
+  "hints": []
+}

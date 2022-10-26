@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<script src="https://code.jquery.com/jquery-3.6.1.js"
+	integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+	crossorigin="anonymous"></script>
+<link type="text/css" rel="stylesheet" href="../static/css/bikers.css" th:href="@{css/bikers.css}">
+</head>
+
+<body class="index">
+	<header class="header">
+		<button class="button">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+				fill="currentColor" class="svg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+					d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+		</button>
+		<nav class="nav">
+			<ul class="ul">
+				<li class="li"><a th:href="@{/login}">Login</a></li>
+				<li class="li"><a th:href="@{/register}">Registro</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="container-text">
+		<h1 class="h1">Bikers</h1>
+	</div>
+	<script type="text/javascript" src="../static/js/bikers.js" th:src="@{js/bikers.js}"></script>
+</body>
+
+</html>

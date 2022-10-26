@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrarse - Bikers</title>
+
+<!-- ---------------------------- BOOTSTRAP Y JQUERY --------------------------------------------->
+
+<link rel="stylesheet" type="text/css" href="../static/css/forms.css" th:href="@{css/forms.css}">
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- ---------------------------- ICONOS REDES SOCIALES ------------------------------------------>
+
+<link
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	rel="stylesheet"
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	crossorigin="anonymous">
+</head>
+<body>
+		<div class="container-register">
+			<div class="logo mb-3">
+				<div class="col-md-12 text-center">
+					<h1>Registro</h1>
+				</div>
+			</div>
+			<form th:action="@{/process-register}" method="post"
+				th:object="${userLogin}" id="form-register">
+				<div class="form-group">
+					<label for="exampleInputEmail1">Nombre</label> <input
+						th:name="name" th:value="*{name}" class="form-control"
+						placeholder="Nombre" type="text" required>
+				</div>
+				<div style="text-align: center; color: red;" class="form-group">
+					<small th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputEmail1">Apellidos</label> <input
+						th:name="surname" th:value="*{surname}" class="form-control"
+						placeholder="Apellidos" type="text" required>
+				</div>
+				<div style="text-align: center; color: red;" class="form-group">
+					<small th:if="${#fields.hasErrors('surname')}"
+						th:errors="*{surname}"></small>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Email</label> <input
+						th:name="username" th:value="*{username}" class="form-control"
+						placeholder="Email / Username" type="email" required>
+				</div>
+
+				<div style="text-align: center; color: red;" class="form-group">
+					<small th:if="${#fields.hasErrors('username')}"
+						th:errors="*{username}"></small>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Password</label> <input
+						th:name="password" th:value="*{password}" id="pass_one"
+						class="form-control" placeholder="Create password" type="password"
+						required>
+				</div>
+				<div style="text-align: center; color: red;" class="form-group">
+					<small th:if="${#fields.hasErrors('password')}"
+						th:errors="*{password}"></small>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Password</label><input
+						th:name="checkPassword" th:value="*{checkPassword}" id="pass_two"
+						class="form-control" placeholder="Repeat password" type="password"
+						required>
+				</div>
+				<div class="form-group" style="text-align: center;">
+					<small id="pass_err"
+						style="color: red; font-weight: bold; text-align: center;"></small>
+				</div>
+				<div class="col-md-6 offset-3 text-center mb-3 mt-5">
+					<button type="submit"
+						class=" btn btn-block mybtn btn-primary tx-tfm">Registrarse</button>
+				</div>
+				<div style="text-align: center" class="form-group"
+					th:if="${userExist}">
+					<small style="color: red; font-family: Helvetica;"
+						th:text="${'El correo electrónico proporcionado ya está registrado'}"></small>
+				</div>
+				<div style="text-align: center" class="form-group"
+					th:if="${passError}">
+					<small style="color: red; font-family: Helvetica;"
+						th:text="${'Las contraseñas no coinciden'}"></small>
+				</div>
+				<div class="col-md-12 ">
+					<div class="form-group">
+						<p class="text-center">
+							<a th:href="@{/login}" id="signin">Ya tienes una cuenta?</a>
+						</p>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	<!-- <script async defer crossorigin="anonymous"
+		src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v14.0&appId=4893919530737327&autoLogAppEvents=1"
+		nonce="e1vIHCmf"></script> -->
+</body>
+</html>
+

@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+body {
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica", "sans-serif";
+}
+
+.index {
+	background-image: url(/images/background.jpg);
+	background-position: center center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.header {
+	width: 100%;
+	padding: 0.6em;
+	display: flex;
+	flex-direction:row;
+	flex-flow: row wrap;
+	justify-content: start;
+	align-items: center;
+	color: white;
+	background-color: #222222;
+}
+
+.header .button {
+	display: none;
+	background-color: #222222;
+	border: none;
+}
+
+.header .svg {
+	width: 4em;
+	height: 4em;
+	fill: white;
+}
+
+.header .h1 {
+	color: white;
+}
+
+.header .nav {
+	width: 100%;
+}
+
+.header .ul {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-end;
+	align-items: center;
+	list-style-type: none;
+	margin-right: 5%;
+}
+
+.header .li {
+	margin: 1rem 1em 0 1em;
+	font-size: 1.5em;
+}
+
+.container-text {
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	flex-direction: row;
+	font-size: 4vw;
+	position: absolute;
+	bottom: -5%;
+	left: 4%;
+}
+
+.h1 {
+	color:white;
+	font-family:"Helvetica","sans-serif";
+	font-size: 3.4em;
+}
+
+@media screen and (max-width:900px) {
+	.header .button {
+		display: block;
+		cursor: pointer;
+	}
+	.header .nav {
+		overflow: hidden;
+		width: 100%;
+		height: 0;
+		transition: all .5s ease;
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
+		pointer-events: none;
+	}
+	.header .nav.activo {
+		height: 50vh;
+		pointer-events: auto;
+	}
+	.header .ul {
+		flex-direction: column;
+	}
+	.header .li {
+		margin: 1rem 0;
+	}
+	.container-text {
+		font-size: 6vw;
+	}
+}
