@@ -56,7 +56,7 @@ spring:
             
           google:
             client-id: 
-            client-secret: -
+            client-secret: micodigo
             redirect-uri: 
             scope:
             - https://www.googleapis.com/auth/userinfo.email
