@@ -5,4 +5,9 @@ body {
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(213, 213, 213);
+}
+
+p {
+  margin: 0;
 }

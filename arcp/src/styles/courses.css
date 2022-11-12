@@ -1,0 +1,30 @@
+.courses {
+  padding: 50px;
+  text-align: center;
+}
+
+.courses .boxes {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 100px;
+}
+
+.title-it {
+  font-size: 2em;
+  text-align: start;
+  margin-bottom: 5px;
+}
+
+.description-it {
+  text-align: start;
+  font-style: italic;
+}
+
+.right {
+  float: right;
+  margin: 20px 30px;
+}
+
+.left {
+  margin: 20px 30px;
+}
