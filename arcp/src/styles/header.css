@@ -1,0 +1,30 @@
+.header {
+  background-color: transparent;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  color: white;
+  text-align: right;
+  background: url('../assets/img/background-1.jpg') no-repeat;
+  height: 160px;
+}
+
+.div-logo {
+  
+}
+
+.navigator {
+  flex-grow: 1;
+  margin-right: 100px;
+}
+
+.anchor {
+  text-decoration: none;
+  padding: 0 60px;
+  text-shadow: white 5px -5px 15px;
+  color: white;
+}
+
+.anchor:hover {
+  color: rgba(152, 136, 136, 0.855);
+}
