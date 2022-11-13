@@ -8,7 +8,6 @@ const Curriculum = () => {
   return (
     <div className='cv'>
       <Timegraphic url={`${url}`} />
-
       <Switch>
         <Route exact path={path}>
         </Route>
