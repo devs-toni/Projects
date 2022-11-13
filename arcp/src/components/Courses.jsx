@@ -15,6 +15,7 @@ import spring from '../assets/img/spring.png';
 import boot from '../assets/img/boot.jpg';
 import sql from '../assets/img/sql.png';
 import fx from '../assets/img/javafx.png';
+import node from '../assets/img/node.png';
 import '../styles/courses.css';
 import Counter from './specific/Counter';
 
@@ -22,7 +23,7 @@ const Courses = () => {
   return (
     <div className='courses'>
       <div className='right'>
-        <Counter hours='2000' />
+        <Counter hours='2206' />
       </div>
       <div className="left">
         <h3 className='title-it'>MY STUDIES</h3>
@@ -31,8 +32,8 @@ const Courses = () => {
       <div className='boxes'>
         <Course
           className='box'
-          name='Master in Software Development'
-          creator='Assembler Institute of Technology'
+          name='Master Software Development'
+          creator='Assembler Institute'
           img={assembler}
           hours='1200'
           link='https://assemblerinstitute.com/cursos/master-in-software-development-remoto/'
@@ -76,6 +77,14 @@ const Courses = () => {
           img={boot}
           hours='15'
           link='https://www.youtube.com/playlist?list=PLcIHm18h1i4nD4H8tPeID8PNiKsm4VZm5'
+        />
+        <Course
+          className='box'
+          name='Node.js'
+          creator='Bluuweb'
+          img={node}
+          hours='6'
+          link='https://www.youtube.com/playlist?list=PLPl81lqbj-4IEnmCXEJeEXPepr8gWtsl6'
         />
         <Course
           className='box'

@@ -12,7 +12,7 @@ const Address = () => {
         <BrowserRouter>
             <HashRouter>
                 <Switch>
-                    <Route exact path='/cv' component={Curriculum} />
+                    <Route path='/cv' component={Curriculum} />
                     <Route exact path='/courses' component={Courses} />
                     <Route exact path='/projects' component={Projects} />
                     <Route exact path='/about' component={About} />

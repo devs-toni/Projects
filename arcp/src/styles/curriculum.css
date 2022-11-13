@@ -1,0 +1,9 @@
+.cv {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.tl {
+    width: 50%;
+    text-align: center;
+}

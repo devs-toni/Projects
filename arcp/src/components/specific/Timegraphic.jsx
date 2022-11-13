@@ -6,122 +6,186 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import FastfoodIcon from '@mui/icons-material/Fastfood';
-import LaptopMacIcon from '@mui/icons-material/LaptopMac';
-import HotelIcon from '@mui/icons-material/Hotel';
-import RepeatIcon from '@mui/icons-material/Repeat';
+import ImportContactsIcon from '@mui/icons-material/ImportContacts';
+import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
+import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
-export default function CustomizedTimeline() {
+export default function CustomizedTimeline({url}) {
+
+
+
     return (
-        <Timeline position="alternate">
-            <TimelineItem>
-                <TimelineOppositeContent
-                    sx={{ m: 'auto 0' }}
-                    align="right"
-                    variant="body2"
-                    color="text.secondary"
-                >
-                    2023
-
+        <div className='tl'>
+            <Timeline position="right">
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{ m: 'auto 0' }}
+                        align="right"
+                        variant="body2"
+                        color="text.secondary"
+                    >
+                        October 2022 - June 2023
                     </TimelineOppositeContent>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot>
-                        <FastfoodIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
+                    <TimelineSeparator>
+                        <Link to={`${url}/assembler`}>
+                            <TimelineDot color="secondary">
+                                <ImportContactsIcon />
+                            </TimelineDot></Link>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    </TimelineSeparator>
+                    <TimelineContent sx={{ py: '20px', px: 2 }}>
+                        <Typography variant="h6" component="span">
+                            Master in Software Development
+                        </Typography>
+                        <Typography>Assembler Institute of Technology</Typography>
+                    </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{ m: 'auto 0' }}
+                        align="right"
+                        variant="body2"
+                        color="text.secondary"
+                    >
+                        October 2022 - April 2023
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                        <Link to={`${url}/front`}>
+                            <TimelineDot color="secondary">
+                                <ImportContactsIcon />
+                            </TimelineDot></Link>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    </TimelineSeparator>
+                    <TimelineContent sx={{ py: '20px', px: 2 }}>
+                        <Typography variant="h6" component="span">
+                            Front-End Development
+                        </Typography>
+                        <Typography>Tokio School</Typography>
+                    </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{ m: 'auto 0' }}
+                        variant="body2"
+                        color="text.secondary"
+                    >
+                        May 2022 - October 2022
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                        <Link to={`${url}/artifact`}>
+                            <TimelineDot color="primary">
+                                <LaptopChromebookIcon />
+                            </TimelineDot></Link>
+                        <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
+                    </TimelineSeparator>
+                    <TimelineContent sx={{ py: '20px', px: 2 }}>
+                        <Typography variant="h6" component="span">
+                            Artifact Consulting S.L
+                        </Typography>
+                        <Typography>Backend Developer</Typography>
+                    </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{ m: 'auto 0' }}
+                        align="right"
+                        variant="body2"
+                        color="text.secondary"
+                    >
+                        December 2021 - May 2022
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
+                        <Link to={`${url}/java`}>
+                            <TimelineDot color="secondary">
+                                <ImportContactsIcon />
+                            </TimelineDot></Link>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    </TimelineSeparator>
+                    <TimelineContent sx={{ py: '200px', px: 2 }}>
+                        <Typography variant="h6" component="span">
+                            Java Backend
+                        </Typography>
+                        <Typography>Tokio School</Typography>
+                    </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{ m: 'auto 0' }}
+                        align="right"
+                        variant="body2"
+                        color="text.secondary"
+                    >
+                        July 2017 - March 2022
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                        <Link to={`${url}/sistemas`}>
+                            <TimelineDot color="success">
+                                <HeadsetMicIcon />
+                            </TimelineDot></Link>
+                        <TimelineConnector sx={{ bgcolor: 'success.main' }} />
+                    </TimelineSeparator>
+                    <TimelineContent
+                        sx={{ py: '30px', px: 2 }}>
 
-                    </Typography>
-                    <Typography>Because you need strength</Typography>
-                </TimelineContent>
-            </TimelineItem>
-
-
-
-
-
-
-
-
-            <TimelineItem>
-                <TimelineOppositeContent
-                    sx={{ m: 'auto 0' }}
-                    align="right"
-                    variant="body2"
-                    color="text.secondary"
-                >
-                    2023
-                </TimelineOppositeContent>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot>
-                        <FastfoodIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-
-                    </Typography>
-                    <Typography>Because you need strength</Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineOppositeContent
-                    sx={{ m: 'auto 0' }}
-                    variant="body2"
-                    color="text.secondary"
-                >
-                    10:00 am
-                </TimelineOppositeContent>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary">
-                        <LaptopMacIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        Code
-                    </Typography>
-                    <Typography>Because it&apos;s awesome!</Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector />
-                    <TimelineDot color="primary" variant="outlined">
-                        <HotelIcon />
-                    </TimelineDot>
-                    <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        Sleep
-                    </Typography>
-                    <Typography>Because you need rest</Typography>
-                </TimelineContent>
-            </TimelineItem>
-            <TimelineItem>
-                <TimelineSeparator>
-                    <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-                    <TimelineDot color="secondary">
-                        <RepeatIcon />
-                    </TimelineDot>
-                    <TimelineConnector />
-                </TimelineSeparator>
-                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                    <Typography variant="h6" component="span">
-                        Repeat
-                    </Typography>
-                    <Typography>Because this is the life you love!</Typography>
-                </TimelineContent>
-            </TimelineItem>
-        </Timeline>
+                        <Typography variant="h6" component="span">
+                            Sistemas 2 Valencia S.L
+                        </Typography>
+                        <Typography>Técnico de Sonido</Typography>
+                    </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{ m: 'auto 0' }}
+                        variant="body2"
+                        color="text.secondary"
+                    >
+                        June 2017 - July 2017
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector sx={{ bgcolor: 'success.main' }} />
+                        <Link to={`${url}/cisco`}>
+                            <TimelineDot color="secondary">
+                                <ImportContactsIcon />
+                            </TimelineDot></Link>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    </TimelineSeparator>
+                    <TimelineContent sx={{ py: '30px', px: 2 }}>
+                        <Typography variant="h6" component="span">Cisco</Typography>
+                        <Typography>CCNA v1</Typography>
+                    </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                    <TimelineOppositeContent
+                        sx={{ m: 'auto 0' }}
+                        align="right"
+                        variant="body2"
+                        color="text.secondary"
+                    >
+                        September 2015 - June 2017
+                    </TimelineOppositeContent>
+                    <TimelineSeparator>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                        <Link to={`${url}/fp`}>
+                            <TimelineDot color="secondary">
+                                <ImportContactsIcon />
+                            </TimelineDot></Link>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    </TimelineSeparator>
+                    <TimelineContent
+                        sx={{ py: '30px', px: 2 }}
+                    >
+                        <Typography variant="h6" component="span">Ciclo Formativo Grado Superior
+                        </Typography>
+                        <Typography>Sistemas Informáticos y Telecomunicaciones</Typography>
+                    </TimelineContent>
+                </TimelineItem>
+            </Timeline>
+        </div>
     );
 }
