@@ -1,18 +1,14 @@
-.counter {
-
-}
-
 .counter .title {
     font-weight: 700;
     margin-bottom: 30px;
 }
 
 .counter .hours {
-    color: rgb(255, 0, 251);
+    color: #286DD3;
     font-size: 5em;
 }
 
 .counter .p-hours {
-    color: rgb(255, 0, 251);
+    color: #286DD3;
     font-size: 2em; 
 }

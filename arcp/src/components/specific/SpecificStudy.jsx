@@ -9,8 +9,7 @@ const SpecificStudy = ({name, school, description, data}) => {
         <p className='data'>{data}</p>
       </div>
       <div className='description'>
-        <p className='text-description'>
-          
+        <p className='text-description'>   
         </p>
       </div>
     </div>

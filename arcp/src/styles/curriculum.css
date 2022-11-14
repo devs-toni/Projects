@@ -1,9 +1,25 @@
 .cv {
-    display: flex;
-    flex-flow: row nowrap;
+  display: flex;
+  flex-flow: row nowrap;
 }
 
 .tl {
-    width: 50%;
-    text-align: center;
+  width: 50%;
+  text-align: center;
+}
+
+.cv .welcome-div {
+  display: flex;
+  width: 40%;
+}
+
+.cv .welcome-div .welcome {
+  margin: 5% 1%;
+  padding-top: 1%;
+}
+
+.cv .change {
+  font-weight: bold;
+  color: #286DD3;
+  font-size: 1em;
 }

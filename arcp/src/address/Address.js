@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, HashRouter, Route , Switch } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Courses from '../components/Courses';
@@ -8,7 +8,7 @@ import Projects from '../components/Projects';
 import Err404 from '../components/main/Err404';
 
 const Address = () => {
-  return (
+    return (
         <BrowserRouter>
             <HashRouter>
                 <Switch>
