@@ -1,0 +1,95 @@
+*, ::after, ::before {
+	box-sizing: content-box !important;	 
+}
+
+body {
+	background-color: #585858 !important;
+}
+
+.settings {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.menu{
+	width: 15%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	margin: 3% 5% 0 8%;
+	background-color: #222222;
+	text-align: center;
+	padding: 0 20px;
+	border: 4px solid white;
+	box-sizing: content-box;
+}
+
+.menu .ul {
+	width: 100%;
+	list-style-type: none;
+	padding: 0;
+	display: inline-flex;
+	align-items:center;
+	flex-direction: column;
+	margin-bottom: 0;
+}
+
+.menu .ul .li {
+	width: 100%;
+	padding: 20px;
+	border-bottom: solid thin #a5a5a5;
+}
+
+.menu .ul .li .button {
+	width: 100%;
+	border:none;
+	background-color: transparent;
+	color: white;
+	cursor:pointer;
+}
+
+.menu .ul .li .button:hover {
+	color: #a5a5a5;
+}
+
+.principal {
+	margin: 3% 5% 0 3%;
+	display:flex;
+	flex-flow: row wrap;
+	flex-direction:column;
+	width: 60%;
+	background-color: #222;
+	padding: 25px 35px;
+	color: white;
+	border: 4px solid white;
+}
+
+.principal .title {
+	padding-bottom: 15px;
+	border-bottom: 2px solid white;
+}
+
+.profile, .account {
+	height: auto;
+}
+
+.div-name, .div-image, .div-mail, .div-pass {
+	width: 25%;
+	display: flex;
+	justify-content: space-between
+}
+
+.footer {
+	position: absolute;
+	bottom: 0px;
+	right: 5px;
+	padding: .5%;
+	margin-top: 3%;
+	background-color: black;
+}
+
+.footer .p-footer {
+	color: white;
+}
