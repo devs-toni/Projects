@@ -1,0 +1,183 @@
+.form {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.form .column {
+  width: 50%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.form .comments {
+  width: 50%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.form .comments label {
+  width: 100px;
+}
+
+.form .comments .textarea {
+  height: 319px;
+  border-radius: 5px;
+  width: 51%;
+  outline: none;
+}
+
+.form .politica {
+  width: 57%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.form .politica input {
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+.form .politica label {
+}
+
+.contact .submit-container {
+  width: 57%;
+  text-align: end;
+}
+
+.contact .submit-container .submit {
+  width: 12%;
+  border: none;
+  color: var(--color);
+  background-color: var(--react-text-color-changing);
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.contact .submit-container .submit:hover {
+  background-color: rgb(110, 110, 110);
+}
+
+@media screen and (max-width: 2200px) {
+  .form .politica {
+    width: 62%;
+  }
+  .contact .submit-container {
+    width: 62%;
+  }
+}
+
+@media screen and (max-width: 2200px) {
+  .form .row {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .form .politica {
+    width: 57%;
+  }
+  .contact .submit-container {
+    width: 57%;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .form .politica {
+    width: 62%;
+  }
+  .contact .submit-container {
+    width: 62%;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .form {
+    flex-flow: column wrap;
+  }
+  .form .column {
+    width: 100%;
+    justify-content: center;
+    margin-left: -38px;
+  }
+  .form .comments {
+    width: 100%;
+    justify-content: center;
+    margin-left: -38px;
+  }
+  .form .comments label {
+    width: 86px;
+    text-align: start;
+  }
+  .form .comments .textarea {
+    width: 76.6%;
+    margin-left: 4px;
+  }
+  .form .politica {
+    width: 100%;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .contact .submit-container {
+    width: 100%;
+    text-align: center;
+  }
+  .contact .submit-container .submit {
+    width: 76.4%;
+    padding: 20px 0;
+    margin-left: 1.6%;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+
+  .form .comments .textarea {
+    width: 75.6%;
+  }
+
+}
+
+@media screen and (max-width: 965px) {
+
+  .form .column {
+
+    margin-left: 0;
+  }
+  .form .column label {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  .form .comments {
+    flex-direction: column;
+    margin-left: 0;
+    align-items: center;
+  }
+  .form .comments label {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  .form .comments .textarea {
+    width: 87%;
+    margin-left: 20px;
+  }
+  .form .politica {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  .contact .submit-container {
+    margin-top: 20px;
+  }
+  .contact .submit-container .submit {
+    width: 87%;
+    margin-left: 20px;
+    padding: 20px 0;
+  }
+}

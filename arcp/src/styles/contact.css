@@ -1,4 +1,165 @@
 .contact {
-    min-height: var(--maxh);
-    background-color: var(--background);
+  min-height: var(--maxh);
+  background-color: var(--background);
+  color: var(--color);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.contact .title {
+  margin-top: 50px;
+}
+
+.contact .description {
+  font-size: 1.3em;
+}
+
+.contact .name {
+  text-align: center;
+  font-size: 1.8em;
+  margin: 40px 0;
+}
+
+.contact div.data-contact {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.2em;
+}
+
+.contact div.data-contact div.data-email {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact div.data-contact div.data-email .icon {
+  font-size: 1.5em;
+  margin-right: 20px;
+}
+
+.contact div.data-contact div.data-email .mail {
+}
+
+.contact div.data-contact div.data-phone {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact div.data-contact div.data-phone .icon {
+  font-size: 1.5em;
+  margin-right: 20px;
+}
+
+.contact div.data-contact div.data-phone .white {
+  filter: invert(100%) sepia(0%) saturate(2476%) hue-rotate(86deg)
+    brightness(118%) contrast(119%);
+  margin-right: 20px;
+}
+
+.contact div.data-contact div.data-phone .phone {
+}
+
+.contact .google-map {
+  margin: 20px 0 60px 0;
+  width: 59%;
+  height: 70vh;
+}
+
+@media screen and (max-width: 1350px) {
+  .contact div.data-contact div.data-phone .icon {
+    margin-right: 10px;
+  }
+  .contact div.data-contact div.data-email .icon {
+    margin-right: 10px;
+  }
+  .contact div.data-contact div.data-phone .white {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .contact div.data-contact div.data-email .mail {
+    display: none;
+  }
+  .contact div.data-contact div.data-phone .phone {
+    display: none;
+  }
+  .contact div.data-contact {
+    justify-content: center;
+  }
+  .contact div.data-contact {
+    width: 60%;
+  }
+  .contact div.data-contact div.data-email {
+    width: 10%;
+  }
+  .contact div.data-contact div.data-phone {
+    width: 20%;
+  }
+  .contact .map {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .contact .google-map {
+    width: 90%;
+    height: 700px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 965px) {
+  .contact .title {
+    font-size: 3.4em;
+  }
+  .contact .description {
+    font-size: 1.7em;
+    padding: 0 20px;
+  }
+  .contact .name {
+    font-size: 2.4em;
+  }
+  .contact div.data-contact div.data-email .mail {
+    display: none;
+  }
+  .contact div.data-contact div.data-phone .phone {
+    display: none;
+  }
+  .contact div.data-contact {
+    justify-content: center;
+  }
+  .contact div.data-contact {
+    width: 60%;
+  }
+  .contact div.data-contact div.data-email {
+    width: 10%;
+  }
+  .contact div.data-contact div.data-phone {
+    width: 20%;
+  }
+  .contact .map {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .contact .google-map {
+    width: 90%;
+    height: 450px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contact .google-map {
+    height: 300px;
+  }
 }

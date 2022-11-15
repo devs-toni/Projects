@@ -1,17 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  width: 100%;
+}
+
 :root {
   --background: #eee;
+  --background-input: #eee;
   --color: black;
   --maxh: 100vh;
   --general-padding: 5em;
   --general-margin: 3em;
   --react-color: #20232a;
   --react-text-color: #5fd5f5;
-  --react-text-color-changing: #286DD3;
-  --bright-btn:#444950;
+  --react-text-color-changing: #286dd3;
+  --bright-btn: #444950;
 }
 
 [data-theme="dark"] {
   --background: #333;
+  --background-input: rgb(124, 124, 124);
   --color: white;
   --maxh: 100vh;
   --general-padding: 2em;
@@ -19,7 +31,7 @@
   --react-color: #20232a;
   --react-text-color: #5fd5f5;
   --react-text-color-changing: #5fd5f5;
-  --bright-btn:#20232a;
+  --bright-btn: #20232a;
 }
 
 html {
@@ -30,8 +42,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background) !important;
@@ -41,5 +52,3 @@ body {
 p {
   margin: 0;
 }
-
-
