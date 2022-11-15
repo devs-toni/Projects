@@ -1,17 +1,18 @@
-import React from 'react'
+import React from 'react';
 import { BrowserRouter as Router, HashRouter, Link } from 'react-router-dom';
-import '../../styles/header.css';
-import Logo from './Logo';
 import { BsSunFill } from 'react-icons/bs';
 import { FiMenu } from 'react-icons/fi';
+import '../../styles/header.css';
+import Logo from './Logo';
 
-const Header = () => {
+const Header = ({switchTheme}) => {
 
     return (
         <div className='header'>
-            <div>
+            <div className='div-logo'>
                 <Logo className='logo' />
             </div>
+            <FiMenu className='hamburguer' />
             <nav className='navigator'>
                 <HashRouter>
                     <Link className='anchor' to='/cv'>Curriculum</Link>
@@ -19,8 +20,7 @@ const Header = () => {
                     <Link className='anchor' to='/projects'>My Projects</Link>
                     <Link className='anchor' to='/about'>About Me</Link>
                     <Link className='anchor' to='/contact'>Contact</Link>
-                    <BsSunFill className='bright' />
-                    <FiMenu className='hamburguer'/>
+                    <button onClick={switchTheme}><BsSunFill className='bright' /></button>
                 </HashRouter>
             </nav>
         </div>

@@ -3,10 +3,12 @@ import Footer from '../components/main/Footer';
 import Address from '../address/Address';
 import Header from '../components/main//Header';
 
-const Layout = () => {
+
+const Layout = ({switchTheme}) => {
+
   return (
     <div>
-        <Header />
+        <Header switchTheme={switchTheme} />
         <Address />
         <Footer />
     </div>

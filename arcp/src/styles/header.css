@@ -5,24 +5,24 @@
   align-items: center;
   color: white;
   text-align: right;
-/*   background-image: url('../assets/img/background-3.jpg'); 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 40%; */
-  background-color: #20232A;
+  background-color: var(--react-color);
   height: 90px;
   font-size: 1.4em;
   font-weight: 500;
   letter-spacing: 1px;
 }
 
-.logo {
-  width: auto;
-  height: auto;
-  color: #0D90B5;
+.header .div-logo {
+
 }
 
-.navigator {
+.header .div-logo .logo {
+  width: auto;
+  height: auto;
+  color: var(--react-text-color);
+}
+
+.header .navigator {
   flex-grow: 1;
   margin-right: 100px;
   display: flex;
@@ -30,33 +30,99 @@
   justify-content: end;
 }
 
-.anchor {
+.header .hamburguer {
+  display: none;
+}
+
+.header .navigator .anchor {
   text-decoration: none;
   padding: 0 30px;
   color: white;
 }
 
-.anchor:hover {
-  color: #5FD5F5;
+.header .navigator .anchor:hover {
+  color: var(--react-text-color);
 }
 
-.opaque {
-  opacity: 0.8;
-}
-
-.bright {
+.header .navigator .bright {
+  opacity: 0.6;
+  cursor: pointer;
   padding: 10px;
   border-radius: 30px;
+  background-color: var(--bright-btn);
 }
 
-.bright:hover {
-  background-color: #444950;
+.header .navigator .bright:hover {
+  opacity: 1;
 }
 
-.hamburguer {
-  display: none;
+.header .navigator button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 1em;
+  margin-top: 6px;
 }
 
 @media screen and (max-width: 1250px) {
-  
+  .header {
+    font-size: 1.1em;
+    font-weight: 400;
+  }
+
+  .header .navigator {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 1081px) {
+  .header {
+    font-size: 0.9em;
+    font-weight: 400;
+  }
+
+  .header .navigator {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 965px) {
+  .header {
+    font-size: 0.8em;
+    font-weight: 400;
+    justify-content: space-between;
+  }
+
+  .header .div-logo {
+    margin-left: -28px;
+  }
+
+  .header .div-logo .logo {
+    width: 37%;
+    height: 44%;
+    margin-left: 0px;
+    padding-left: 0;
+  }
+
+  .header .navigator {
+    display: none;
+  }
+
+  .header .hamburguer {
+    display: inline;
+    margin-right: 40px;
+    font-size: 2.3em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header .div-logo .logo {
+    width: 30%;
+    height: 40%;
+    padding-left: 0;
+    margin-left: -30px;
+  }
+  .header .hamburguer {
+    margin-right: 25px;
+  }
 }

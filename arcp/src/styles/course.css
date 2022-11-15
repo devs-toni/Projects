@@ -3,88 +3,178 @@
   display: flex;
   min-height: 140px;
   max-height: 140px;
-  width: 24%;
+  width: 22.8vw;
+  min-width: 450px;
   margin: 0 0.4% 1% 0.4%;
   box-shadow: black 0px 0px 10px;
-  background-color: #20232A;
+  background-color: #20232a;
   color: white;
   border-radius: 10px;
 }
 
-.img {
-    max-height: 140px;
-    max-width: 160px;
-    min-height: 140px;
-    min-width: 160px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+.box .img {
+  max-height: 140px;
+  max-width: 160px;
+  min-height: 140px;
+  min-width: 160px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-.info {
-    width: 100%;
-    flex-grow: 1;
-    display: flex;
+.box .info {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px 15px;
+  text-align: start;
+}
+
+.box .info .name {
+  margin: 0 0 0 6px;
+  font-weight: 500;
+  font-size: 1vw;
+}
+
+.box .info .creator {
+  margin: 10px 0 0 6px;
+  font-size: 0.9vw;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.box .info .data {
+  margin-left: 6px;
+  font-size: 1em;
+  font-weight: 200;
+}
+
+.box .info .features {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  align-items: center;
+}
+
+.features .hours {
+  padding: 0.2rem 0.5rem;
+  color: #61dafb;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin-left: -5px;
+  letter-spacing: -0.1rem;
+  border: 1px solid #61dafb;
+  border-radius: 20px;
+  margin-left: 0.2rem;
+}
+
+.features .eye {
+  flex-grow: 1;
+  text-align: end;
+  margin-right: 20px;
+  color: white;
+}
+
+.features .eye .border {
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.073);
+}
+
+.features .eye .white {
+  filter: invert(100%) sepia(0%) saturate(2476%) hue-rotate(86deg)
+    brightness(118%) contrast(119%);
+}
+
+@media screen and (max-width: 1968px) {
+  .box {
+    width: 32.3%;
+  }
+
+  .box .info .name {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 1489px) {
+  .box {
+    width: 48.8%;
+  }
+}
+
+@media screen and (max-width: 1018px) {
+  .box {
+    width: 98.7%;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .box {
     flex-direction: column;
-    justify-content: center;
-    padding: 5px 15px;
-    text-align: start;
-}
+    min-width: 375px;
+    max-height: fit-content;
+  }
 
-.name {
-    margin-left: 6px;
-    font-weight: 500;
-    font-size: 1.3em;
-}
+  .box .img {
+    min-width: 100%;
+    min-height: 300px;
+  }
 
-.creator {
-    margin-left: 6px;
-    font-size: 1.1em;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.data {
-    margin-left: 6px;
-    font-size: 1em;
-    font-weight: 200;
-}
-
-.features {
+  .box .info {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 0.5rem;
-    align-items: center;
-}
+    text-align: center;
+    padding: 0;
+  }
 
-.hours {
-    padding: 0.2rem 0.5rem;
-    color: #286DD3;
-    font-weight: 700;
+  .box .info .name {
+    width: 100%;
+    text-align: center;
     font-size: 1.2em;
-    margin-left: -5px;
-    letter-spacing: -0.1rem;
-    border: 1px solid #286DD3;
-    border-radius: 20px;
-    margin-left: 0.2rem;
-}
-
-.hours.main {
+    margin-top: 15px;
     margin-left: 0;
-    border: none;
+  }
+
+  .box .info .creator {
+    width: 100%;
+    font-size: 1em;
+    margin: 15px 0;
+
+  }
+
+  .box .info .data {
+    width: 100%;
+  }
+
+  .box .info .features {
+    width: 100%;
+  }
+
+  .features .hours {
+    width: 20%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  .features .eye {
+    width: 100%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
 }
 
-.eye {
-    flex-grow: 1;
-    text-align: end;
-    margin-right: 20px;
-    color: white;
+@media screen and (max-width: 442px) {
+    .box {
+        min-width: 250px;
+    }
 }
 
-.border {
-    padding: 7px;
-    border: 1px solid black;
-    border-radius: 30px;
-    background-color: rgba(0, 0, 0, 0.073);
+@media screen and (max-width: 390px) {
+    .box .img {
+        min-width: 100%;
+        min-height: 200px;
+      }
 }
-

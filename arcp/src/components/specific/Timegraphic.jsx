@@ -12,9 +12,7 @@ import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
-export default function CustomizedTimeline({url}) {
-
-
+export default function CustomizedTimeline({ url }) {
 
     return (
         <div className='tl'>
@@ -24,7 +22,7 @@ export default function CustomizedTimeline({url}) {
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="text.secondary"
+                        color="var(--color)" className='tl-text'
                     >
                         October 2022 - June 2023
                     </TimelineOppositeContent>
@@ -36,10 +34,10 @@ export default function CustomizedTimeline({url}) {
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: '20px', px: 2 }}>
-                        <Typography variant="h6" component="span">
+                        <Typography className='tl-text' variant="h6" component="span">
                             Master in Software Development
                         </Typography>
-                        <Typography>Assembler Institute of Technology</Typography>
+                        <Typography className='tl-text'>Assembler Institute of Technology</Typography>
                     </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>
@@ -47,7 +45,7 @@ export default function CustomizedTimeline({url}) {
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="text.secondary"
+                        color="var(--color)" className='tl-text'
                     >
                         October 2022 - April 2023
                     </TimelineOppositeContent>
@@ -60,17 +58,18 @@ export default function CustomizedTimeline({url}) {
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: '20px', px: 2 }}>
-                        <Typography variant="h6" component="span">
+                        <Typography className='tl-text' variant="h6" component="span">
                             Front-End Development
                         </Typography>
-                        <Typography>Tokio School</Typography>
+                        <Typography className='tl-text'>Tokio School</Typography>
                     </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
+                        align="right"
                         variant="body2"
-                        color="text.secondary"
+                        color="var(--color)" className='tl-text'
                     >
                         May 2022 - October 2022
                     </TimelineOppositeContent>
@@ -83,10 +82,10 @@ export default function CustomizedTimeline({url}) {
                         <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: '20px', px: 2 }}>
-                        <Typography variant="h6" component="span">
+                        <Typography className='tl-text' variant="h6" component="span">
                             Artifact Consulting S.L
                         </Typography>
-                        <Typography>Backend Developer</Typography>
+                        <Typography className='tl-text'>Backend Developer</Typography>
                     </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>
@@ -94,7 +93,7 @@ export default function CustomizedTimeline({url}) {
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="text.secondary"
+                        color="var(--color)" className='tl-text'
                     >
                         December 2021 - May 2022
                     </TimelineOppositeContent>
@@ -107,10 +106,10 @@ export default function CustomizedTimeline({url}) {
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: '200px', px: 2 }}>
-                        <Typography variant="h6" component="span">
+                        <Typography className='tl-text' variant="h6" component="span">
                             Java Backend
                         </Typography>
-                        <Typography>Tokio School</Typography>
+                        <Typography className='tl-text'>Tokio School</Typography>
                     </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>
@@ -118,7 +117,7 @@ export default function CustomizedTimeline({url}) {
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="text.secondary"
+                        color="var(--color)" className='tl-text'
                     >
                         July 2017 - March 2022
                     </TimelineOppositeContent>
@@ -133,17 +132,18 @@ export default function CustomizedTimeline({url}) {
                     <TimelineContent
                         sx={{ py: '30px', px: 2 }}>
 
-                        <Typography variant="h6" component="span">
+                        <Typography variant="h6" component="span" className='tl-text'>
                             Sistemas 2 Valencia S.L
                         </Typography>
-                        <Typography>Técnico de Sonido</Typography>
+                        <Typography className='tl-text'>Técnico de Sonido</Typography>
                     </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>
-                    <TimelineOppositeContent
+                    <TimelineOppositeContent className='tl-text'
                         sx={{ m: 'auto 0' }}
+                        align="right"
                         variant="body2"
-                        color="text.secondary"
+                        color="var(--color)"
                     >
                         June 2017 - July 2017
                     </TimelineOppositeContent>
@@ -156,16 +156,16 @@ export default function CustomizedTimeline({url}) {
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: '30px', px: 2 }}>
-                        <Typography variant="h6" component="span">Cisco</Typography>
-                        <Typography>CCNA v1</Typography>
+                        <Typography variant="h6" component="span" className='tl-text'>Cisco</Typography>
+                        <Typography className='tl-text'>CCNA v1</Typography>
                     </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>
-                    <TimelineOppositeContent
+                    <TimelineOppositeContent className='tl-text'
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="text.secondary"
+                        color="var(--color)"
                     >
                         September 2015 - June 2017
                     </TimelineOppositeContent>
@@ -177,12 +177,12 @@ export default function CustomizedTimeline({url}) {
                             </TimelineDot></Link>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
-                    <TimelineContent
+                    <TimelineContent className='tl-text'
                         sx={{ py: '30px', px: 2 }}
                     >
-                        <Typography variant="h6" component="span">Ciclo Formativo Grado Superior
+                        <Typography className='tl-text' variant="h6" component="span">Ciclo Formativo Grado Superior
                         </Typography>
-                        <Typography>Sistemas Informáticos y Telecomunicaciones</Typography>
+                        <Typography className='tl-text'>Sistemas Informáticos y Telecomunicaciones</Typography>
                     </TimelineContent>
                 </TimelineItem>
             </Timeline>

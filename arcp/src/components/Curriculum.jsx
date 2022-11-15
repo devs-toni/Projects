@@ -6,11 +6,12 @@ import { FaBeer } from 'react-icons/fa';
 import Study from './specific/Study';
 import { Transition } from './specific/Transition';
 
+
 const Curriculum = () => {
   let { path, url } = useRouteMatch();
-  const newLocal = '🌍';
+  
   return (
-    <div className='cv'>
+    <div className='cv' >
       <Timegraphic url={`${url}`} />
       <div className="welcome-div">
         <span className='welcome'>Welcome to my &#123; &lt; </span>

@@ -1,4 +1,4 @@
-.about {
-    text-align: center;
+.contact {
+    min-height: var(--maxh);
     background-color: var(--background);
 }

@@ -1,30 +1,63 @@
 .courses {
   padding: 50px;
   text-align: center;
+  background-color: var(--background);
+  padding-bottom: var(--general-padding);
+  min-height: var(--maxh);
 }
 
-.courses .boxes {
-  display: flex;
-  flex-flow: row wrap;
-  margin-top: 70px;
+.courses .right {
+  float: right;
+  margin: 20px 30px;
 }
 
-.title-it {
+.courses .left {
+  margin: 20px 30px;
+  color: var(--color);
+}
+
+.courses .left .title-it {
   font-size: 2em;
   text-align: start;
   margin-bottom: 5px;
 }
 
-.description-it {
+.courses .left .description-it {
   text-align: start;
   font-style: italic;
 }
 
-.right {
-  float: right;
-  margin: 20px 30px;
+.courses .boxes {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 65px;
 }
 
-.left {
-  margin: 20px 30px;
+@media screen and (max-width: 1968px) {
+}
+
+@media screen and (max-width: 1018px) {
+  .courses {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .courses .right {
+    float: none;
+  }
+
+  .courses .left .title-it {
+    text-align: center;
+  }
+
+  .courses .left .description-it {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .courses .right {
+    font-size: 0.8em;
+  }
 }

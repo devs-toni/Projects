@@ -21,6 +21,7 @@
     "react-scripts": "5.0.1",
     "react-text-transition": "^3.0.2",
     "react-typed": "^1.2.0",
+    "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

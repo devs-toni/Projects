@@ -1,14 +1,15 @@
-.counter .title {
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-
 .counter .hours {
-    color: #286DD3;
+    color: var(--react-text-color-changing);
     font-size: 5em;
 }
 
 .counter .p-hours {
-    color: #286DD3;
+    color: var(--react-text-color-changing);
     font-size: 2em; 
 }
+
+.counter .hours.main {
+    color: var(--react-text-color-changing);
+    margin-left: 0;
+    border: none;
+  }
