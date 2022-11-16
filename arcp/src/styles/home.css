@@ -1,0 +1,86 @@
+.home {
+  background-color: var(--background);
+  padding-bottom: var(--general-padding);
+  min-height: var(--maxh);
+  color: var(--color);
+  font-size: 1.5em;
+}
+
+.home .title {
+  width: 40%;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.home .title .name {
+  text-align: center;
+  font-size: 2em;
+  border-bottom: 1px solid var(--color);
+  padding-bottom: 10px;
+}
+.home .title .job {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.home .welcome-div {
+  color: var(--color);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.home .welcome-div .welcome {
+  margin: 0 .5rem;
+}
+.home .welcome-div .change {
+  font-weight: bold;
+  color: var(--react-text-color-changing);
+  font-size: 1em;
+}
+.home .container-description {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.home .buttons {
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+
+@media screen and (max-width: 680px) {
+  .home .welcome-div .welcome {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home .welcome-div .welcome {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 536px) {
+  .home .welcome-div .welcome {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .home .welcome-div .welcome {
+    font-size: 0.5em;
+  }
+  .home .welcome-div .welcome {
+    margin: 0 .2rem;
+  }
+  .home .welcome-div .change {
+    margin-top: 20px;
+  }
+}

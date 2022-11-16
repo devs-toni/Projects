@@ -17,9 +17,14 @@
 }
 
 .header .div-logo .logo {
-  width: auto;
-  height: auto;
+  width: 100px;
+  height: 50px;
   color: var(--react-text-color);
+  margin-left: 30px;
+}
+
+.header .div-logo .logo:hover {
+  opacity: 0.5;
 }
 
 .header .navigator {
@@ -69,7 +74,6 @@
     font-size: 1.1em;
     font-weight: 400;
   }
-
   .header .navigator {
     margin-right: 20px;
   }
@@ -77,10 +81,8 @@
 
 @media screen and (max-width: 1081px) {
   .header {
-    font-size: 0.9em;
     font-weight: 400;
   }
-
   .header .navigator {
     margin-right: 20px;
   }
@@ -92,22 +94,15 @@
     font-weight: 400;
     justify-content: space-between;
   }
-
-  .header .div-logo {
-    margin-left: -28px;
-  }
-
   .header .div-logo .logo {
-    width: 37%;
-    height: 44%;
-    margin-left: 0px;
+    margin-left: 10px;
     padding-left: 0;
+    width: 80px;
+    height: 40px;
   }
-
   .header .navigator {
     display: none;
   }
-
   .header .hamburguer {
     display: inline;
     margin-right: 40px;
@@ -116,12 +111,6 @@
 }
 
 @media screen and (max-width: 400px) {
-  .header .div-logo .logo {
-    width: 30%;
-    height: 40%;
-    padding-left: 0;
-    margin-left: -30px;
-  }
   .header .hamburguer {
     margin-right: 25px;
   }

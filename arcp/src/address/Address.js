@@ -6,6 +6,7 @@ import Courses from '../components/Courses';
 import Curriculum from '../components/Curriculum';
 import Projects from '../components/Projects';
 import Err404 from '../components/main/Err404';
+import Home from '../components/Home';
 
 const Address = () => {
 
@@ -13,6 +14,7 @@ const Address = () => {
         <BrowserRouter>
             <HashRouter>
                 <Switch>
+                    <Route exact path='/' component={Home} />
                     <Route path='/cv' component={Curriculum} />
                     <Route exact path='/courses' component={Courses} />
                     <Route exact path='/projects' component={Projects} />

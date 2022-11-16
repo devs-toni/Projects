@@ -12,22 +12,6 @@
   text-align: center;
 }
 
-.cv .welcome-div {
-  color: var(--color);
-  display: flex;
-  width: 40%;
-}
-
-.cv .welcome-div .welcome {
-  margin: 5% 1%;
-  padding-top: 1%;
-}
-
-.cv .change {
-  font-weight: bold;
-  color: var(--react-text-color-changing);
-  font-size: 1em;
-}
 @media screen and (max-width: 600px) {
   .cv {
     flex-flow: row wrap;
@@ -37,15 +21,5 @@
 @media screen and (max-width: 440px) {
   .cv .tl .tl-text {
     font-size: 0.7em;
-  }
-
-  .cv .welcome-div {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .cv .welcome-div .welcome {
-    font-size: 0.5em;
-    text-align: center;
   }
 }

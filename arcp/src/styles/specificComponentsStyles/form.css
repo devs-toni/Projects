@@ -69,15 +69,6 @@
 }
 
 @media screen and (max-width: 2200px) {
-  .form .politica {
-    width: 62%;
-  }
-  .contact .submit-container {
-    width: 62%;
-  }
-}
-
-@media screen and (max-width: 2200px) {
   .form .row {
     display: flex;
     flex-flow: column nowrap;
@@ -138,7 +129,6 @@
 }
 
 @media screen and (max-width: 1070px) {
-
   .form .comments .textarea {
     width: 75.6%;
   }
@@ -146,9 +136,7 @@
 }
 
 @media screen and (max-width: 965px) {
-
   .form .column {
-
     margin-left: 0;
   }
   .form .column label {
@@ -169,8 +157,10 @@
     margin-left: 20px;
   }
   .form .politica {
-    font-size: 1.8em;
+    width: 90%;
+    font-size: 1.1em;
     margin-bottom: 20px;
+    margin: 30px auto 0 auto;
   }
   .contact .submit-container {
     margin-top: 20px;
@@ -179,5 +169,11 @@
     width: 87%;
     margin-left: 20px;
     padding: 20px 0;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .form .politica {
+    width: 80%;
   }
 }
