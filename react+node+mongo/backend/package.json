@@ -1,0 +1,18 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "API REST para una app desarrollada con React JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"Antonio Rufino Casasus\"",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
