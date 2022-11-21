@@ -2,18 +2,17 @@
 import React from 'react'
 import '../../assets/css/ITTraining/Course.css';
 
-const Course = ({ name, creator, img, hours, data, link }) => {
+const Course = ({ course, className }) => {
 
   return (
     <div className='box'>
-      <img className='img' src={img} alt={name} />
+      <img className='img' src={course.image} alt={course.name} />
       <div className='info'>
-        <p className='name'>{name}</p>
-        <p className='creator'>{creator}</p>
-        <p className='data'>{data}</p>
+        <p className='name'>{course.name}</p>
+        <p className='creator'>{course.center}</p>
         <div className='features'>
-          <p className='hours'>{hours} h</p>
-          <a className='eye' href={link} target='_blank'>
+          <p className='hours'>{course.hours} h</p>
+          <a className='eye' href={course.link} target='_blank'>
             <svg
               width='24'
               height='24'
@@ -28,4 +27,4 @@ const Course = ({ name, creator, img, hours, data, link }) => {
   )
 }
 
-export default Course
+export default Course;

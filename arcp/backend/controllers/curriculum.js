@@ -1,38 +1,35 @@
 'use strict'
 
-let Project = require('../models/project');
+let Curriculum = require('../models/curriculum');
 
 let controller = {
 
     save: (req, res) => {
         var params = req.body;
-        var project = new Project();
-        project.name = params.name;
-        project.description = params.description;
+        var cv = new Curriculum();
 
-        if (req.file) {
-            const { originalname } = req.file; 
-            originalname.split('.');
-            project.setImage(originalname[0]);
-        }
+        cv.name = params.name;
+        cv.center = params.center;
+        cv.date = params.date;
+        cv.topic = params.topic;
 
-        project.save((err, projectStored) => {
+        cv.save((err, cvStored) => {
 
-            if (err || !projectStored) return res.status(404).send({
+            if (err || !cvStored) return res.status(404).send({
                 status: 'error',
                 message: 'El proyecto no se ha guardado'
             });
 
             return res.status(200).send({
                 status: 'success',
-                projectStored
+                cvStored
             });
         });
     },
 
-    getProjects: (req, res) => {
-        let query = Project.find({});
-        query.sort('-date').exec((err, projects) => {
+    getCvs: (req, res) => {
+        let query = Curriculum.find({});
+        query.sort('-date').exec((err, cvs) => {
 
             if (err) {
                 return res.status(500).send({
@@ -41,7 +38,7 @@ let controller = {
                 });
             }
 
-            if (!projects) {
+            if (!cvs) {
                 return res.status(404).send({
                     status: 'error',
                     message: 'No hay proyectos para mostrar'
@@ -50,15 +47,15 @@ let controller = {
 
             return res.status(200).send({
                 status: 'success',
-                projects
+                cvs
             })
         });
     },
 
     delete: (req, res) => {
-        let projectId = req.params.id;
+        let cvId = req.params.id;
 
-        Project.findOneAndDelete({ _id: projectId }, (err, projectRemoved) => {
+        Curriculum.findOneAndDelete({ _id: cvId }, (err, cvRemoved) => {
             if (err) {
                 return res.status(500).send({
                     status: 'error',
@@ -66,7 +63,7 @@ let controller = {
                 });
             }
 
-            if (!articleRemoved) {
+            if (!cvRemoved) {
                 return res.status(404).send({
                     status: 'error',
                     message: 'No se ha encontrado el proyecto a eliminar'
@@ -75,7 +72,7 @@ let controller = {
 
             return res.status(200).send({
                 status: 'success',
-                projectRemoved
+                cvRemoved
             });
         });
     }

@@ -1,16 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Project from './Project';
-import arcp from '../../assets/img/Projects/arcp.png';
-import calc from '../../assets/img/Projects/calculadora.png';
+
+import Global from '../../Global';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 const Projects = () => {
+
+  const url = Global.url;
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    getProjects();
+    console.log(projects);
+
+  }, [projects.length]);
+
+  const getProjects = () => {
+    axios.get(url + 'getProjects').then(res => {
+      setProjects(res.data.projects);
+    });
+  };
+
   return (
     <div className='courses projects'>
-      <Project img={arcp} title='www.arcp.es' tech='developed with Front: React.js Back: Node.js DB: Mongo' right={false}  />
-{/*       <Project img='' title='Bikers' tech='developed with Spring Boot' />
- */}      <Project img={calc} title='Calculator' tech='developed with React.js' right={true}  />
-{/*       <Project img='' title='Pokemon Console' tech='developed with Java'  />
- */}    </div>
+      {
+        projects.length > 0
+          ? (
+            projects.map((project, index) => {
+              return (<Project key={index} id={index} project={project} />)
+            })
+          ) : (
+            <h3 className=''>No hay artículos</h3>
+          )
+      }
+    </div>
   )
 }
 

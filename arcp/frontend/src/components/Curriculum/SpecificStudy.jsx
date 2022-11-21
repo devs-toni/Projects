@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../assets/css/Curriculum/Study.css';
 
-const SpecificStudy = ({name, school, description, data}) => {
+const SpecificStudy = ({ name, center, description, date }) => {
+
   return (
     <div className='study'>
       <div className='name'>
         <p className='text-name'>{name}</p>
-        <p className='school'>{school}</p>
-        <p className='data'>{data}</p>
+        <p className='school'>{center}</p>
+        <p className='data'>{date}</p>
       </div>
       <div className='description'>
-        <p className='text-description'>   
-        </p>
+        <ul className='text-description'>
+          {description.map(line => {
+            <li>{line}</li>
+          })}
+        </ul>
       </div>
     </div>
   )

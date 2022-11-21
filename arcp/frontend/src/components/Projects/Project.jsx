@@ -1,14 +1,16 @@
 import React from 'react';
 import '../../assets/css/Projects/Projects.css';
+import arcp from '../../assets/img/Projects/arcp.png';
+import calc from '../../assets/img/Projects/calculadora.png';
 
-const Project = ( { img, title, tech, right } ) => {
+const Project = ( { id, project } ) => {
   return (
     <div className='project'>
-        <div className={right ? 'container reverse' : 'container'}>
-          <img className={right ? 'img marginLeft' : 'img'} src={img} alt={title} />
+        <div className={id % 2 === 0 ? 'container reverse' : 'container'}>
+          <img className={id % 2 === 0 ? 'img marginLeft' : 'img'} src={project.image} alt={project.name} />
           <div className="info">
-              <p className='name'>{title}</p>
-              <p className='tech'>{tech}</p>
+              <p className='name'>{project.name}</p>
+              <p className='description'>{project.description}</p>
           </div>
         </div>
     </div>

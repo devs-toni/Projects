@@ -51,7 +51,7 @@
     margin-bottom: 10px;
 }
 
-.projects .project .container .info .tech {
+.projects .project .container .info .description {
     text-align: center;
     font-size: 2em;
 }
@@ -75,7 +75,7 @@
         font-size: 1.3em;
     }
     
-    .projects .project .info .tech {
+    .projects .project .info .description {
         font-size: 1.3em;
     }
 }
@@ -90,7 +90,7 @@
         font-size: 1.2em;
     }
     
-    .projects .project .info .tech {
+    .projects .project .info .description {
         font-size: 1.2em;
     }
 }

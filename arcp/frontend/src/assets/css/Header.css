@@ -52,7 +52,6 @@
 .header .navigator .bright {
   opacity: 0.6;
   cursor: pointer;
-  padding: 10px;
   border-radius: 30px;
   background-color: var(--bright-btn);
 }
