@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  width: 100%;
+}
+
+:root {
+  --background: #eee;
+  --background-input: #eee;
+  --background-me: #20232a;
+  --color: black;
+  --maxh: 100vh;
+  --general-padding: 5em;
+  --general-margin: 3em;
+  --react-color: #20232a;
+  --react-text-color: #5fd5f5;
+  --react-text-color-changing: #286dd3;
+  --bright-btn: #444950;
+}
+
+[data-theme="dark"] {
+  --background: #333;
+  --background-input: rgb(124, 124, 124);
+  --background-me: #eee;
+  --color: white;
+  --maxh: 100vh;
+  --general-padding: 2em;
+  --general-margin: 3em;
+  --react-color: #20232a;
+  --react-text-color: #5fd5f5;
+  --react-text-color-changing: #5fd5f5;
+  --bright-btn: #20232a;
+}
+
+html {
+  min-height: var(--maxh);
+  background-color: var(--background);
+  position: relative;
+}
+
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background) !important;
+  min-height: var(--maxh);
+}
+
+p {
+  margin: 0;
+}

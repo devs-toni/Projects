@@ -1,0 +1,35 @@
+.study {
+    color: var(--color);
+  min-width: 40vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+  height: auto;
+  max-height: 400px;
+  background-color: transparent;
+  padding: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.study  .name {
+    width: 100%;
+}
+
+.study .name .text-name {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.study .name .school {
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+
+.study .name .data {
+    margin-left: 0;
+    font-style: italic;
+    font-size: 1em;
+
+}
