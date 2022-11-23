@@ -31,20 +31,27 @@
 }
 
 @media screen and (max-width: 1130px) {
-    .form-input {
-        width: 85%;
-      }
-    .form-input .input {
-        width: 100%;
-      }
+  .form-input {
+    width: 85%;
+  }
+  .form-input .input {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 965px) {
-    .form-input {
-        flex-flow: column wrap;
-        width: 85%;
-      }
-    .form-input .input {
-        width: 100%;
-      }
+  .form-input {
+    flex-flow: column wrap;
+    width: 85%;
+  }
+  .form-input .input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .form-input label {
+    font-size: 1.2em !important;
+    text-align: center;
+  }
 }

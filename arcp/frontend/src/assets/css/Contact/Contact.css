@@ -48,7 +48,6 @@
   opacity: 0.6;
 }
 
-
 .contact div.data-contact div.data-email .mail {
 }
 
@@ -164,6 +163,18 @@
     height: 450px;
     margin-bottom: 50px;
     margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .contact .title {
+    font-size: 1.6em;
+  }
+  .contact .description {
+    font-size: 1.1em;
+  }
+  .contact .name {
+    font-size: 1.3em;
   }
 }
 

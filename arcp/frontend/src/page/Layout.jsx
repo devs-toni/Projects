@@ -4,11 +4,11 @@ import Address from '../router/Router';
 import Header from '../components/Header';
 
 
-const Layout = ({switchTheme}) => {
+const Layout = ( { switchTheme, isNavShow, setIsNavShow } ) => {
 
   return (
     <div>
-        <Header switchTheme={switchTheme} />
+        <Header switchTheme={switchTheme} isNavShow={isNavShow} setIsNavShow={setIsNavShow} />
         <Address />
         <Footer />
     </div>

@@ -13,7 +13,6 @@
 }
 
 .header .div-logo {
-
 }
 
 .header .div-logo .logo {
@@ -33,6 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: end;
+  width: 100%;
 }
 
 .header .hamburguer {
@@ -49,7 +49,7 @@
   color: var(--react-text-color);
 }
 
-.header .navigator .bright {
+.header .bright {
   opacity: var(--opacity);
   cursor: pointer;
   border-radius: 30px;
@@ -57,7 +57,7 @@
   box-shadow: var(--shadow);
 }
 
-.header .navigator button {
+.header button {
   background-color: transparent;
   color: white;
   border: none;
@@ -96,12 +96,36 @@
     height: 40px;
   }
   .header .navigator {
-    display: none;
+    overflow: hidden;
+    height: 0;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    position: absolute;
+    top: 90px;
+    width: 100vw;
+    background-color: var(--react-color);
+    line-height: 50px;
   }
+  .header .active {
+    height: 50vh;
+    pointer-events: auto;
+    z-index: 1;
+    font-size: 1.5em;
+    margin-right: 0;
+  }
+
   .header .hamburguer {
     display: inline;
     margin-right: 40px;
     font-size: 2.3em;
+    cursor: pointer;
+  }
+  .header .hamburguer:hover {
+    opacity: 0.6;
   }
 }
 

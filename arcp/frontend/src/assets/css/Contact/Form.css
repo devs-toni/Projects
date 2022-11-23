@@ -187,6 +187,17 @@
   }
 }
 
+@media screen and (max-width: 700px) {
+  .form .comments label {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .form .politica {
+    font-size: 0.7em;
+  }
+}
+
 @media screen and (max-width: 470px) {
   .form .politica {
     width: 80%;

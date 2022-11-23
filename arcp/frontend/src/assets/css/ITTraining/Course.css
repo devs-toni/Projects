@@ -135,11 +135,17 @@
     flex-direction: column;
     min-width: 375px;
     max-height: fit-content;
+    border-radius: 20px;
+    margin-bottom: 40px;
   }
 
   .box .img {
     min-width: 100%;
     min-height: 300px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
   }
 
   .box .info {
@@ -151,14 +157,14 @@
   .box .info .name {
     width: 100%;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin-top: 15px;
     margin-left: 0;
   }
 
   .box .info .creator {
     width: 100%;
-    font-size: 1em;
+    font-size: 1.3em;
     margin: 15px 0;
   }
 
