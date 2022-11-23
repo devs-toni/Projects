@@ -1,9 +1,9 @@
 .courses {
-  padding: 50px;
   text-align: center;
   background-color: var(--background);
   padding-bottom: var(--general-padding);
   min-height: var(--maxh);
+  padding-top: var(--padding-top-box);
 }
 
 .courses .right {

@@ -62,6 +62,7 @@
   color: white;
   border: none;
   font-size: 1em;
+  margin-top: -7px;
 }
 
 @media screen and (max-width: 1250px) {

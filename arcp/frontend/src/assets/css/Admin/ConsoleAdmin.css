@@ -1,5 +1,14 @@
+.main {
+    min-height: var(--maxh);
+    background-color: var(--background);
+    color: var(--color);
+    width: 100vw !important;
+    margin: 0;
+    padding-top: 60px;
+}
+
 .container {
-    height: 100vh;
+    margin: 0 auto !important;
 }
 
 .link {

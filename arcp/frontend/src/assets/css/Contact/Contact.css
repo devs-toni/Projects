@@ -7,10 +7,11 @@
   flex-direction: column;
   text-align: center;
   align-items: center;
+  padding-top:  var(--padding-top-box);
 }
 
 .contact .title {
-  margin-top: 50px;
+
 }
 
 .contact .description {

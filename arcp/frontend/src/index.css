@@ -22,6 +22,7 @@ textarea {
   --bright-btn: #444950;
   --opacity: 1;
   --shadow: 0px 0px 25px 2px white;
+  --padding-top-box: 30px;
 }
 
 [data-theme="dark"] {
