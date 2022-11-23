@@ -49,24 +49,26 @@ const BackendProjects = () => {
     }
 
     return (
-        <div className='container mb-5 '>
-            <div className="row-cols-1 text-center mt-5 mb-3 d-flex flex-column justify-content-center">
-                <h1>PROYECTOS</h1>
-                <form onSubmit={sendData}>
-                    <div className="mb-3">
-                        <label htmlFor="name" className="form-label">Nombre</label>
-                        <input type="text" className="form-control" id="name" aria-describedby="emailHelp" onChange={changeState} ref={nameRef} />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="desc" className="form-label">Descripción</label>
-                        <textarea rows={20} className="form-control" id="desc" onChange={changeState} ref={descriptionRef} />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="image" className="form-label">Imagen</label><br />
-                        <input type='file' rows={20} className="form-control" id="image" onChange={(e) => uploadFile(e.target.files[0])} />
-                    </div>
-                    <button type="submit" className="btn btn-primary">Añadir</button>
-                </form>
+        <div className="main">
+            <div className='container mb-5 '>
+                <div className="row-cols-1 text-center mt-5 mb-3 d-flex flex-column justify-content-center">
+                    <h1>PROYECTOS</h1>
+                    <form onSubmit={sendData}>
+                        <div className="mb-3">
+                            <label htmlFor="name" className="form-label">Nombre</label>
+                            <input type="text" className="form-control" id="name" aria-describedby="emailHelp" onChange={changeState} ref={nameRef} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="desc" className="form-label">Descripción</label>
+                            <textarea rows={20} className="form-control" id="desc" onChange={changeState} ref={descriptionRef} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="image" className="form-label">Imagen</label><br />
+                            <input type='file' rows={20} className="form-control" id="image" onChange={(e) => uploadFile(e.target.files[0])} />
+                        </div>
+                        <button type="submit" className="btn btn-primary">Añadir</button>
+                    </form>
+                </div>
             </div>
         </div>
     )

@@ -38,32 +38,34 @@ const BackendCurriculum = () => {
   if (redirect) return <Redirect to='/admin' />
 
   return (
-    <div className='container text-center mt-5 mb-5'>
-      <div className="row-cols-1">
-        <h1 className='mb-4'>Curriculum</h1>
-        <form onSubmit={sendData}>
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label">Name</label>
-            <input type="text" className="form-control" id="name" ref={nameRef} onChange={changeState} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="topic" className="form-label">Topic Hidden</label>
-            <input type="text" className="form-control" id="topic" ref={topicRef} onChange={changeState} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="center" className="form-label">Centro</label>
-            <input type="text" className="form-control" id="center" ref={centerRef} onChange={changeState} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="date" className="form-label">Fecha</label>
-            <input type="text" className="form-control" id="date" ref={dateRef} onChange={changeState} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="desc" className="form-label">Descripción</label>
-            <textarea rows={20} className="form-control" id="desc" ref={descriptionRef} onChange={changeState} />
-          </div>
-          <button type="submit" className="btn btn-primary">Añadir</button>
-        </form>
+    <div className="main">
+      <div className='container text-center mt-5 mb-5'>
+        <div className="row-cols-1">
+          <h1 className='mb-4'>Curriculum</h1>
+          <form onSubmit={sendData}>
+            <div className="mb-3">
+              <label htmlFor="name" className="form-label">Name</label>
+              <input type="text" className="form-control" id="name" ref={nameRef} onChange={changeState} />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="topic" className="form-label">Topic Hidden</label>
+              <input type="text" className="form-control" id="topic" ref={topicRef} onChange={changeState} />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="center" className="form-label">Centro</label>
+              <input type="text" className="form-control" id="center" ref={centerRef} onChange={changeState} />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="date" className="form-label">Fecha</label>
+              <input type="text" className="form-control" id="date" ref={dateRef} onChange={changeState} />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="desc" className="form-label">Descripción</label>
+              <textarea rows={20} className="form-control" id="desc" ref={descriptionRef} onChange={changeState} />
+            </div>
+            <button type="submit" className="btn btn-primary">Añadir</button>
+          </form>
+        </div>
       </div>
     </div>
   );

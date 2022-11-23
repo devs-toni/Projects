@@ -32,6 +32,16 @@
   font-size: 1.2em;
 }
 
+.social-link {
+  color: var(--react-text-color);
+}
+
+.social-link:hover {
+  opacity: 0.6;
+  color: var(--react-text-color);
+
+}
+
 .contact div.data-contact div.data-email {
   width: 100%;
   display: flex;
