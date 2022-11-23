@@ -14,7 +14,6 @@ import BackendCurriculum from '../components/Admin/BackendCurriculum';
 import BackendITTraining from '../components/Admin/BackendITTraining';
 import BackendContact from '../components/Admin/BackendContact';
 import BackendHome from '../components/Admin/BackendHome';
-import Study from '../components/Curriculum/Study';
 
 const Address = () => {
 
@@ -25,6 +24,7 @@ const Address = () => {
                     <Route path='/cv' component={Curriculum} />
                     <Route exact path='/courses' component={Courses} />
                     <Route exact path='/projects' component={Projects} />
+                    <Route exact path='/projects/calculator' />
                     <Route exact path='/about' component={About} />
                     <Route exact path='/contact' component={Contact} />
                     <Route exact path='/admin' component={ConsoleAdmin} />

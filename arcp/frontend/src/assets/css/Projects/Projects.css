@@ -69,6 +69,20 @@
   font-size: 2em;
 }
 
+.projects .project .container .info .linkEye {
+  cursor: pointer;
+  opacity: 0.4;
+}
+.projects .project .container .info .linkEye:hover {
+  opacity: 1;
+}
+
+.projects .project .container .info .svgEye {
+  margin-top: 20px;
+  filter: var(--filter);
+}
+
+
 @media screen and (max-width: 1300px) {
   .projects .project .container .info {
     font-size: 0.8em;
