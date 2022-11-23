@@ -40,9 +40,14 @@
 }
 
 .contact div.data-contact div.data-email .icon {
-  font-size: 1.5em;
+  font-size: 1.6em;
   margin-right: 20px;
+  cursor: pointer;
 }
+.contact div.data-contact div.data-email .icon:hover {
+  opacity: 0.6;
+}
+
 
 .contact div.data-contact div.data-email .mail {
 }
@@ -58,6 +63,10 @@
 .contact div.data-contact div.data-phone .icon {
   font-size: 1.5em;
   margin-right: 20px;
+  cursor: pointer;
+}
+.contact div.data-contact div.data-phone .icon:hover {
+  opacity: 0.6;
 }
 
 .contact div.data-contact div.data-phone .white {
@@ -75,18 +84,6 @@
   height: 70vh;
 }
 
-@media screen and (max-width: 1350px) {
-  .contact div.data-contact div.data-phone .icon {
-    margin-right: 10px;
-  }
-  .contact div.data-contact div.data-email .icon {
-    margin-right: 10px;
-  }
-  .contact div.data-contact div.data-phone .white {
-    margin-right: 10px;
-  }
-}
-
 @media screen and (max-width: 1130px) {
   .contact div.data-contact div.data-email .mail {
     display: none;
@@ -101,10 +98,12 @@
     width: 60%;
   }
   .contact div.data-contact div.data-email {
-    width: 10%;
+    justify-content: center;
+    width: 100px;
   }
   .contact div.data-contact div.data-phone {
-    width: 20%;
+    justify-content: space-between;
+    width: 105px;
   }
   .contact .map {
     width: 100%;
@@ -114,6 +113,15 @@
     width: 90%;
     height: 700px;
     margin-bottom: 40px;
+  }
+  .contact div.data-contact div.data-phone .icon {
+    margin-right: 10px;
+  }
+  .contact div.data-contact div.data-email .icon {
+    margin-right: 10px;
+  }
+  .contact div.data-contact div.data-phone .white {
+    margin-right: 10px;
   }
 }
 
@@ -141,10 +149,11 @@
     width: 60%;
   }
   .contact div.data-contact div.data-email {
-    width: 10%;
+    min-width: 100px;
   }
   .contact div.data-contact div.data-phone {
-    width: 20%;
+    min-width: 105px;
+    margin-right: 20px;
   }
   .contact .map {
     width: 100%;

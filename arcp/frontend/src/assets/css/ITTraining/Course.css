@@ -1,8 +1,8 @@
 .box {
   border: 1px solid rgba(0, 0, 0, 0.238);
   display: flex;
-  min-height: 140px;
-  max-height: 140px;
+  min-height: 150px;
+  max-height: 150px;
   width: 22.8vw;
   min-width: 450px;
   margin: 0 0.4% 1% 0.4%;
@@ -13,9 +13,9 @@
 }
 
 .box .img {
-  max-height: 140px;
+  max-height: 148px;
   max-width: 160px;
-  min-height: 140px;
+  min-height: 148px;
   min-width: 160px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -27,19 +27,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5px 15px;
+  padding: 10px 15px;
   text-align: start;
 }
 
 .box .info .name {
   margin: 0 0 0 6px;
   font-weight: 500;
-  font-size: 1vw;
+  font-size: 1.1em;
 }
 
 .box .info .creator {
   margin: 10px 0 0 6px;
-  font-size: 0.9vw;
+  font-size: 1em;
   font-weight: 400;
   font-style: italic;
 }
@@ -75,6 +75,11 @@
   text-align: end;
   margin-right: 20px;
   color: white;
+  cursor: auto;
+}
+.hover:hover {
+  opacity: 0.5;
+  cursor:pointer;
 }
 
 .features .eye .border {
@@ -89,23 +94,36 @@
     brightness(118%) contrast(119%);
 }
 
-@media screen and (max-width: 1968px) {
+@media screen and (max-width: 1990px) {
   .box {
     width: 32.3%;
   }
+}
 
+@media screen and (min-width: 1969px) {
   .box .info .name {
-    font-size: 1.2rem;
+    font-size: 1.2em;
+  }
+
+  .box .info .creator {
+    font-size: 1em;
   }
 }
 
-@media screen and (max-width: 1489px) {
+@media screen and (max-width: 1503px) {
   .box {
     width: 48.8%;
   }
+  .box .info .name {
+    font-size: 1.2em;
+  }
+
+  .box .info .creator {
+    font-size: 1em;
+  }
 }
 
-@media screen and (max-width: 1018px) {
+@media screen and (max-width: 1028px) {
   .box {
     width: 98.7%;
     margin-bottom: 15px;
@@ -142,7 +160,6 @@
     width: 100%;
     font-size: 1em;
     margin: 15px 0;
-
   }
 
   .box .info .data {
@@ -154,9 +171,11 @@
   }
 
   .features .hours {
-    width: 20%;
+    width: 30%;
     margin-left: 20px;
     margin-bottom: 10px;
+    font-size: 1em;
+    letter-spacing: 1px;
   }
 
   .features .eye {
@@ -167,14 +186,30 @@
 }
 
 @media screen and (max-width: 442px) {
-    .box {
-        min-width: 250px;
-    }
+  .box {
+    min-width: 250px;
+  }
+  .features .hours {
+    width: 35%;
+  }
 }
 
 @media screen and (max-width: 390px) {
-    .box .img {
-        min-width: 100%;
-        min-height: 200px;
-      }
+  .box .img {
+    min-width: 100%;
+    min-height: 200px;
+  }
+  .features .hours {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 2400px) {
+  .box .info .name {
+    font-size: 1.35em;
+  }
+
+  .box .info .creator {
+    font-size: 1.15em;
+  }
 }

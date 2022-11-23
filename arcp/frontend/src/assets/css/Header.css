@@ -50,14 +50,11 @@
 }
 
 .header .navigator .bright {
-  opacity: 0.6;
+  opacity: var(--opacity);
   cursor: pointer;
   border-radius: 30px;
   background-color: var(--bright-btn);
-}
-
-.header .navigator .bright:hover {
-  opacity: 1;
+  box-shadow: var(--shadow);
 }
 
 .header .navigator button {
@@ -65,7 +62,6 @@
   color: white;
   border: none;
   font-size: 1em;
-  margin-top: 6px;
 }
 
 @media screen and (max-width: 1250px) {

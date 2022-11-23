@@ -36,6 +36,7 @@
   padding: 10px 100px;
   width: 100%;
   text-align: end;
+  font-size: 1.3em;
 }
 
 .footer .design .name {
@@ -50,6 +51,9 @@
 .footer .design .a-none {
   text-decoration: none;
 }
+.footer .design .a-none:hover {
+  opacity: 0.5;
+}
 
 @media screen and (max-width: 965px) {
   .footer .social .icon {
@@ -62,6 +66,7 @@
 
   .footer .design {
     padding-right: 50px;
+    font-size: 1.2em;
   }
 }
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../assets/css/About/About.css';
 import Me from '../../assets/img/About/me.png';
-import { Transition } from '../Home/Transition';
 import Animation from './Animation';
 import Loader from './Loader';
 import aficiones from '../../assets/img/About/aficiones.png';

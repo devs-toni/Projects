@@ -17,23 +17,21 @@
 }
 
 .courses .left .title-it {
-  font-size: 2em;
+  font-size: 2.2em;
   text-align: start;
   margin-bottom: 5px;
 }
 
 .courses .left .description-it {
   text-align: start;
-  font-style: italic;
+  font-size: 1.3em;
 }
 
 .courses .boxes {
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   margin-top: 65px;
-}
-
-@media screen and (max-width: 1968px) {
 }
 
 @media screen and (max-width: 1018px) {
@@ -59,5 +57,18 @@
 @media screen and (max-width: 390px) {
   .courses .right {
     font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 1968px) {
+  .courses .left .description-it {
+    font-size: 1.4em;
+  }
+  .courses .left .title-it {
+    font-size: 3em;
+  }
+
+  .courses .right {
+    font-size: 1.4em;
   }
 }
