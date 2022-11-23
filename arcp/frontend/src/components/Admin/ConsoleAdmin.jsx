@@ -12,9 +12,9 @@ const ConsoleAdmin = () => {
                 <Link className='link' to={`${url}/projects`}>Ir a PROJECTS</Link>
                 <Link className='link' to={`${url}/courses`}>Ir a IT TRAINING</Link>
                 <Link className='link' to={`${url}/cv`}>Ir a CURRICULUM</Link>
-                <Link className='link' to={`${url}/about`}>Ir a ABOUT</Link>
+{/*                 <Link className='link' to={`${url}/about`}>Ir a ABOUT</Link>
                 <Link className='link' to={`${url}/contact`}>Ir a CONTACT</Link>
-                <Link className='link' to={`${url}/home`}>Ir a HOME</Link>
+                <Link className='link' to={`${url}/home`}>Ir a HOME</Link> */}
             </div>
         </div>
     );
