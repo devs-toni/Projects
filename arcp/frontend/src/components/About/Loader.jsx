@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const loadingContainer = {
   width: "6rem",
-  height: "6rem",
+  height: "5rem",
   display: "flex",
   justifyContent: "space-around",
 };

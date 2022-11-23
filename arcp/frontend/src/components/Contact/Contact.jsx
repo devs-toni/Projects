@@ -9,8 +9,8 @@ const Contact = () => {
 
   return (
     <div className='contact'>
-      <h1 className='title'>Contacto</h1>
-      <p className='description'>Ponte en contacto conmigo mediante el formulario o a través de mis datos de contacto.</p>
+      <h1 className='title'>Contact</h1>
+      <p className='description'>Please contact me through the form or through my contact information.</p>
       <p className='name'>Antonio Rufino Casasus</p>
       <div className="data-contact">
         <div className="data-email">

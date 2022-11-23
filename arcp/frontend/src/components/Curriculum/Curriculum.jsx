@@ -10,12 +10,18 @@ const Curriculum = () => {
   let { path, url } = useRouteMatch();
 
   return (
-    <div className='cv' >
-      <Timegraphic url={`${url}`} />
-      <Switch>
-        <Route exact path={path}></Route>
-        <Route path={`${path}/:topic`} component={Study}></Route>
-      </Switch>
+    <div className="curriculum">
+      <div className='info'>
+        <h1 className='title'>Currículum</h1>
+        <p className='description'>In this section, you can take a look at my professional career.</p>
+      </div>
+      <div className='cv' >
+        <Timegraphic url={`${url}`} />
+        <Switch>
+          <Route exact path={path}></Route>
+          <Route path={`${path}/:topic`} component={Study}></Route>
+        </Switch>
+      </div>
     </div>
   );
 };

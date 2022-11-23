@@ -39,7 +39,7 @@ const Courses = () => {
         <Counter hours={hours} />
       </div>
       <div className="left">
-        <h3 className='title-it'>MY STUDIES</h3>
+        <h3 className='title-it'>My Studies</h3>
         <p className='description-it'>All the courses that I have taken since I started programming </p>
       </div>
       <div className='boxes'>

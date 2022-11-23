@@ -135,7 +135,7 @@ export default function CustomizedTimeline({ url }) {
                         <Typography variant="h6" component="span" className='tl-text'>
                             Sistemas 2 Valencia S.L
                         </Typography>
-                        <Typography className='tl-text'>Técnico de Sonido</Typography>
+                        <Typography className='tl-text'>Sound Technician</Typography>
                     </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>
@@ -182,7 +182,7 @@ export default function CustomizedTimeline({ url }) {
                     >
                         <Typography className='tl-text' variant="h6" component="span">Ciclo Formativo Grado Superior
                         </Typography>
-                        <Typography className='tl-text'>Sistemas Informáticos y Telecomunicaciones</Typography>
+                        <Typography className='tl-text'>Computer and Telecommunications Systems</Typography>
                     </TimelineContent>
                 </TimelineItem>
             </Timeline>

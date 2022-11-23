@@ -13,12 +13,12 @@ const Form = () => {
         <Input type='text' name='Asunto' />
       </div>
       <div className="comments">
-        <label>Mensaje</label>
+        <label>Message</label>
         <textarea className='textarea' />
       </div>
       <div className="politica">
         <input type="checkbox" />
-        <label htmlFor="">He leído y acepto la política de privacidad</label>
+        <label htmlFor="">I have read and accept the privacy policy</label>
       </div>
       <div className="submit-container">
         <input type='submit' className='submit' value='ENVIAR' />

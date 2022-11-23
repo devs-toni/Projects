@@ -1,10 +1,30 @@
-.cv {
-  display: flex;
-  flex-flow: row nowrap;
+.curriculum {
+  color: var(--color);
   background-color: var(--background);
   padding-bottom: var(--general-padding);
   min-height: var(--maxh);
   padding-top: var(--padding-top-box);
+}
+
+.cv {
+  display: flex;
+  flex-flow: row nowrap;
+
+}
+
+.curriculum .info {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.curriculum .info .title {
+
+}
+
+.curriculum .info .description {
+  font-size: 1.3em;
 }
 
 .cv .tl {

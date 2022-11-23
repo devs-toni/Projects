@@ -24,6 +24,10 @@ const Projects = () => {
 
   return (
     <div className='courses projects'>
+      <div className="info">
+        <h1 className='title'>Projects</h1>
+        <p className='description'>Please, take a look at the different projects that I have been creating and improving since I started in this world.</p>
+      </div>
       {
         projects.length > 0
           ? (

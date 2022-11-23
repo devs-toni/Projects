@@ -5,6 +5,19 @@
   background-color: var(--background);
   min-height: var(--maxh);
   padding-top: var(--padding-top-box);
+  color: var(--color);
+}
+
+.projects .info {
+  margin-bottom: 40px;
+}
+
+.projects .info .title {
+
+}
+
+.projects .info .description {
+  font-size: 1.3em;
 }
 
 .projects .project {
@@ -37,7 +50,6 @@
   padding: 0;
   margin: 20px 0;
   padding-left: 200px;
-  color: var(--color);
   width: 500px;
 }
 

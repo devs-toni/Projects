@@ -10,7 +10,8 @@ import develop from '../../assets/img/About/develop.png';
 const About = () => {
   return (
     <div className='courses about'>
-      <h1 className='title'>ABOUT ME</h1>
+      <h1 className='title'>About Me</h1>
+      <p className='description'>In this section, you can know a little about me</p>
       <div className="me">
         <img className='img' src={Me} alt="Me" />
         <p>Backend developer. Actually I'm realising a Master in Software Development in Assembler Institute of Technologies</p>
