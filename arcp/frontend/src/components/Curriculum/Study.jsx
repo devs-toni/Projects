@@ -20,7 +20,7 @@ const Study = () => {
         getCvs();
         findTopic();
         editDescription();
-    }, [topic]);
+    }, [topic.length]);
 
     const getCvs = () => {
         axios.get(axiosUrl + 'getCvs').then(res => {
