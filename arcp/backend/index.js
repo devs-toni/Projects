@@ -1,22 +1,16 @@
 'use strict';
+
 const express = require('express');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-/* const config = require('./config');
-console.log(config);
-const { appConfig, dbConfig} = config;
-const { db, dbPort, dbHost, dbName } = dbConfig;
-const { appPort, appHost } = appConfig; */
-const port = 3900;
 const app = express();
-/* const url = `${db}://${dbHost}:${dbPort}/${dbName}`;
- */
-const url = 'mongodb://localhost:27017/arcp';
-
-mongoose.Promise = global.Promise;
-
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const myConnection = require('express-myconnection');
 let router = require('./routes/router');
+const mysql = require('mysql');
+var databaseName = "arcp";
 
+// settings 
+app.set('port', 3900);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use((req, res, next) => {
@@ -27,13 +21,23 @@ app.use((req, res, next) => {
     next();
 });
 
+// static
 app.use('/public', express.static(`${__dirname}/storage/imgs`))
 
+// middlewares
+app.use(morgan('dev'));
+app.use(myConnection(mysql, {
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    port: 3306,
+    database: 'arcp'
+ }, 'single'));
+ 
+ // router
 app.use('/', router);
 
-mongoose.connect(url, {useNewUrlParser: true}).then(() => {
-    console.log('Conexión a la bbdd realizada con exito!!!!');
-    app.listen(port, () => {
-        console.log('Lanzando la aplicación en el puerto ' + port);
-    });
-});
+ // starting server
+ app.listen(app.get('port'), () => {
+    console.log('Server listening on port ' + app.get('port'));
+ })

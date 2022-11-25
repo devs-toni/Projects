@@ -1,0 +1,32 @@
+CREATE DATABASE arcp;
+use arcp;
+
+CREATE TABLE projects (
+    id INT(6) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE curriculum (
+    id INT(6) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    center VARCHAR(255) NOT NULL,
+    date VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    topic VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE courses (
+    id INT(6) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    center VARCHAR(255) NOT NULL,
+    hours INT(10) NOT NULL,
+    link VARCHAR(255) NOT NULL,
+    hidden VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL
+);
+
+SHOW TABLES;
+
+DESCRIBE courses;

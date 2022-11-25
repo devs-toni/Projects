@@ -11,15 +11,15 @@ const upload = require('../libs/storage');
 let router = express.Router();
 
 router.post('/saveProject', upload.single('file'), Project.save);
-router.get('/getProjects', Project.getProjects);
+router.get('/getProjects', Project.get);
 router.delete('/deleteProject/:id', Project.delete);
 
 router.post('/saveCv', Curriculum.save);
-router.get('/getCvs', Curriculum.getCvs);
+router.get('/getCurriculum', Curriculum.get);
 router.delete('/deleteCv/:id', Curriculum.delete);
 
 router.post('/saveCourse', upload.single('file'), Course.save);
-router.get('/getCourses', Course.getCourses);
+router.get('/getCourses', Course.get);
 router.delete('/deleteCourse/:id', Course.delete);
 
 module.exports = router;

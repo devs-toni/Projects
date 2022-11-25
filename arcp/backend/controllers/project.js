@@ -1,81 +1,89 @@
 'use strict'
 
-let Project = require('../models/project');
-
 let controller = {
 
     save: (req, res) => {
         var params = req.body;
-        var project = new Project();
-        project.name = params.name;
-        project.description = params.description;
-
+        let originalname;
         if (req.file) {
-            const { originalname } = req.file; 
-            originalname.split('.');
-            project.setImage(originalname[0]);
+            originalname = req.file.originalname;
+            originalname = originalname.split('.');
         }
 
-        project.save((err, projectStored) => {
+        req.getConnection((err, conn) => {
+            conn.query('INSERT INTO projects (name, description, image) VALUES (?, ?, ?)',
+                [
+                    params.name,
+                    params.description,
+                    originalname[0]
+                ], 
+                (err, projectStored) => {
+                    if (err || !projectStored) {
+                        return res.status(404).send({
+                            status: 'error',
+                            message: 'El proyecto no se ha guardado'
+                        });
+                    }
 
-            if (err || !projectStored) return res.status(404).send({
-                status: 'error',
-                message: 'El proyecto no se ha guardado'
-            });
-
-            return res.status(200).send({
-                status: 'success',
-                projectStored
-            });
+                    return res.status(200).send({
+                        status: 'success',
+                        projectStored
+                    });
+                });
         });
     },
 
-    getProjects: (req, res) => {
-        let query = Project.find({});
-        query.sort('-date').exec((err, projects) => {
+    get: (req, res) => {
+        req.getConnection((err, conn) => {
+            if (err) next(err);
 
-            if (err) {
-                return res.status(500).send({
-                    status: 'error',
-                    message: 'Error al extraer los datos'
-                });
-            }
+            conn.query('SELECT * FROM projects', (err, projects) => {
+                if (err) {
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error al extraer los datos'
+                    });
+                }
+                if (!projects) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No hay proyectos para mostrar'
+                    });
+                }
+                return res.status(200).send({
+                    status: 'success',
+                    projects
+                })
 
-            if (!projects) {
-                return res.status(404).send({
-                    status: 'error',
-                    message: 'No hay proyectos para mostrar'
-                });
-            }
-
-            return res.status(200).send({
-                status: 'success',
-                projects
-            })
-        });
+            });
+        }
+        );
     },
 
     delete: (req, res) => {
         let projectId = req.params.id;
 
-        Project.findOneAndDelete({ _id: projectId }, (err, projectRemoved) => {
-            if (err) {
-                return res.status(500).send({
-                    status: 'error',
-                    message: 'Error al eliminar el proyecto'
-                });
-            }
+        req.getConnection((err, conn) => {
+            if (err) next(err);
+            conn.query(`DELETE FROM projects WHERE id=${projectId}`, (err, projectRemoved) => {
+                if (err) {
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error al eliminar el proyecto'
+                    });
+                }
 
-            if (!articleRemoved) {
-                return res.status(404).send({
-                    status: 'error',
-                    message: 'No se ha encontrado el proyecto a eliminar'
-                });
-            }
+                if (!projectRemoved) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No se ha encontrado el proyecto a eliminar'
+                    });
+                }
 
-            return res.status(200).send({
-                status: 'success',
-                projectRemoved
+                return res.status(200).send({
+                    status: 'success',
+                    projectRemoved
+                });
             });
         });
     }
