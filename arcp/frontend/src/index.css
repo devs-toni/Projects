@@ -57,6 +57,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background) !important;
   min-height: var(--maxh);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 p {

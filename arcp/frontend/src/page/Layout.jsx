@@ -7,12 +7,12 @@ import Header from '../components/Header';
 const Layout = ( { switchTheme, isNavShow, setIsNavShow } ) => {
 
   return (
-    <div>
+    <>
         <Header switchTheme={switchTheme} isNavShow={isNavShow} setIsNavShow={setIsNavShow} />
         <Address />
         <Footer />
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default Layout
+export default Layout;
