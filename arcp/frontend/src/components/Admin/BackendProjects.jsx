@@ -11,6 +11,7 @@ const BackendProjects = () => {
     const [project, setProject] = useState({
         name: null,
         description: null,
+        position: null
     });
     const [files, setFiles] = useState(null);
     const [redirect, setRedirect] = useState(false);
@@ -18,11 +19,13 @@ const BackendProjects = () => {
     // Referencia de los datos del formulario
     let nameRef = React.createRef();
     let descriptionRef = React.createRef();
+    let positionRef = React.createRef();
 
     const changeState = () => {
         setProject({
             name: nameRef.current.value,
             description: descriptionRef.current.value,
+            position: positionRef.current.value,
         });
     }
 
@@ -38,6 +41,7 @@ const BackendProjects = () => {
         file.append('file', files);
         file.append('name', project.name);
         file.append('description', project.description);
+        file.append('position', project.position);
 
         await axios.post(backendUrl + 'saveProject', file).then(res => {
             setRedirect(true);
@@ -54,6 +58,10 @@ const BackendProjects = () => {
                 <div className="row-cols-1 text-center mt-5 mb-3 d-flex flex-column justify-content-center">
                     <h1>PROYECTOS</h1>
                     <form onSubmit={sendData}>
+                    <div className="mb-3">
+                            <label htmlFor="position" className="form-label">Position</label>
+                            <input type="text" className="form-control" id="position" aria-describedby="emailHelp" onChange={changeState} ref={positionRef} />
+                        </div>
                         <div className="mb-3">
                             <label htmlFor="name" className="form-label">Nombre</label>
                             <input type="text" className="form-control" id="name" aria-describedby="emailHelp" onChange={changeState} ref={nameRef} />

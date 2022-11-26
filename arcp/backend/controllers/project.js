@@ -6,10 +6,11 @@ let controller = {
         var params = req.body;
 
         req.getConnection((err, conn) => {
-            conn.query('INSERT INTO projects (name, description, image) VALUES (?, ?, ?)',
+            conn.query('INSERT INTO projects (name, description, position, image) VALUES (?, ?, ?, ?)',
                 [
                     params.name,
                     params.description,
+                    params.position,
                     `http://localhost:3900/public/${req.file.filename}`
                 ], 
                 (err, projectStored) => {

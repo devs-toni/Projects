@@ -4,15 +4,14 @@ let controller = {
 
     save: (req, res) => {
         var params = req.body;
-        console.log(req.file.filename);
-        console.log(params);
         req.getConnection((err, conn) => {
-            conn.query('INSERT INTO courses (name, center, hours, link, image) VALUES (?, ?, ?, ?, ?)',
+            conn.query('INSERT INTO courses (name, center, hours, link, position, image) VALUES (?, ?, ?, ?, ?, ?)',
                 [
                     params.name,
                     params.center,
                     params.hours,
                     params.link,
+                    params.position,
                     `http://localhost:3900/public/${req.file.filename}`
                 ], 
                 (err, courseStored) => {
