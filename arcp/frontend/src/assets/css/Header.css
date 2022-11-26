@@ -41,7 +41,7 @@
 
 .header .navigator .anchor {
   text-decoration: none;
-  padding: 0 30px;
+  margin: 0 30px;
   color: white;
 }
 
@@ -55,6 +55,7 @@
   border-radius: 30px;
   background-color: var(--bright-btn);
   box-shadow: var(--shadow);
+  margin-left: 30px;
 }
 
 .header button {
@@ -127,6 +128,10 @@
   }
   .header .hamburguer:hover {
     opacity: 0.6;
+  }
+
+  .bright {
+    margin: 0 !important;
   }
 }
 

@@ -4,18 +4,13 @@ let controller = {
 
     save: (req, res) => {
         var params = req.body;
-        let originalname;
-        if (req.file) {
-            originalname = req.file.originalname;
-            originalname = originalname.split('.');
-        }
 
         req.getConnection((err, conn) => {
             conn.query('INSERT INTO projects (name, description, image) VALUES (?, ?, ?)',
                 [
                     params.name,
                     params.description,
-                    originalname[0]
+                    `http://localhost:3900/public/${req.file.filename}`
                 ], 
                 (err, projectStored) => {
                     if (err || !projectStored) {

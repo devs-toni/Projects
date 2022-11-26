@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 });
 
 // static
-app.use('/public', express.static(`${__dirname}/storage/imgs`))
+app.use('/public', express.static(`${__dirname}/storage`))
 
 // middlewares
 app.use(morgan('dev'));

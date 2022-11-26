@@ -2,6 +2,7 @@ import './App.css';
 import Layout from './page/Layout';
 import useLocalStorage from 'use-local-storage';
 import { useState } from 'react';
+import Login from './components/Admin/Login';
 
 function App() {
 

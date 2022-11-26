@@ -1,0 +1,8 @@
+.login {
+    background-color: var(--background);
+    color: var(--color);
+    min-height: var(--maxh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

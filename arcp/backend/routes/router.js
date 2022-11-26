@@ -5,6 +5,7 @@ let express = require('express');
 let Project = require('../controllers/project');
 let Curriculum = require('../controllers/curriculum');
 let Course = require('../controllers/course');
+let Login = require('../controllers/login');
 
 const upload = require('../libs/storage');
 
@@ -21,5 +22,7 @@ router.delete('/deleteCv/:id', Curriculum.delete);
 router.post('/saveCourse', upload.single('file'), Course.save);
 router.get('/getCourses', Course.get);
 router.delete('/deleteCourse/:id', Course.delete);
+
+router.post('/login', Login.login);
 
 module.exports = router;

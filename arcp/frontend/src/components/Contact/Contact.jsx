@@ -18,7 +18,7 @@ const Contact = () => {
           <p className='mail'>devs.toni@gmail.com</p>
         </div>
         <div className="data-phone">
-        <a target='_blank' className='social-link' href="https://api.whatsapp.com/send?phone=674767153&text=Hello%20Antonio"><i class="bi bi-whatsapp icon"></i></a>
+        <a target='_blank' className='social-link' href="https://api.whatsapp.com/send?phone=674767153&text=Hello%20Antonio"><i className="bi bi-whatsapp icon"></i></a>
           <a target='_blank' className='social-link' href="tel:674767153">
             <FontAwesomeIcon icon={Phone} className='icon' />
           </a>

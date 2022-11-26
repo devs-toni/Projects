@@ -32,7 +32,7 @@ const BackendCurriculum = () => {
 
     axios.post(url + 'saveCv', cv).then(res => {
       setredirect(true);
-    })
+    });
   };
 
   if (redirect) return <Redirect to='/admin' />

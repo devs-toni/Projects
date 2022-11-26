@@ -24,7 +24,7 @@ const Header = ({ switchTheme, isNavShow, setIsNavShow }) => {
                     <Link className='anchor' to='/projects' onClick={() => setIsNavShow(!isNavShow)}>Projects</Link>
                     <Link className='anchor' to='/about' onClick={() => setIsNavShow(!isNavShow)}>About</Link>
                     <Link className='anchor' to='/contact' onClick={() => setIsNavShow(!isNavShow)}>Contact</Link>
-                    <Link className='anchor' to='/admin' onClick={() => setIsNavShow(!isNavShow)}><i className="bi bi-box-arrow-in-right"></i></Link>
+                    <Link className='anchor' to='/login' onClick={() => setIsNavShow(!isNavShow)}><i className="bi bi-box-arrow-in-right"></i></Link>
                     <button onClick={switchTheme}><BsSunFill className='bright' /></button>
                 </nav>
                 <FiMenu className='hamburguer' onClick={openMenu} />

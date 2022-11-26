@@ -12,8 +12,7 @@ const BackendITTraining = () => {
       name: null,
       center: null,
       hours: null,
-      link: null,
-      hidden: null
+      link: null
   });
   const [files, setFiles] = useState(null);
   const [redirect, setRedirect] = useState(false);
@@ -22,7 +21,6 @@ const BackendITTraining = () => {
   let centerRef = React.createRef();
   let hoursRef = React.createRef();
   let linkRef = React.createRef();
-  let hiddenRef = React.createRef();
 
   const changeState = () => {
       setCourse({
@@ -30,7 +28,6 @@ const BackendITTraining = () => {
           center: centerRef.current.value,
           hours: hoursRef.current.value,
           link: linkRef.current.value,
-          hidden: hiddenRef.current.value,
       });
   }
 
@@ -47,7 +44,6 @@ const BackendITTraining = () => {
       file.append('center', course.center);
       file.append('hours', course.hours);
       file.append('link', course.link);
-      file.append('hidden', course.hidden);
 
       await axios.post(backendUrl + 'saveCourse', file).then(res => {
           setRedirect(true);
@@ -67,10 +63,6 @@ const BackendITTraining = () => {
           <div className="mb-3">
             <label htmlFor="name" className="form-label">Name</label>
             <input type="text" className="form-control" id="name" ref={nameRef} onChange={changeState} />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="hidden" className="form-label">Hidden Reference to Image</label>
-            <input type="text" className="form-control" id="hidden" ref={hiddenRef} onChange={changeState} />
           </div>
           <div className="mb-3">
             <label htmlFor="center" className="form-label">Centro</label>

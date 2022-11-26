@@ -6,13 +6,15 @@
     "mongoose": "^6.7.2",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "prop-types": "^15.8.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/index.js"
   },
   "devDependencies": {
+    "cors": "^2.8.5",
     "nodemon": "^2.0.20"
   }
 }

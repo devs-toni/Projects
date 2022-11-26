@@ -4,21 +4,16 @@ let controller = {
 
     save: (req, res) => {
         var params = req.body;
-        let originalname;
-        if (req.file) {
-            originalname = req.file.originalname;
-            originalname = originalname.split('.');
-        }
-    
+        console.log(req.file.filename);
+        console.log(params);
         req.getConnection((err, conn) => {
-            conn.query('INSERT INTO courses (name, center, hours, link, hidden, image) VALUES (?, ?, ?, ?, ?, ?)',
+            conn.query('INSERT INTO courses (name, center, hours, link, image) VALUES (?, ?, ?, ?, ?)',
                 [
                     params.name,
                     params.center,
                     params.hours,
                     params.link,
-                    params.hidden,
-                    originalname[0]
+                    `http://localhost:3900/public/${req.file.filename}`
                 ], 
                 (err, courseStored) => {
                     if (err || !courseStored) {
