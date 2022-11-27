@@ -19,7 +19,7 @@ textarea {
   --react-color: #20232a;
   --react-text-color: #5fd5f5;
   --react-text-color-changing: #286dd3;
-  --bright-btn: #444950;
+  --background-bright-btn: rgba(255, 255, 255, 0.308);
   --opacity: 1;
   --shadow: 0px 0px 25px 2px white;
   --padding-top-box: 30px;
@@ -37,7 +37,7 @@ textarea {
   --react-color: #20232a;
   --react-text-color: #5fd5f5;
   --react-text-color-changing: #5fd5f5;
-  --bright-btn: #20232a;
+  --background-bright-btn: #fafafa2f;
   --opacity:0.4;
   --shadow: 0px 0px 15px 1px rgba(255, 255, 255, 0.726);
   --filter: invert(100%) sepia(0%) saturate(2476%) hue-rotate(86deg)

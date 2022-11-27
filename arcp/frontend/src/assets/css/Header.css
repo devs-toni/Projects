@@ -53,7 +53,7 @@
   opacity: var(--opacity);
   cursor: pointer;
   border-radius: 30px;
-  background-color: var(--bright-btn);
+  background-color: var(--background-bright-btn);
   box-shadow: var(--shadow);
   margin-left: 30px;
 }

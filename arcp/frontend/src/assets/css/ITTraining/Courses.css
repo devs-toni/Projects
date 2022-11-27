@@ -42,8 +42,12 @@
 @media screen and (max-width: 850px) {
   .courses .right {
     float: none;
+    background-color: transparent;
+    margin-top: 0 !important;
   }
-
+  .main {
+    padding-top: 0 !important;
+  }
   .courses .left .title-it {
     text-align: center;
   }

@@ -13,7 +13,6 @@ function App() {
   const switchTheme = (e) => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
-    setIsNavShow(!isNavShow);
   }
 
   return (

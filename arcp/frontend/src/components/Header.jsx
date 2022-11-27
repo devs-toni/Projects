@@ -12,6 +12,12 @@ const Header = ({ switchTheme, isNavShow, setIsNavShow }) => {
         setIsNavShow(!isNavShow);
     }
 
+    const closeMenu = () => {
+        if (isNavShow) {
+            setIsNavShow(false);
+        }
+    }
+
     return (
         <div className='header'>
             <HashRouter>
@@ -19,12 +25,12 @@ const Header = ({ switchTheme, isNavShow, setIsNavShow }) => {
                     <Link to='/'><Logo className='logo' ></Logo></Link>
                 </div>
                 <nav id='navigator' className={`navigator ${isNavShow ? 'active' : ''}`}>
-                    <Link className='anchor' to='/courses' onClick={() => setIsNavShow(!isNavShow)}>IT Training</Link>
-                    <Link className='anchor' to='/cv' onClick={() => setIsNavShow(!isNavShow)}>Curriculum</Link>
-                    <Link className='anchor' to='/projects' onClick={() => setIsNavShow(!isNavShow)}>Projects</Link>
-                    <Link className='anchor' to='/about' onClick={() => setIsNavShow(!isNavShow)}>About</Link>
-                    <Link className='anchor' to='/contact' onClick={() => setIsNavShow(!isNavShow)}>Contact</Link>
-                    <Link className='anchor' to='/login' onClick={() => setIsNavShow(!isNavShow)}><i className="bi bi-box-arrow-in-right"></i></Link>
+                    <Link className='anchor' to='/courses' onClick={closeMenu}>IT Training</Link>
+                    <Link className='anchor' to='/cv' onClick={closeMenu}>Curriculum</Link>
+                    <Link className='anchor' to='/projects' onClick={closeMenu}>Projects</Link>
+                    <Link className='anchor' to='/about' onClick={closeMenu}>About</Link>
+                    <Link className='anchor' to='/contact' onClick={closeMenu}>Contact</Link>
+                    <Link className='anchor' to='/login' onClick={closeMenu}><i className="bi bi-box-arrow-in-right"></i></Link>
                     <button onClick={switchTheme}><BsSunFill className='bright' /></button>
                 </nav>
                 <FiMenu className='hamburguer' onClick={openMenu} />
