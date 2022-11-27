@@ -1,9 +1,16 @@
 .form-input {
-  margin-bottom: 35px;
   width: 60%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.margin {
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .form-input label {
@@ -22,6 +29,15 @@
 .form-input .input::placeholder {
   color: var(--color);
   letter-spacing: 1px;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  width: 50%;
+  text-align:end;
+  margin-top: 4px;
+  padding-right: 2px;
 }
 
 @media screen and (min-width: 1130px) and (max-width: 1350px) {

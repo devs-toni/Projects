@@ -14,52 +14,31 @@ const initialForm = {
   privacy: false
 }
 
-let styles = {
-  fontWeight: '600',
-  color: 'red'
-}
-
 const validateForm = (form) => {
   let errors = {};
   let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
   let regexEmail = /^(\w+[.-]?){1,}@[a-z]+[.]\w{2,}$/;
   let regexPhone = /[0-9]/;
+  let regexSubject = /^.{1,40}$/;
   let regexComments = /^.{1,255}$/;
 
-  if (!form.email.trim()) {
-    errors.email = 'El campo "Email" es obligatorio';
-  } else if (!regexEmail.test(form.email.trim())) {
-    errors.email = 'El campo "Email" no és válido';
+  if (form.name && !regexName.test(form.name.trim())) {
+    errors.name = '"Nombre" solo acepta letras y espacios en blanco';
+  }
+  if (form.email && !regexEmail.test(form.email.trim())) {
+    errors.email = 'El formato "Email" introducido no és válido';
+  }
+  if (form.phone && !regexPhone.test(form.phone.trim())) {
+    errors.phone = 'El formato "Phone" indroducido no és válido';
+  }
+  if (form.subject && !regexSubject.test(form.subject.trim())) {
+    errors.subject = '"Subject" solo puede contener 40 caracteres'
+  }
+  if (form.comments && !regexComments.test(form.comments.trim())) {
+    errors.comments = '"Comments" solo puede contener 255 caracteres'
   }
 
-  if (!form.phone.trim()) {
-    errors.phone = 'El campo "Phone" es obligatorio';
-  } else if (!regexPhone.test(form.phone.trim())) {
-    errors.phone = 'El campo "Phone" no és válido';
-  }
 
-  if (!form.subject.trim()) {
-    errors.subject = 'El campo "Asunto" es obligatorio';
-  }
-
-  if (!form.comments.trim()) {
-    errors.comments = 'El campo "Comentarios" es obligatorio';
-  } else if (!regexComments.test(form.name.trim())) {
-    errors.comments = 'El campo "Comments" solo puede contener 255 caracteres'
-  }
-
-  return errors;
-}
-
-const validateName = (form) => {
-  let errors = {};
-  let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-
-  if (!form.name.trim()) {
-    errors.name = 'El campo "Nombre" es obligatorio';
-  } else if (!regexName.test(form.name.trim())) {
-    errors.name = 'El campo "Nombre" solo acepta letras y espacios en blanco';
-  }
   return errors;
 }
 
@@ -71,39 +50,32 @@ const Form = () => {
     loading,
     response,
     handleChange,
-    handleBlur,
-    handleBlurName,
-    handleSubmit
-  } = useForm(initialForm, validateForm, validateName);
+    handleSubmit,
+    handleBlur
+  } = useForm(initialForm, validateForm);
 
   return (
     <>
-      <form action='f2834b9068e7ce4a793c0fa0d1519fd5' mothod="POST" className='form' onSubmit={handleSubmit}>
+      <form action='f2834b9068e7ce4a793c0fa0d1519fd5' className='form' onSubmit={handleSubmit}>
         <div className="column">
-          <Input type='text' name='name' blur={handleBlurName} change={handleChange} val={form.name} />
-          {errors.name && (<h4 style={styles}>{errors.name}</h4>)}
-          <Input type='email' name='email' blur={handleBlur} change={handleChange} val={form.email} />
-          {errors.email && (<h4 style={styles}>{errors.email}</h4>)}
-          <Input type='text' name='phone' blur={handleBlur} change={handleChange} val={form.phone} />
-          {errors.phone && (<h4 style={styles}>{errors.phone}</h4>)}
-          <Input type='text' name='subject' blur={handleBlur} change={handleChange} val={form.subject} />
-          {errors.subject && (<h4 style={styles}>{errors.subject}</h4>)}
+          <Input type='text' name='name'  blur={handleBlur} change={handleChange} val={form.name} required error={errors.name && errors.name} />
+          <Input type='email' name='email'  blur={handleBlur} change={handleChange} val={form.email} required error={errors.email && errors.email} />
+          <Input type='text' name='phone' blur={handleBlur}  change={handleChange} val={form.phone} error={errors.phone && errors.phone} />
+          <Input type='text' name='subject'  blur={handleBlur} change={handleChange} val={form.subject} required error={errors.subject && errors.subject} />
         </div>
-        <div className="comments">
-          <label>Message</label>
-          <textarea className='textarea' name='comments' onBlur={handleBlur} onChange={handleChange} value={form.comments} />
-          {errors.comments && (<h4 style={styles}>{errors.comments}</h4>)}
-        </div>
-        <div className="politica">
-          <input type="checkbox" name='privacy' onChange={handleChange} value={form.privacy} />
-          <label htmlFor="">I have read and accept the privacy policy</label>
+        <div className="comments-column">
+          <div className="comments">
+            <label>Message</label>
+            <textarea className='textarea' name='comments'  onBlur={handleBlur} onChange={handleChange} value={form.comments} required />
+          </div>
+          {errors.comments && (<p className='errorComments'>{errors.comments}</p>)}
         </div>
         <div className="submit-container">
           <input type='submit' className='submit' value='ENVIAR' />
         </div>
       </form>
       {loading && <Loader />}
-      {response && (<Message msg='Los datos han sido enviados' bgColor='green' />)}
+      {response && (<Message msg='Los datos han sido enviados' bgColor='var(--react-text-color-changing2)' />)}
     </>
   )
 }

@@ -4,8 +4,9 @@ const Message = ({ msg, bgColor }) => {
 
   let style = {
     backgroundColor: bgColor,
-    padding: '30px 50px',
-    width: '100%'
+    padding: '15px 30px',
+    width: '100%',
+    fontSize: '1.2em',
   }
   return (
     <div>

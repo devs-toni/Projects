@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { helpHttp } from '../helpers/helpHttp';
 
 
-export const useForm = (initialForm, validateForm, validateName) => {
+export const useForm = (initialForm, validateForm) => {
 
     const [form, setForm] = useState(initialForm);
     const [errors, setErrors] = useState({});
@@ -12,16 +12,11 @@ export const useForm = (initialForm, validateForm, validateName) => {
     const [response, setResponse] = useState(null);
 
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setForm({
             ...form,
             [name]: value
         });
-    };
-
-    const handleBlurName = (e) => {
-        handleChange(e);
-        setErrors(validateName(form));
     };
 
     const handleBlur = (e) => {
@@ -30,10 +25,9 @@ export const useForm = (initialForm, validateForm, validateName) => {
     };
 
     const handleSubmit = (e) => {
-        console.log('Que mierda pasa');
         e.preventDefault();
         setErrors(validateForm(form));
-        
+
         if (Object.keys(errors).length === 0) {
             setLoading(true);
             helpHttp().post('https://formsubmit.co/ajax/antoniorufinocasasus@gmail.com', {
@@ -56,6 +50,6 @@ export const useForm = (initialForm, validateForm, validateName) => {
     };
 
     return {
-        form, errors, loading, response, handleBlur, handleChange, handleBlurName, handleSubmit   
+        form, errors, loading, response, handleBlur, handleChange, handleSubmit
     }
 }
