@@ -33,7 +33,7 @@
 }
 
 .social-link {
-  color: var(--react-text-color);
+  color: var(--react-text-color-changing);
 }
 
 .social-link:hover {

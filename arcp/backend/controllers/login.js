@@ -18,8 +18,8 @@ let login = {
                         token
                     });
                 } else return res.status(200).send({ status: 'Error login' });
-            })
-        })
+            });
+        });
     }
 };
 

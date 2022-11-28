@@ -47,7 +47,6 @@ const Courses = () => {
           courses.length > 0
             ? (
               courses.map((course, index) => {
-                console.log(course);
                 return (
                   <Course
                     key={index}

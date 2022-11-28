@@ -1,0 +1,52 @@
+.study {
+  max-width: 500px;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-left: 8%;
+  height: fit-content;
+  color: white;
+  background-image: linear-gradient( to right, var(--react-color) , rgba(30, 149, 204, 0.658));
+  padding: 10px 30px;
+  align-items: center;
+  text-align: start;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.411);
+}
+
+.study .name {
+  width: 100%;
+}
+
+.study .name .text-name {
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.study .name .school {
+  font-style: italic;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+}
+
+.study .name .data {
+  margin-left: 0;
+  font-style: italic;
+  font-size: 1em;
+}
+
+.study .description {
+    margin-top: 20px;
+}
+
+.study .description .text-description {
+    width: 100%;
+    padding-left: 0;
+    list-style-type: none;
+    text-align: start;
+}
+
+.study .description .text-description .li {
+
+}

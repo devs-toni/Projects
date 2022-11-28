@@ -34,17 +34,18 @@ let controller = {
     },
 
     get: (req, res) => {
+        let params = req.body;
         req.getConnection((err, conn) => {
             if (err) next(err);
 
-            conn.query('SELECT * FROM curriculum', (err, cvs) => {
+            conn.query('SELECT * FROM curriculum WHERE topic=?', params.topic, (err, cv) => {
                 if (err) {
                     return res.status(500).send({
                         status: 'error',
                         message: 'Error al extraer los datos'
                     });
                 }
-                if (!cvs) {
+                if (!cv) {
                     return res.status(404).send({
                         status: 'error',
                         message: 'No hay datos para mostrar'
@@ -52,7 +53,7 @@ let controller = {
                 }
                 return res.status(200).send({
                     status: 'success',
-                    cvs
+                    cv
                 })
 
             });

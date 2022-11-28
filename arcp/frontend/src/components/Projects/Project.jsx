@@ -13,7 +13,7 @@ const Project = ({ id, project }) => {
         <div className={`info ${id % 2 === 0 ? 'marginLeft' : ''}`}>
           <p className='name'>{project.name}</p>
           <p className='description'>{project.description}</p>
-          <Link className='link' to={`${url}/calculator`}>VISIT</Link>
+          <Link className='link' to={`${path}/calculator`}>VISIT</Link>
         </div>
       </div>
     </div>

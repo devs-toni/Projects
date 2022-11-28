@@ -5,6 +5,8 @@ let controller = {
     save: (req, res) => {
         var params = req.body;
         req.getConnection((err, conn) => {
+            if (err) next(err);
+            
             conn.query('INSERT INTO courses (name, center, hours, link, position, image) VALUES (?, ?, ?, ?, ?, ?)',
                 [
                     params.name,
