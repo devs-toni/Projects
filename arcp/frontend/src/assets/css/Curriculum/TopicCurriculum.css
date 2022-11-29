@@ -18,24 +18,27 @@
 }
 
 .study .name .text-name {
-  margin-bottom: 20px;
-  font-size: 2em;
+  margin-bottom: 10px;
+  font-size: var(--font-title-size);
 }
 
 .study .name .school {
   font-style: italic;
-  margin-bottom: 20px;
-  font-size: 1.6em;
+  margin-bottom: 10px;
+  font-size: var(--font-secondary-size);
+
 }
 
 .study .name .data {
   margin-left: 0;
   font-style: italic;
-  font-size: 1em;
+  font-size: var(--font-extras-title);
+
 }
 
 .study .description {
     margin-top: 20px;
+    font-size: var(--font-extras-title);
 }
 
 .study .description .text-description {

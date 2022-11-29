@@ -49,8 +49,8 @@
 .contact .submit-container .submit {
   width: 12%;
   border: none;
-  color: var(--color);
-  background-color: var(--react-text-color-changing);
+  color: var(--tont-color);
+  background-color: var(--react-secondary-color-changing);
   cursor: pointer;
   padding: 10px;
   font-size: 1em;

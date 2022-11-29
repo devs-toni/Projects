@@ -1,7 +1,7 @@
 .login {
-    background-color: var(--background);
-    color: var(--color);
-    min-height: var(--maxh);
+    background-color: var(--main-bg-color);
+    color: var(--font-color);
+    min-height: var(--main-height);
     display: flex;
     flex-direction: column;
     align-items: center;

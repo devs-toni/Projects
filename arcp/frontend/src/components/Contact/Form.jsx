@@ -10,8 +10,7 @@ const initialForm = {
   email: '',
   phone: '',
   subject: '',
-  comments: '',
-  privacy: false
+  comments: ''
 }
 
 const validateForm = (form) => {

@@ -1,6 +1,6 @@
 .footer {
   margin-top: auto;
-  color: white;
+  color: #FFF;
   width: 100%;
   height: 6em;
   display: flex;
@@ -40,11 +40,11 @@
 
 .footer .design .name {
   cursor: pointer;
-  color: var(--react-text-color);
+  color: var(--react-secondary-color-fix);
 }
 
 .footer .design .name:hover {
-  color: var(--react-text-color);
+  color: var(--react-secondary-color-fix);
 }
 
 .footer .design .a-none {
@@ -58,11 +58,9 @@
   .footer .social .icon {
     padding-left: 50px;
   }
-
   .footer .social .icon.m-low {
     padding-left: 25px;
   }
-
   .footer .design {
     padding-right: 50px;
     font-size: 1.2em;
@@ -74,12 +72,10 @@
     flex-direction: column;
     height: auto;
   }
-
   .footer .social .icon {
     padding: 0;
     padding-top: 20px;
   }
-
   .footer .design {
     text-align: center;
     padding: 20px 0;

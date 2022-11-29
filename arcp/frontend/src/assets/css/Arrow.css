@@ -11,17 +11,22 @@
   
   .back .back-link .arrow {
     color: black;
-    width: 30px;
-    height: 30px;
-    background-color: var(--react-text-color-changing);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--react-secondary-color-changing);
     display: inline-flex;
     justify-content: center;
     align-items: center;
     border-radius: 100%;
     cursor: pointer;
+    font-weight: bolder;
+    text-decoration: none;
   }
   .back .arrow:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
 
   @media screen and (max-width: 965px) {

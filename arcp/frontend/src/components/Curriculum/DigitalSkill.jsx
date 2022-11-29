@@ -13,7 +13,7 @@ const DigitalSkill = ({ name, level }) => {
     const containerStyles = {
         height: 15,
         width: '40%',
-        backgroundColor: 'var(--color)',
+        backgroundColor: 'var(--font-color)',
         borderRadius: 50,
         margin: 50
       }
@@ -21,7 +21,7 @@ const DigitalSkill = ({ name, level }) => {
       const fillerStyles = {
         height: '100%',
         width: `${completed}%`,
-        backgroundColor: 'var(--react-text-color-changing)',
+        backgroundColor: 'var(--react-secondary-color-changing)',
         borderRadius: 'inherit',
         textAlign: 'right',
         transition: 'width 3s ease-in-out'

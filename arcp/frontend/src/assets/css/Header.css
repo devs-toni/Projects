@@ -3,22 +3,19 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  color: white;
+  color: #FFF;
   text-align: right;
-  background-color: var(--react-color);
   height: 90px;
-  font-size: 1.4em;
+  background-color: var(--react-color);
+  font-size: var(--font-secondary-size);
   font-weight: 500;
   letter-spacing: 1px;
-}
-
-.header .div-logo {
 }
 
 .header .div-logo .logo {
   width: 100px;
   height: 50px;
-  color: var(--react-text-color);
+  color: var(--react-secondary-color-fix);
   margin-left: 30px;
 }
 
@@ -42,11 +39,11 @@
 .header .navigator .anchor {
   text-decoration: none;
   margin: 0 30px;
-  color: white;
+  color: #FFF;
 }
 
 .header .navigator .anchor:hover {
-  color: var(--react-text-color);
+  color: var(--react-secondary-color-fix);
 }
 
 .header .bright {
@@ -60,9 +57,8 @@
 
 .header button {
   background-color: transparent;
-  color: white;
+  color: #FFF;
   border: none;
-  font-size: 1em;
   margin-top: -7px;
 }
 

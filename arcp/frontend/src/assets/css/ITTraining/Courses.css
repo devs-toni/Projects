@@ -1,8 +1,9 @@
 .courses {
   text-align: center;
-  background-color: var(--background);
-  padding-bottom: var(--general-padding);
-  min-height: var(--maxh);
+  background-color: var(--main-bg-color);
+  padding-bottom: var(--main-padding);
+  min-height: var(--main-height);
+  color: var(--font-color);
 }
 
 .courses .right {
@@ -12,18 +13,17 @@
 
 .courses .left {
   margin: 20px 30px;
-  color: var(--color);
 }
 
 .courses .left .title-it {
-  font-size: 2.2em;
+  font-size: var(--font-title-size);
   text-align: start;
   margin-bottom: 5px;
 }
 
 .courses .left .description-it {
   text-align: start;
-  font-size: 1.3em;
+  font-size: var(--font-secondary-size);
 }
 
 .courses .boxes {

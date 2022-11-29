@@ -1,16 +1,17 @@
 .counter .hours {
-    color: var(--react-text-color-changing);
-    font-size: 5em;
+    color: var(--react-secondary-color-changing);
+    font-size: var(--font-enormous-size);
     max-height: 200px;
 }
 
 .counter .p-hours {
-    color: var(--react-text-color-changing);
-    font-size: 2em; 
+    color: var(--react-secondary-color-changing);
+    font-size: var(--font-title-size);
+    margin-left: 10px; 
 }
 
 .counter .hours.main {
-    color: var(--react-text-color-changing);
+    color: var(--react-secondary-color-changing);
     margin-left: 0;
     border: none;
   }

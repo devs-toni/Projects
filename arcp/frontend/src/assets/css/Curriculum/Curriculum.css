@@ -1,8 +1,8 @@
 .curriculum {
-  color: var(--color);
-  background-color: var(--background);
-  padding-bottom: var(--general-padding);
-  min-height: var(--maxh);
+  color: var(--font-color);
+  background-color: var(--main-bg-color);
+  padding-bottom: var(--main-padding);
+  min-height: var(--main-height);
   padding-top: var(--padding-top-box);
 }
 
@@ -19,16 +19,17 @@
 }
 
 .curriculum .info .title {
+  font-size: var(--font-title-size);
 }
 
 .curriculum .info .description {
-  font-size: 1.3em;
+  font-size: var(--font-secondary-size);
 }
 
 .cv .tl {
-  color: var(--color);
   min-width: 50%;
   text-align: center;
+  font-size: var(--font-extras-secondary);
 }
 
 .cv .tl .tl-text {
@@ -39,12 +40,11 @@
   flex-direction: column;
   align-items: start;
   width: 40%;
-  font-size: 1.3em;
+  font-size: var(--font-extras-secondary);
   font-weight: lighter;
 }
 
 .cv .explanation .skills {
-  color: var(--color);
   text-align: end;
   width: 100%;
 }
@@ -55,8 +55,6 @@
   text-align: end;
   margin-top: 40px;
   font-size: 1.3em;
-  text-decoration: underline
-  ;
 }
 
 .skills .digital-skills {
@@ -75,7 +73,7 @@
 
 .skill .name {
   margin-right: 20px;
-  width: 25%;
+  width: 20%;
   text-align: left;
 }
 
@@ -138,7 +136,8 @@
     font-size: 0.9em;
     }
     .cv .explanation .skills .title {
-      font-size: 1.2em;
+      font-size: var(--font-secondary-size);
+
     }
     .cv {
       flex-flow: column-reverse wrap;

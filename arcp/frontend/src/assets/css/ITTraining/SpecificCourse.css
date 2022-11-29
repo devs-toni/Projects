@@ -1,59 +1,62 @@
 .specificCourse {
-    color: var(--color);
-    background-color: var(--background-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 95vh;
+  color: var(--font-color);
+  background-color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 95vh;
 }
 
 .specificCourse .img {
-    margin: 50px 0;
+  margin: 50px 0;
 }
 
 .specificCourse .img img {
-    width: 500px;
-    height: auto;
+  width: 500px;
+  height: auto;
 }
 
 .specificCourse .info {
-    text-align: center;
-    font-size: 1.2em;
+  text-align: center;
 }
 
 .specificCourse .info .title {
-font-size: 1.2em;
+  font-size: var(--font-title-size);
 }
 
-.specificCourse .info .center {}
+.specificCourse .info .center {
+  font-size: var(--font-secondary-size);
+}
 
-.specificCourse .info .description {}
+.specificCourse .info .description {
+  margin-top: 30px;
+  font-size: var(--font-extras-secondary);
+}
 
 .specificCourse .technologies {
-    display: flex;
-    width: 75%;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 0;
+  display: flex;
+  width: 75%;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
 }
 
 .specificCourse .technologies .tech {
-    margin: 12px 7px;
-    color: black;
-    font-weight: bold;
-    border-radius: 30px;
-    border: 3px solid;
-    padding: 5px 10px;
-    max-height: 35px;
-    font-size: 0.8em;
+  margin: 8px 7px;
+  color: black;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 3px solid;
+  padding: 5px 10px;
+  max-height: 35px;
+  font-size: 0.7em;
 }
 
 @media screen and (max-width: 600px) {
-    .specificCourse .img img {
-        width: 250px;
-        height: auto;
-    }
+  .specificCourse .img img {
+    width: 250px;
+    height: auto;
+  }
 }
-

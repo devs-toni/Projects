@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import Project from './Project';
-
 import Global from '../../Global';
 import axios from 'axios';
 import { useEffect } from 'react';
-import Arrow from '../Arrow';
 
 const Projects = () => {
 
@@ -13,7 +11,6 @@ const Projects = () => {
 
   useEffect(() => {
     getProjects();
-    console.log(projects);
 
   }, [projects.length]);
 

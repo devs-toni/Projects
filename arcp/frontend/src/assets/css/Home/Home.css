@@ -1,8 +1,8 @@
 .home {
-  background-color: var(--background);
-  padding-bottom: var(--general-padding);
-  min-height: var(--maxh);
-  color: var(--color);
+  background-color: var(--main-bg-color);
+  padding-bottom: var(--main-padding);
+  min-height: var(--main-height);
+  color: var(--font-color);
   font-size: 1.5em;
 }
 

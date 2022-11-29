@@ -1,31 +1,30 @@
 .main {
-    min-height: var(--maxh);
-    background-color: var(--background);
-    color: var(--color);
-    width: 100vw !important;
+    min-height: var(--main-height);
+    background-color: var(--main-bg-color);
+    color: var(--font-color);
+    width: 100vw;
     margin: 0;
     padding-top: 60px;
 }
 
 .container {
-    margin: 0 auto !important;
+    margin: 0 auto;
 }
 
 .link {
     text-decoration: none;   
-    color: white;
+    color: #FFF;
     margin: 0 auto;
     margin-bottom: 30px;
-    width: 700px;
-    height: 200px;
-    line-height: 200px;
+    width: 500px;
+    height: 100px;
+    line-height: 100px;
     background-color: var(--react-color);
     border-radius: 30px;
-    font-size: 1.9em;
+    font-size: var(--font-secondary-size);
 }
 
 .link:hover {
     color: var(--react-color);
-    background-color: var(--react-text-color);
-
+    background-color: var(--react-secondary-color-fix);
 }
