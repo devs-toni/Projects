@@ -4,6 +4,7 @@ let express = require('express');
 
 let Project = require('../controllers/project');
 let Curriculum = require('../controllers/curriculum');
+let Skill = require('../controllers/skill');
 let Course = require('../controllers/course');
 let Login = require('../controllers/login');
 let About = require('../controllers/about');
@@ -19,6 +20,8 @@ router.delete('/deleteProject/:id', Project.delete);
 router.post('/saveCv', Curriculum.save);
 router.post('/getCurriculum', Curriculum.get);
 router.delete('/deleteCv/:id', Curriculum.delete);
+
+router.get('/getSkills', Skill.get);
 
 router.post('/saveCourse', upload.single('file'), Course.save);
 router.get('/getCourses', Course.get);

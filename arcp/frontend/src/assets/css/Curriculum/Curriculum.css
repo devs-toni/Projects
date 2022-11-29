@@ -9,18 +9,16 @@
 .cv {
   display: flex;
   flex-flow: row nowrap;
-
 }
 
 .curriculum .info {
   text-align: center;
   margin: 0 auto;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
 .curriculum .info .title {
-
 }
 
 .curriculum .info .description {
@@ -33,14 +31,138 @@
   text-align: center;
 }
 
-@media screen and (max-width: 600px) {
-  .cv {
-    flex-flow: row wrap;
-  }
+.cv .tl .tl-text {
 }
 
-@media screen and (max-width: 440px) {
-  .cv .tl .tl-text {
-    font-size: 0.7em;
+.cv .explanation {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 40%;
+  font-size: 1.3em;
+  font-weight: lighter;
+}
+
+.cv .explanation .skills {
+  color: var(--color);
+  text-align: end;
+  width: 100%;
+}
+
+.cv .explanation .skills .title {
+  width: 80%;
+  margin-bottom: 20px;
+  text-align: end;
+  margin-top: 40px;
+  font-size: 1.3em;
+  text-decoration: underline
+  ;
+}
+
+.skills .digital-skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.skill {
+  display: flex;
+  min-width: 320px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill .name {
+  margin-right: 20px;
+  width: 25%;
+  text-align: left;
+}
+
+@media screen and (max-width: 1750px) {
+  .cv .explanation {
+    margin-left: 20px;
+  }
+  .cv .tl {
+    margin-left: -50px;
+    margin-right: 50px;
+  }
+  .skill .name {
+    width: 30%;
+    font-size: 0.9em;
+    }
+    .cv .explanation .skills .title {
+      font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+  .cv .explanation {
+    width: 50%;
+    margin: 0 !important;
+  }
+  .cv .tl {
+    width: 100%;
+    margin: 0;
+  }
+  .skills {
+    margin-bottom: 50px;
+  }
+  .skill .name {
+    width: 30%;
+    font-size: 0.9em;
+    }
+    .cv .explanation .skills .title {
+      font-size: 1.2em;
+    }
+    .cv {
+      flex-flow: column-reverse wrap;
+      align-items: center;
+    }
+}
+
+@media screen and (max-width: 850px) {
+  .cv .explanation {
+    width: 80%;
+    margin: 0 !important;
+  }
+  .cv .tl {
+    width: 100%;
+    margin: 0;
+  }
+  .skills {
+    margin-bottom: 50px;
+  }
+  .skill .name {
+    width: 30%;
+    font-size: 0.9em;
+    }
+    .cv .explanation .skills .title {
+      font-size: 1.2em;
+    }
+    .cv {
+      flex-flow: column-reverse wrap;
+      align-items: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+  .cv .explanation {
+    width: 90%;
+   }
+   .skills {
+    margin-left: 5%;
+   }
+}
+
+@media screen and (max-width: 500px) {
+  .curriculum .info {
+    padding: 0 20px;
+  }
+  .tl .tl-text {
+    font-size: 0.8em
+  }
+  .cv .explanation {
+    font-size: 1em;
   }
 }

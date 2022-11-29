@@ -16,7 +16,7 @@ export default function CustomizedTimeline({ url }) {
 
     return (
         <div className='tl'>
-            <Timeline position="right">
+            <Timeline position="alternate">
                 <TimelineItem>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
@@ -33,7 +33,7 @@ export default function CustomizedTimeline({ url }) {
                             </TimelineDot></Link>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '20px', px: 2 }}>
+                    <TimelineContent sx={{ py: '0px', px: 2 }}>
                         <Typography className='tl-text' variant="h6" component="span">
                             Master in Software Development
                         </Typography>
@@ -57,7 +57,7 @@ export default function CustomizedTimeline({ url }) {
                             </TimelineDot></Link>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '20px', px: 2 }}>
+                    <TimelineContent sx={{ py: '120px', px: 2 }}>
                         <Typography className='tl-text' variant="h6" component="span">
                             Front-End Development
                         </Typography>
@@ -81,7 +81,7 @@ export default function CustomizedTimeline({ url }) {
                             </TimelineDot></Link>
                         <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '20px', px: 2 }}>
+                    <TimelineContent sx={{ py: '30px', px: 2 }}>
                         <Typography className='tl-text' variant="h6" component="span">
                             Artifact Consulting S.L
                         </Typography>
@@ -105,9 +105,9 @@ export default function CustomizedTimeline({ url }) {
                             </TimelineDot></Link>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '200px', px: 2 }}>
+                    <TimelineContent sx={{ py: '120px', px: 2 }}>
                         <Typography className='tl-text' variant="h6" component="span">
-                            Java Backend
+                            Java Backend Development
                         </Typography>
                         <Typography className='tl-text'>Tokio School</Typography>
                     </TimelineContent>
@@ -130,7 +130,7 @@ export default function CustomizedTimeline({ url }) {
                         <TimelineConnector sx={{ bgcolor: 'success.main' }} />
                     </TimelineSeparator>
                     <TimelineContent
-                        sx={{ py: '30px', px: 2 }}>
+                        sx={{ py: '400px', px: 2 }}>
 
                         <Typography variant="h6" component="span" className='tl-text'>
                             Sistemas 2 Valencia S.L
@@ -155,8 +155,8 @@ export default function CustomizedTimeline({ url }) {
                             </TimelineDot></Link>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '30px', px: 2 }}>
-                        <Typography variant="h6" component="span" className='tl-text'>Cisco</Typography>
+                    <TimelineContent sx={{ py: '0px', px: 2 }}>
+                        <Typography variant="h6" component="span" className='tl-text'>Cisco NetAcad Academy</Typography>
                         <Typography className='tl-text'>CCNA v1</Typography>
                     </TimelineContent>
                 </TimelineItem>
