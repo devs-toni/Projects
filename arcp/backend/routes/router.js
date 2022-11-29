@@ -25,6 +25,7 @@ router.get('/getSkills', Skill.get);
 
 router.post('/saveCourse', upload.single('file'), Course.save);
 router.get('/getCourses', Course.get);
+router.get('/getCourse/:id', Course.getCourseById);
 router.delete('/deleteCourse/:id', Course.delete);
 
 router.post('/saveAboutMe', About.save);

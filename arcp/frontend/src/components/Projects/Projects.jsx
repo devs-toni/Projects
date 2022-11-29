@@ -4,6 +4,7 @@ import Project from './Project';
 import Global from '../../Global';
 import axios from 'axios';
 import { useEffect } from 'react';
+import Arrow from '../Arrow';
 
 const Projects = () => {
 

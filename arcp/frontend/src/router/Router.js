@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch, useParams } from 'react-router-dom';
 import About from '../components/About/About';
 import Contact from '../components/Contact/Contact';
 import Courses from '../components/ITTraining/Courses';
@@ -16,6 +16,7 @@ import BackendContact from '../components/Admin/BackendContact';
 import BackendHome from '../components/Admin/BackendHome';
 import Login from '../components/Admin/Login';
 import PrivateRoute from '../components/PrivateRoute';
+import SpecificCourse from '../components/ITTraining/SpecificCourse';
 
 const Address = () => {
 
@@ -25,11 +26,13 @@ const Address = () => {
                 <Route exact path='/' component={Home} />
                 <Route path='/cv' component={Curriculum} />
                 <Route exact path='/courses' component={Courses} />
+                <Route path='/courses/:course/:id' component={SpecificCourse} />
+
                 <Route exact path='/projects' component={Projects} />
                 <Route path='/about' component={About} />
                 <Route exact path='/contact' component={Contact} />
 
-                <Route exact path='/login' component={Login}/>
+                <Route exact path='/login' component={Login} />
 
                 <PrivateRoute exact path='/admin' component={ConsoleAdmin} />
                 <PrivateRoute exact path='/admin/projects' component={BackendProjects} />

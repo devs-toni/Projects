@@ -59,7 +59,34 @@ let controller = {
         }
         );
     },
+    getCourseById: (req, res) => {
+        let idCourse = req.params.id;
+        req.getConnection((err, conn) => {
+            if (err) next(err);
 
+            conn.query('SELECT * FROM courses WHERE id=?', [idCourse], (err, course) => {
+                console.log(course);
+                if (err) {
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error al extraer los datos'
+                    });
+                }
+                if (!course) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No hay curso para mostrar'
+                    });
+                }
+                return res.status(200).send({
+                    status: 'success',
+                    course
+                })
+
+            });
+        }
+        );
+    },
 
     delete: (req, res) => {
         let courseId = req.params.id;

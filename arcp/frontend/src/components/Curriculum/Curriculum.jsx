@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
-import { FaBeer } from 'react-icons/fa';
 import TopicCurriculum from './TopicCurriculum';
 import Timegraphic from './Timegraphic';
 import '../../assets/css/Curriculum/Curriculum.css';
 import DigitalSkill from './DigitalSkill';
 import Global from '../../Global';
 import axios from 'axios';
+import Arrow from '../Arrow';
 
 
 const Curriculum = () => {
@@ -18,7 +18,7 @@ const Curriculum = () => {
       setSkills(res.data.skills);
     });
   }, []);
-  
+
   return (
     <div className="curriculum">
       <div className='info'>
@@ -33,17 +33,17 @@ const Curriculum = () => {
             <Route path={`${path}/:topic`} component={TopicCurriculum}></Route>
           </Switch>
           <div className='skills'>
-            <p className="title">Digital Skills</p>     
+            <p className="title">Digital Skills</p>
             <div className="digital-skills">
               {skills.map(skill => skill.section === 'Digital' && <DigitalSkill key={skill.id} {...skill} />)}
             </div>
             <p className="title">Language Skills</p>
             <div className="digital-skills">
-            {skills.map(skill => skill.section === 'Language' && <DigitalSkill key={skill.id} {...skill} />)}
+              {skills.map(skill => skill.section === 'Language' && <DigitalSkill key={skill.id} {...skill} />)}
             </div>
             <p className="title">Soft Skills</p>
             <div className="digital-skills">
-            {skills.map(skill => skill.section === 'Soft' && <DigitalSkill key={skill.id} {...skill} />)}
+              {skills.map(skill => skill.section === 'Soft' && <DigitalSkill key={skill.id} {...skill} />)}
             </div>
           </div>
         </div>

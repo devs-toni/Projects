@@ -7,6 +7,7 @@ import aficiones from '../../assets/img/About/aficiones.png';
 import historia from '../../assets/img/About/historia.png';
 import develop from '../../assets/img/About/develop.png';
 import AboutSection from './AboutSection';
+import Arrow from '../Arrow';
 
 const About = () => {
 

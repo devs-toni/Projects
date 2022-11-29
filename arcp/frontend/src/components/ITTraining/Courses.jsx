@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import Global from '../../Global';
 import axios from 'axios';
+import Arrow from '../Arrow';
 
 const Courses = () => {
 
@@ -34,8 +35,8 @@ const Courses = () => {
 
   return (
     <div className='courses'>
-      <div className='right'>
 
+      <div className='right'>
         <Counter hours={hours} />
       </div>
       <div className="left">
@@ -46,16 +47,17 @@ const Courses = () => {
         {
           courses.length > 0
             ? (
-              courses.map((course, index) => {
-                return (
-                  <Course
-                    key={index}
-                    id={index}
-                    course={course}
-                    className='box'
-                  />
-                )
-              })
+              courses.sort((a, b) => a.position < b.position ? 1 : -1)
+                .map((course, index) => {
+                  return (
+                    <Course
+                      key={index}
+                      id={index}
+                      course={course}
+                      className='box'
+                    />
+                  )
+                })
             ) : (
               <h3 className=''>Any Trainings</h3>
             )
