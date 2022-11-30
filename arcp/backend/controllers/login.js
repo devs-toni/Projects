@@ -1,5 +1,3 @@
-'use strict'
-
 const token = { token: 'auth' }
 
 let login = {

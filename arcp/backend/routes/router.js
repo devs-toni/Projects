@@ -1,5 +1,3 @@
-'use strict'
-
 let express = require('express');
 
 let Project = require('../controllers/project');

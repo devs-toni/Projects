@@ -1,5 +1,3 @@
-'use strict';
-
 let controller = {
 
     get: (req, res) => {
