@@ -1,6 +1,0 @@
-{
-    "images": {
-        "pathDev":"http://localhost:3900/public/",
-        "pathProd":"https://api.arcprojects.es/public/"
-    }
-}

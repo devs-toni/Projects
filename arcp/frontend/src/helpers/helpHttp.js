@@ -17,7 +17,6 @@ export const helpHttp = () => {
         //Configuration body
         options.body = JSON.stringify(options.body) || false;
         if (!options.body) delete options.body;
-        console.log(options);
         //Abort request if doesn't exist answer
         setTimeout(() => controller.abort(), 2000);
 

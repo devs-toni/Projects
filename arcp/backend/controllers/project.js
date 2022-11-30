@@ -1,6 +1,6 @@
 'use strict';
 
-const path = require('../paths/imagePaths');
+const path = '/public/'
 
 let controller = {
 

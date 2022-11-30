@@ -15,7 +15,6 @@ const TopicCurriculum = () => {
         axios.post(`${backendUrl}getCurriculum`, { topic }).then(res => {
             setInfo(res.data.cv[0]);
             setDescription([...res.data.cv[0].description.split(',')]);
-            console.log(description);
         });
     }, [topic]);
 

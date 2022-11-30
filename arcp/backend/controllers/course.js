@@ -1,6 +1,6 @@
 'use strict';
 
-const path = require('../paths/imagePaths');
+const path = '/public/'
 
 let controller = {
 
@@ -67,7 +67,6 @@ let controller = {
             if (err) next(err);
 
             conn.query('SELECT * FROM courses WHERE id=?', [idCourse], (err, course) => {
-                console.log(course);
                 if (err) {
                     return res.status(500).send({
                         status: 'error',

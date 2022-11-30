@@ -15,8 +15,8 @@ const MapContainer = ( { styles } ) => {
   }
   
   const onLoad = Marker => {
-    console.log('marker: ', Marker)
-  }
+/*     console.log('marker: ', Marker)
+ */  }
 
   return (
     <LoadScript

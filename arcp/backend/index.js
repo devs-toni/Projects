@@ -13,7 +13,7 @@ let router = require('./routes/router');
 const mysql = require('mysql');
 
 // settings 
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+//app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use((req, res, next) => {
@@ -45,12 +45,14 @@ const sslServer = https.createServer({
     cert: fs.readFileSync(path.join(__dirname,'cert', 'cert.pem'))
 }, app);
 
-// Starting SSL server
-/* sslServer.listen(3900, () => {
-    console.log('Secure server is listening on port 3900')
-}); */
 
+// Starting SSL server
+ sslServer.listen(3900, () => {
+    console.log('Secure server is listening on port 3900')
+}); 
+/*
 // Starting normal server
-app.listen(3900, () => {
+ app.listen(3900, () => {
     console.log('Server listening on port 3900');
  });
+ */

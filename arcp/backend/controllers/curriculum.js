@@ -16,9 +16,7 @@ let controller = {
                     params.description
                 ],
                 (err, cvStored) => {
-                    console.log(cvStored);
                     if (err || !cvStored) {
-                        console.log('Error');
                         return res.status(404).send({
                             status: 'error',
                             message: 'El registro no se ha guardado'

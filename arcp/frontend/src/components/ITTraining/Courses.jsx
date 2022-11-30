@@ -10,7 +10,6 @@ import axios from 'axios';
 const Courses = () => {
 
   const url = Global.url;
-
   const [courses, setcourses] = useState([])
   const [hours, sethours] = useState(0);
 
@@ -53,7 +52,6 @@ const Courses = () => {
                       key={index}
                       id={index}
                       course={course}
-                      className='box'
                     />
                   )
                 })

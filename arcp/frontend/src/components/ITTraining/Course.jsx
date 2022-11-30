@@ -2,14 +2,16 @@
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import '../../assets/css/ITTraining/Course.css';
+import Global from '../../Global';
 
-const Course = ({ course, className }) => {
+const Course = ({ course }) => {
 
   const { url } = useRouteMatch();
+  const backendUrl =  Global.url;
 
   return (
     <div className='box'>
-      <img className='img' src={course.image} alt={course.name} />
+      <img className='img' src={`${backendUrl}${course.image}`} alt={course.name} />
       <div className='info'>
         <p className='name'>{course.name}</p>
         <p className='creator'>{course.center}</p>
