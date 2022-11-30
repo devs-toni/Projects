@@ -28,13 +28,14 @@ export const useForm = (initialForm, validateForm) => {
 
         if (Object.keys(errors).length === 0) {
             setLoading(true);
-            helpHttp().post('https://formsubmit.co/ajax/antoniorufinocasasus@gmail.com', {
+            helpHttp().post('https://formsubmit.co/ajax/devs.toni@gmail.com', {
                 body: form,
                 headers: {
                     'Content-Type': 'application/json',
                     Accept: 'application/json'
                 }
             }).then(res => {
+                console.log(res)
                 setLoading(false);
                 setResponse(res);
                 setTimeout(() => {
