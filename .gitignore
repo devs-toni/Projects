@@ -3,3 +3,10 @@ bikers/src/main/resources/application.yml
 arcp/src/components/specific/MapContainer.jsx
 react+node+mongo/backend/node_modules/
 react+node+mongo/frontend/node_modules/
+arcp/backend/cert/key.pem
+arcp/backend/cert/cert.pem
+arcp/frontend/key.pem
+arcp/frontend/cert.pem
+.gitignore
+arcp/backend/cert/arcp.pem
+arcp/backend/cert/arcp.key

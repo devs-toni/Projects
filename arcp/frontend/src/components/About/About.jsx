@@ -1,13 +1,11 @@
 import React from 'react'
 import '../../assets/css/About/About.css';
 import Me from '../../assets/img/About/me.png';
-import Animation from './Animation';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
 import aficiones from '../../assets/img/About/aficiones.png';
 import historia from '../../assets/img/About/historia.png';
 import develop from '../../assets/img/About/develop.png';
 import AboutSection from './AboutSection';
-import Arrow from '../Arrow';
 
 const About = () => {
 

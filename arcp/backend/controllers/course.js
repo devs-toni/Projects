@@ -1,5 +1,7 @@
 'use strict';
 
+const path = require('../paths/imagePaths');
+
 let controller = {
 
     save: (req, res) => {
@@ -14,7 +16,7 @@ let controller = {
                     params.hours,
                     params.link,
                     params.position,
-                    `http://localhost:3900/public/${req.file.filename}`
+                    `${path}${req.file.filename}`
                 ], 
                 (err, courseStored) => {
                     if (err || !courseStored) {

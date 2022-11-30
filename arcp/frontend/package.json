@@ -53,5 +53,10 @@
   },
   "devDependencies": {
     "@iconify/icons-mdi": "^1.2.32"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   }
 }

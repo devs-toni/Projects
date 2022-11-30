@@ -25,11 +25,11 @@ const Header = ({ switchTheme, isNavShow, setIsNavShow }) => {
                     <Link to='/'><Logo className='logo' ></Logo></Link>
                 </div>
                 <nav id='navigator' className={`navigator ${isNavShow ? 'active' : ''}`}>
-                    <Link className='anchor' to='/courses' onClick={closeMenu}>IT Training</Link>
+                    <Link className='anchor' to='/courses' onClick={closeMenu}>Formación IT</Link>
                     <Link className='anchor' to='/cv' onClick={closeMenu}>Curriculum</Link>
-                    <Link className='anchor' to='/projects' onClick={closeMenu}>Projects</Link>
-                    <Link className='anchor' to='/about' onClick={closeMenu}>About</Link>
-                    <Link className='anchor' to='/contact' onClick={closeMenu}>Contact</Link>
+                    <Link className='anchor' to='/projects' onClick={closeMenu}>Proyectos</Link>
+                    <Link className='anchor' to='/about' onClick={closeMenu}>Sobre mí</Link>
+                    <Link className='anchor' to='/contact' onClick={closeMenu}>Contacto</Link>
                     <Link className='anchor' to='/login' onClick={closeMenu}><i className="bi bi-box-arrow-in-right"></i></Link>
                     <button onClick={switchTheme}><BsSunFill className='bright' /></button>
                 </nav>

@@ -1,4 +1,6 @@
-'use strict'
+'use strict';
+
+const path = require('../paths/imagePaths');
 
 let controller = {
 
@@ -11,7 +13,7 @@ let controller = {
                     params.name,
                     params.description,
                     params.position,
-                    `http://localhost:3900/public/${req.file.filename}`
+                    `${path}${req.file.filename}`
                 ], 
                 (err, projectStored) => {
                     if (err || !projectStored) {
