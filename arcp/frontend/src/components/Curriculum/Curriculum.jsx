@@ -9,9 +9,11 @@ import axios from 'axios';
 
 
 const Curriculum = () => {
+
   let { path, url } = useRouteMatch();
   const [skills, setSkills] = useState([])
   const backendUrl = Global.url;
+
   useEffect(() => {
     axios.get(`${backendUrl}getSkills`).then(res => {
       setSkills(res.data.skills);
@@ -27,29 +29,25 @@ const Curriculum = () => {
       <div className='cv' >
         <Timegraphic url={`${url}`} />
         <div className='explanation'>
-          <div className='study'>
           <Switch>
             <Route exact path={path}></Route>
             <Route path={`${path}/:topic`} component={TopicCurriculum}></Route>
           </Switch>
-          </div>
         </div>
-      </div>
-      <div className='skills'>
-        <div className="digital">
-          <p className="title">Habilidades digitales</p>
+        <div className='skills'>
           <div className="digital-skills">
+            <p className="title">Habilidades digitales</p>
             {skills.map(skill => skill.section === 'Digital' && <DigitalSkill key={skill.id} {...skill} />)}
           </div>
-        </div>
-        <div className="other">
-          <p className="title">Idiomas</p>
-          <div className="digital-skills">
-            {skills.map(skill => skill.section === 'Language' && <DigitalSkill key={skill.id} {...skill} />)}
-          </div>
-          <p className="title">Soft Skills</p>
-          <div className="digital-skills">
-            {skills.map(skill => skill.section === 'Soft' && <DigitalSkill key={skill.id} {...skill} />)}
+          <div className="other">
+            <div className="digital-skills">
+              <p className="title">Idiomas</p>
+              {skills.map(skill => skill.section === 'Language' && <DigitalSkill key={skill.id} {...skill} />)}
+            </div>
+            <div className="digital-skills">
+              <p className="title">Soft Skills</p>
+              {skills.map(skill => skill.section === 'Soft' && <DigitalSkill key={skill.id} {...skill} />)}
+            </div>
           </div>
         </div>
       </div>

@@ -40,17 +40,16 @@ app.use('/', router);
 
 const sslServer = https.createServer({
     key: fs.readFileSync(path.join(__dirname, 'cert', 'key.pem')),
-    cert: fs.readFileSync(path.join(__dirname,'cert', 'cert.pem'))
+    cert: fs.readFileSync(path.join(__dirname, 'cert', 'cert.pem'))
 }, app);
 
 
 // Starting SSL server
- sslServer.listen(3900, () => {
+sslServer.listen(3900, () => {
     console.log('Secure server is listening on port 3900')
-}); 
+});
 /*
 // Starting normal server
  app.listen(3900, () => {
     console.log('Server listening on port 3900');
- });
-*/
+ });*/

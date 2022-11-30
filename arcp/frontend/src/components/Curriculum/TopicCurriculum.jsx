@@ -3,25 +3,35 @@ import { useParams } from 'react-router-dom';
 import '../../assets/css/Curriculum/TopicCurriculum.css';
 import Global from '../../Global';
 import axios from 'axios';
+import CustomPopup from '../Popup';
 
 const TopicCurriculum = () => {
 
+    const backendUrl = Global.url;
     let { topic } = useParams();
     const [info, setInfo] = useState({});
     const [description, setDescription] = useState([]);
-    const backendUrl = Global.url;
+    const [visibility, setVisibility] = useState(false);
+
+    const popupCloseHandler = (e) => {
+        setVisibility(e);
+    };
 
     useEffect(() => {
         axios.post(`${backendUrl}getCurriculum`, { topic }).then(res => {
             setInfo(res.data.cv[0]);
             setDescription([...res.data.cv[0].description.split(',')]);
+            setVisibility(!visibility);
         });
     }, [topic]);
 
 
     return (
         <>
-            {<>
+            <CustomPopup
+                onClose={popupCloseHandler}
+                show={visibility}
+            >
                 <div className='name'>
                     <p className='text-name'>{info.name}</p>
                     <p className='school'>{info.center}</p>
@@ -34,8 +44,7 @@ const TopicCurriculum = () => {
                         )}
                     </ul>
                 </div>
-            </>
-            }
+            </CustomPopup>
         </>
     )
 }

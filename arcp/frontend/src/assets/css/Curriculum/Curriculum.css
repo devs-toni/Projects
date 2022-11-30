@@ -30,7 +30,8 @@
 }
 
 .cv .tl {
-  min-width: 50%;
+  width: 50%;
+  margin: 0 0;
   text-align: center;
   font-size: var(--font-extras-secondary);
 }
@@ -42,112 +43,65 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 40%;
   font-size: var(--font-extras-secondary);
   font-weight: lighter;
 }
 
 .skills {
-  border-top: 1px solid var(--font-color);
-  padding-top: 40px;
-  width: 80%;
-  margin: 0 auto;
+  width: 50%;
   display: flex;
   flex-direction: row;
+  justify-content: start;
 }
 
-.skills .digital {
-  width: 100%;
-  padding: 0 50px;
-}
-
-.skills .other {
-  width: 100%;
-  padding: 0 50px;
-}
-
-.skills .digital .title {
-  width: 90%;
-  margin: 20px auto;
-  text-align: end;
-  font-size: 1.3em;
-}
-
-.skills .digital .digital-skills {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.skills .digital .digital-skills .skill {
-  display: flex;
-  min-width: 100%;
-  height: 40px;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.skills .other .title {
-  width: 90%;
-  margin: 20px auto;
+.skills .title {
+  margin: 10px 0;
   text-align: start;
   font-size: 1.3em;
 }
 
-.skills .other .digital-skills {
+.skills .digital-skills {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
 
-.skills .other .digital-skills .skill {
+.skills .digital-skills .skill {
   display: flex;
   min-width: 100%;
-  height: 40px;
-  flex-direction: row-reverse;
+  height: 35px;
+  flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  margin-left: 0;
 }
 
-.skills .digital .digital-skills .skill .name {
+.skills .digital-skills .skill .name {
   margin-right: 20px;
-  width: 30%;
+  width: 200px;
   text-align: right;
 }
 
-.skills .other .digital-skills .skill .name {
-  margin-right: 20px;
-  width: 30%;
-  text-align: left;
-}
-
-@media screen and (max-width: 1750px) {
-  .cv .explanation {
-    margin-left: 20px;
+@media screen and (max-width: 1825px) {
+  .skills {
+    flex-direction: column;
+    align-items: center;
   }
-  .cv .tl {
-    margin-left: -50px;
-    margin-right: 50px;
+  .skills .digital-skills {
+    margin-bottom: 30px;
   }
   .skill .name {
     width: 50%;
     font-size: 0.9em;
   }
-  .cv .explanation .skills .title {
-    font-size: 1.2em;
-  }
 }
 
 @media screen and (max-width: 1350px) {
-  .cv .explanation {
-    width: 50%;
-    margin: 0 !important;
-  }
   .cv .tl {
     width: 100%;
-    margin: 0;
+    margin: 0 0 40px 0;
   }
   .skills {
     margin-bottom: 50px;
@@ -156,18 +110,9 @@
     width: 30%;
     font-size: 0.9em;
   }
-  .cv .explanation .skills .title {
-    font-size: 1.2em;
-  }
   .cv {
-    flex-flow: column-reverse wrap;
+    flex-flow: column wrap;
     align-items: center;
-  }
-  .skills .digital {
-    padding: 0 0;
-  }
-  .skills .other {
-    padding: 0 0;
   }
 }
 
@@ -181,34 +126,14 @@
   }
   .cv .tl {
     width: 100%;
-    margin: 0;
   }
   .skills {
     margin-bottom: 50px;
     flex-direction: column;
     align-items: center;
   }
-  .skills .digital .title {
-    text-align: center;
-  }
-  .skills .other .title {
-    text-align: center;
-  }
-  .skills .other .digital-skills .skill {
-    justify-content: center;
-    flex-direction: row;
-  }
-  .skills .digital .digital-skills .skill {
-    justify-content: center;
-  }
-  .skills .other .digital-skills .skill .name {
-    text-align: right;
-  }
-  .cv .explanation .skills .title {
-    font-size: var(--font-secondary-size);
-  }
   .cv {
-    flex-flow: column-reverse wrap;
+    flex-flow: column wrap;
     align-items: center;
   }
   .curriculum .info .description {
@@ -217,23 +142,25 @@
 }
 
 @media screen and (max-width: 500px) {
-  .cv .explanation {
-    width: 90%;
-  }
   .skills {
     width: 100%;
     font-size: 0.9em;
   }
-}
-
-@media screen and (max-width: 500px) {
-  .curriculum .info {
-    padding: 0 20px;
-  }
   .tl .tl-text {
     font-size: 0.8em;
   }
-  .cv .explanation {
-    font-size: 1em;
+  .curriculum .info {
+    padding: 0 20px;
+  }
+  .skills .digital-skills .skill {
+    flex-direction: column;
+    height: 45px;
+  }
+  .skills .digital-skills .skill .name {
+    text-align: center;
+    margin: 5px 0 ;
+  }
+  .bar {
+    margin: 0 !important;
   }
 }

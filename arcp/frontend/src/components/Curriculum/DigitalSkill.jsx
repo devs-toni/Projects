@@ -38,7 +38,7 @@ const DigitalSkill = ({ name, level, color }) => {
     return (
         <div className='skill'>
         <p className='name'>{name}</p>
-            <div style={containerStyles}>
+            <div style={containerStyles} className='bar'>
                 <div style={fillerStyles}>
                     <span style={labelStyles}></span>
                 </div>

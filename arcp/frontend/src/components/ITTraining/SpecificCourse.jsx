@@ -32,7 +32,7 @@ const SpecificCourse = () => {
           <Arrow direction='right'></Arrow>
         </div>
         <div className='img'>
-          <img src={showCourse.image} alt="Course" />
+          <img src={`${backendUrl}${showCourse.image}`} alt="Course" />
         </div>
         <div className='info'>
           <p className='title'>{showCourse.name}</p>
