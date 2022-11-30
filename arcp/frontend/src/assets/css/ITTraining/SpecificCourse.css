@@ -30,13 +30,15 @@
 }
 
 .specificCourse .info .description {
+  margin: 0 auto;
+  width: 60%;
   margin-top: 30px;
   font-size: var(--font-extras-secondary);
 }
 
 .specificCourse .technologies {
   display: flex;
-  width: 75%;
+  width: 45%;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;

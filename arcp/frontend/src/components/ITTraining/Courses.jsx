@@ -6,7 +6,6 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import Global from '../../Global';
 import axios from 'axios';
-import Arrow from '../Arrow';
 
 const Courses = () => {
 
@@ -40,8 +39,8 @@ const Courses = () => {
         <Counter hours={hours} />
       </div>
       <div className="left">
-        <h3 className='title-it'>My Studies</h3>
-        <p className='description-it'>All the courses that I have taken since I started programming </p>
+        <h3 className='title-it'>Formación</h3>
+        <p className='description-it'>Sección dedicada a toda la formación en la que me he instruido desde que empecé a programar. En continua actualización.</p>
       </div>
       <div className='boxes'>
         {

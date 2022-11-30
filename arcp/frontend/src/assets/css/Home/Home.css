@@ -27,7 +27,7 @@
 }
 
 .home .welcome-div {
-  color: var(--color);
+  color: var(--font-color);
   display: flex;
   width: 100%;
   justify-content: center;
@@ -40,7 +40,7 @@
 }
 .home .welcome-div .change {
   font-weight: bold;
-  color: var(--react-text-color-changing);
+  color: var(--react-secondary-color-changing);
   font-size: 1em;
 }
 .home .container-description {

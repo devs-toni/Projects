@@ -16,7 +16,7 @@ export default function CustomizedTimeline({ url }) {
 
     return (
         <div className='tl'>
-            <Timeline position="alternate">
+            <Timeline position="left">
                 <TimelineItem>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
@@ -24,7 +24,7 @@ export default function CustomizedTimeline({ url }) {
                         variant="body2"
                         color="var(--color)" className='tl-text'
                     >
-                        October 2022 - June 2023
+                        Octubre 2022 - Junio 2023
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <Link to={`${url}/assembler`}>
@@ -33,9 +33,9 @@ export default function CustomizedTimeline({ url }) {
                             </TimelineDot></Link>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '0px', px: 2 }}>
+                    <TimelineContent sx={{ py: '10px', px: 2 }}>
                         <Typography className='tl-text' variant="h6" component="span">
-                            Master in Software Development
+                            Master Software Development
                         </Typography>
                         <Typography className='tl-text'>Assembler Institute of Technology</Typography>
                     </TimelineContent>
@@ -47,7 +47,7 @@ export default function CustomizedTimeline({ url }) {
                         variant="body2"
                         color="var(--color)" className='tl-text'
                     >
-                        October 2022 - April 2023
+                        Octubre 2022 - Abril 2023
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
@@ -57,7 +57,7 @@ export default function CustomizedTimeline({ url }) {
                             </TimelineDot></Link>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '120px', px: 2 }}>
+                    <TimelineContent sx={{ py: '40px', px: 2 }}>
                         <Typography className='tl-text' variant="h6" component="span">
                             Front-End Development
                         </Typography>
@@ -71,7 +71,7 @@ export default function CustomizedTimeline({ url }) {
                         variant="body2"
                         color="var(--color)" className='tl-text'
                     >
-                        May 2022 - October 2022
+                        Mayo 2022 - Octubre 2022
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
@@ -81,7 +81,7 @@ export default function CustomizedTimeline({ url }) {
                             </TimelineDot></Link>
                         <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '30px', px: 2 }}>
+                    <TimelineContent sx={{ py: '20px', px: 2 }}>
                         <Typography className='tl-text' variant="h6" component="span">
                             Artifact Consulting S.L
                         </Typography>
@@ -95,7 +95,7 @@ export default function CustomizedTimeline({ url }) {
                         variant="body2"
                         color="var(--color)" className='tl-text'
                     >
-                        December 2021 - May 2022
+                        Diciembre 2021 - Mayo 2022
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
@@ -105,7 +105,7 @@ export default function CustomizedTimeline({ url }) {
                             </TimelineDot></Link>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '120px', px: 2 }}>
+                    <TimelineContent sx={{ py: '40px', px: 2 }}>
                         <Typography className='tl-text' variant="h6" component="span">
                             Java Backend Development
                         </Typography>
@@ -119,7 +119,7 @@ export default function CustomizedTimeline({ url }) {
                         variant="body2"
                         color="var(--color)" className='tl-text'
                     >
-                        July 2017 - March 2022
+                        Julio 2017 - Marzo 2022
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
@@ -130,12 +130,12 @@ export default function CustomizedTimeline({ url }) {
                         <TimelineConnector sx={{ bgcolor: 'success.main' }} />
                     </TimelineSeparator>
                     <TimelineContent
-                        sx={{ py: '400px', px: 2 }}>
+                        sx={{ py: '80px', px: 2 }}>
 
                         <Typography variant="h6" component="span" className='tl-text'>
                             Sistemas 2 Valencia S.L
                         </Typography>
-                        <Typography className='tl-text'>Sound Technician</Typography>
+                        <Typography className='tl-text'>Técnico de Sonido</Typography>
                     </TimelineContent>
                 </TimelineItem>
                 <TimelineItem>
@@ -145,7 +145,7 @@ export default function CustomizedTimeline({ url }) {
                         variant="body2"
                         color="var(--color)"
                     >
-                        June 2017 - July 2017
+                        Junio 2017 - Julio 2017
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <TimelineConnector sx={{ bgcolor: 'success.main' }} />
@@ -167,7 +167,7 @@ export default function CustomizedTimeline({ url }) {
                         variant="body2"
                         color="var(--color)"
                     >
-                        September 2015 - June 2017
+                        Septiembre 2015 - Junio 2017
                     </TimelineOppositeContent>
                     <TimelineSeparator>
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
@@ -178,11 +178,11 @@ export default function CustomizedTimeline({ url }) {
                         <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
                     </TimelineSeparator>
                     <TimelineContent className='tl-text'
-                        sx={{ py: '30px', px: 2 }}
+                        sx={{ py: '20px', px: 2 }}
                     >
                         <Typography className='tl-text' variant="h6" component="span">Ciclo Formativo Grado Superior
                         </Typography>
-                        <Typography className='tl-text'>Computer and Telecommunications Systems</Typography>
+                        <Typography className='tl-text'>Sistemas Informáticos y Telecomunicaciones</Typography>
                     </TimelineContent>
                 </TimelineItem>
             </Timeline>

@@ -23,8 +23,8 @@ const Projects = () => {
   return (
     <div className='courses projects'>
       <div className="info">
-        <h1 className='title'>Projects</h1>
-        <p className='description'>Please, take a look at the different projects that I have been creating and improving since I started in this world.</p>
+        <h1 className='title'>Proyectos</h1>
+        <p className='description'>Aquí puedes tomarte tu tiempo para echar un vistazo a los diferentes proyectos que he estado creando y mejorando desde que las habilidades que he ido adquiriendo me lo han permitido.</p>
       </div>
       {
         projects.length > 0

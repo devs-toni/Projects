@@ -1,8 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React, { Component } from 'react';
-import { Link, useRouteMatch, Switch, Route } from 'react-router-dom';
+import React from 'react';
+import { Link, useRouteMatch } from 'react-router-dom';
 import '../../assets/css/ITTraining/Course.css';
-import SpecificCourse from './SpecificCourse';
 
 const Course = ({ course, className }) => {
 

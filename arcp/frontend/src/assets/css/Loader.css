@@ -1,8 +1,10 @@
 .lds-hourglass {
-  display: inline-block;
+  display: inline-flex;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 60%;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
 }
 .lds-hourglass:after {
   content: " ";

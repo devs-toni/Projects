@@ -10,8 +10,8 @@ const Contact = () => {
 
   return (
     <div className='contact'>
-      <h1 className='title'>Contact</h1>
-      <p className='description'>Please contact me through the form or through my contact information.</p>
+      <h1 className='title'>Contacto</h1>
+      <p className='description'>Por favor, contacta conmigo mediante el formulario o a través de cualquier otro método de contacto que te proporciono si tienes cualquier duda, inquietud o proposición</p>
       <p className='name'>Antonio Rufino Casasus</p>
       <div className="data-contact">
         <div className="data-email">

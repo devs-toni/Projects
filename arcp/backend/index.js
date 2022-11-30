@@ -52,5 +52,5 @@ const sslServer = https.createServer({
 
 // Starting normal server
 app.listen(3900, () => {
-    console.log('Server listening on port ' + app.get('port'));
+    console.log('Server listening on port 3900');
  });

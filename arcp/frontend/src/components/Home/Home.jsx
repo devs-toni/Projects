@@ -7,15 +7,15 @@ const Home = () => {
     <div className='home'>
       <div className='title'>
         <p className='name'>Antonio Rufino Casasus</p>
-        <p className="job">Full Stack Developer</p>
+        <p className="job">Backend Developer</p>
       </div>
       <div className="welcome-div">
-        <span className='welcome'>`¡Welcome to my $&#123; &lt; </span>
+        <span className='welcome'>`¡Bienvenido a mi $&#123; &lt; </span>
         <Transition className='welcome change' />
-        <span className='welcome'>&gt; &#125;!`, I hope you enjoy it.</span>
+        <span className='welcome'>&gt; &#125;!`, espero que lo disfrutes.</span>
       </div>
       <div className='container-description'>
-        <p className='description'>Here you can find my background and experience as well as the projects I have worked on.</p>
+        <p className='description'>Aquí podrás encontrar información sobre mi perfil personal y laboral, además de los proyectos personales en los que estoy trabajando.</p>
       </div>
     </div>
   )

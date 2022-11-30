@@ -22,21 +22,20 @@ const TopicCurriculum = () => {
 
     return (
         <>
-            {info &&
-                <div className='study'>
-                    <div className='name'>
-                        <p className='text-name'>{info.name}</p>
-                        <p className='school'>{info.center}</p>
-                        <p className='data'>{info.date}</p>
-                    </div>
-                    <div className='description'>
-                        <ul className='text-description'>
-                            {description.map((line, key) =>
-                                <li className='li' key={key}>{line}</li>
-                            )}
-                        </ul>
-                    </div>
+            {<>
+                <div className='name'>
+                    <p className='text-name'>{info.name}</p>
+                    <p className='school'>{info.center}</p>
+                    <p className='data'>{info.date}</p>
                 </div>
+                <div className='description'>
+                    <ul className='text-description'>
+                        {description.map((line, key) =>
+                            <li className='li' key={key}>{line}</li>
+                        )}
+                    </ul>
+                </div>
+            </>
             }
         </>
     )

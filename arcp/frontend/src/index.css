@@ -16,7 +16,8 @@ textarea {
   --main-height: 100vh;
   --main-padding: 5em;
   --main-bg-color: #eee;
-  
+  --width-description: 50%;
+
   --font-title-size: 2.2em;
   --font-secondary-size: 1.2em;
   --font-enormous-size: 5em;

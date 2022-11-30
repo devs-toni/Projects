@@ -108,6 +108,12 @@
   }
 }
 
+@media screen and (max-width: 850px) {
+  .box:hover {
+    transform: none;
+  }
+}
+
 @media screen and (max-width: 520px) {
   .box {
     flex-direction: column;

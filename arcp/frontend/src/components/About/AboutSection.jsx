@@ -19,13 +19,12 @@ const AboutSection = () => {
             topic
         }).then(res => {
             setText(res.data.topic[0].text);
-        })
+        });
     }, [topic]);
-
 
     return (
         <>
-            {text && <Animation className='born' speed={text.length < 200 ? 0 : 20} content={text}/> }
+            {text && <Animation className='born' speed={5} content={text}/>}
         </>
     )
 }

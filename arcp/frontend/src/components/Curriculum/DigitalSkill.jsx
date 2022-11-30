@@ -2,26 +2,27 @@ import React, { useEffect, useState } from 'react'
 
 
 
-const DigitalSkill = ({ name, level }) => {
+const DigitalSkill = ({ name, level, color }) => {
 
     const [completed, setCompleted] = useState(0);
 
     useEffect(() => {
-      setInterval(() => setCompleted(level), 1000);
+      setInterval(() => setCompleted(level), 30);
     }, []);
 
     const containerStyles = {
-        height: 15,
-        width: '40%',
+        height: 5,
+        width: '160px',
         backgroundColor: 'var(--font-color)',
         borderRadius: 50,
-        margin: 50
+        margin: 50,
+        marginLeft: 20
       }
     
       const fillerStyles = {
         height: '100%',
         width: `${completed}%`,
-        backgroundColor: 'var(--react-secondary-color-changing)',
+        backgroundColor: color,
         borderRadius: 'inherit',
         textAlign: 'right',
         transition: 'width 3s ease-in-out'

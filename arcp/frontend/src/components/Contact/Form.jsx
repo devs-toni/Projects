@@ -55,16 +55,17 @@ const Form = () => {
 
   return (
     <>
+      {loading ? <Loader /> : 
       <form action='f2834b9068e7ce4a793c0fa0d1519fd5' className='form' onSubmit={handleSubmit}>
         <div className="column">
-          <Input type='text' name='name'  blur={handleBlur} change={handleChange} val={form.name} required error={errors.name && errors.name} />
-          <Input type='email' name='email'  blur={handleBlur} change={handleChange} val={form.email} required error={errors.email && errors.email} />
-          <Input type='text' name='phone' blur={handleBlur}  change={handleChange} val={form.phone} error={errors.phone && errors.phone} />
-          <Input type='text' name='subject'  blur={handleBlur} change={handleChange} val={form.subject} required error={errors.subject && errors.subject} />
+          <Input type='text' name='name' placeholder='Nombre'  blur={handleBlur} change={handleChange} val={form.name} required error={errors.name && errors.name} />
+          <Input type='email' name='email' placeholder='Email' blur={handleBlur} change={handleChange} val={form.email} required error={errors.email && errors.email} />
+          <Input type='text' name='phone' placeholder='Móvil' blur={handleBlur}  change={handleChange} val={form.phone} error={errors.phone && errors.phone} />
+          <Input type='text' name='subject' placeholder='Tema' blur={handleBlur} change={handleChange} val={form.subject} required error={errors.subject && errors.subject} />
         </div>
         <div className="comments-column">
           <div className="comments">
-            <label>Message</label>
+            <label>Mensaje</label>
             <textarea className='textarea' name='comments'  onBlur={handleBlur} onChange={handleChange} value={form.comments} required />
           </div>
           {errors.comments && (<p className='errorComments'>{errors.comments}</p>)}
@@ -72,9 +73,8 @@ const Form = () => {
         <div className="submit-container">
           <input type='submit' className='submit' value='ENVIAR' />
         </div>
-      </form>
-      {loading && <Loader />}
-      {response && (<Message msg='Los datos han sido enviados' bgColor='var(--react-text-color-changing2)' />)}
+      </form>}
+      {response && (<Message msg='Los datos han sido enviados' bgColor='var(--react-secondary-color-changing)' />)}
     </>
   )
 }

@@ -4,7 +4,7 @@ import TextTransition, { presets } from "react-text-transition";
 const TEXTS = [
     "portfolio",
     "🌎",
-    "page",
+    "página",
 ];
 
 export const Transition = ( { className } ) => {

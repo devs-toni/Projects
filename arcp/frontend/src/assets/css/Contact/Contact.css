@@ -16,6 +16,7 @@
 
 .contact .description {
   font-size: var(--font-secondary-size);
+  width: var(--width-description);
 }
 
 .contact .name {
@@ -172,6 +173,12 @@
     width: 90%;
     height: 450px;
     margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .contact .description {
+    width: 90%;
   }
 }
 
