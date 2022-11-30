@@ -22,7 +22,7 @@ const Header = ({ switchTheme, isNavShow, setIsNavShow }) => {
         <div className='header'>
             <HashRouter>
                 <div className='div-logo'>
-                    <Link to='/'><Logo className='logo' onClick={closeMenu}></Logo></Link>
+                    <Link to='/'  onClick={closeMenu}><Logo className='logo'></Logo></Link>
                 </div>
                 <nav id='navigator' className={`navigator ${isNavShow ? 'active' : ''}`}>
                     <Link className='anchor' to='/courses' onClick={closeMenu}>Formación IT</Link>
