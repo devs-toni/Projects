@@ -13,8 +13,7 @@ const Courses = () => {
     const [courses, setcourses] = useState([])
     const [hours, sethours] = useState(0);
     const [visibility, setVisibility] = useState(false);
-    const [course, setCourse] = useState({});
-    const [description, setDescription] = useState([]);
+    const [course, setCourse] = useState(null);
     const [techs, settechs] = useState([]);
     const [colors, setColors] = useState([]);
     const [borders, setBorders] = useState([]);
@@ -22,17 +21,18 @@ const Courses = () => {
         if (e.target.getAttribute('topic')) {
             axios.get(`${url}getCourse/${e.target.getAttribute('topic')}`).then(res => {
                 setCourse(res.data.course[0]);
-                setDescription([...res.data.course[0].description.split(',')]);
                 settechs(res.data.course[0].technologies.split(','));
                 setColors(res.data.course[0].color.split(','));
                 setBorders(res.data.course[0].border.split(','));
                 setVisibility(!visibility);
+                document.querySelector('body').style.overflow = 'hidden';
             });
         }
     }
 
     const popupCloseHandler = (e) => {
         setVisibility(e);
+        document.querySelector('body').style.overflow = 'auto';
     };
 
     useEffect(() => {

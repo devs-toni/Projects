@@ -40,11 +40,12 @@
 
   }
   .popup {
-    margin: 5% auto;
+    margin: 3% auto;
     padding: 20px 50px;
     background-color: var(--main-bg-color);
     color: var(--font-color);
     width: 40%;
+    max-height: 90%;
     position: relative;
     transition: all 3s ease-in-out;
     overflow-y:auto;
@@ -148,6 +149,7 @@
     .popup {
       width: 60%;
       height: 90%;
+      margin: 7% auto;
     }
   }
   @media screen and (max-width: 600px) {
