@@ -16,6 +16,7 @@ const Curriculum = () => {
 
   const popupCloseHandler = (e) => {
     setVisibility(e);
+    document.querySelector('body').style.overflow = 'auto';
   };
   useEffect(() => {
     axios.get(`${backendUrl}getSkills`).then(res => {
@@ -30,6 +31,7 @@ const Curriculum = () => {
         setInfo(res.data.cv[0]);
         setDescription([...res.data.cv[0].description.split(',')]);
         setVisibility(!visibility);
+        document.querySelector('body').style.overflow = 'hidden';
       });
     }
   }
