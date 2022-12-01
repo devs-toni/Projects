@@ -34,6 +34,56 @@
   margin-top: 65px;
 }
 
+.courses .specificCourse .img {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.courses .specificCourse .img img {
+  width: 80%;
+  max-width: 440px;
+  max-height: 440px;
+  height: 80%;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+.courses .specificCourse .info .title{
+  font-size: var(--font-title-size);
+}
+
+.courses .specificCourse .info .center {
+  font-size: var(--font-secondary-size);
+}
+
+.courses .specificCourse .info .description {
+  font-size: var(--font-extras-size);
+  margin-bottom: 30px;
+}
+
+.courses .specificCourse .technologies {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.courses .specificCourse .technologies .tech {
+  margin: 8px 7px;
+  color: black;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 3px solid;
+  padding: 5px 10px;
+  max-height: 35px;
+  font-size: 0.7em;
+}
+
 @media screen and (max-width: 1018px) {
   .courses {
     padding: 30px;

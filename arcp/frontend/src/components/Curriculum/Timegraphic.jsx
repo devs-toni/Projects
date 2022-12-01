@@ -10,179 +10,176 @@ import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
 
-export default function CustomizedTimeline({ url }) {
+export default function CustomizedTimeline({ handlePopup }) {
 
+    let style = {
+        cursor: 'pointer'
+    }
     return (
         <div className='tl'>
             <Timeline position="left">
-                <TimelineItem>
+                <TimelineItem onClick={handlePopup} style={style} topic='assembler'>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" className='tl-text'
+                        color="var(--color)" className='tl-text' onClick={handlePopup} style={style} topic='assembler'
                     >
                         Octubre 2022 - Junio 2023
                     </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <Link to={`${url}/assembler`}>
-                            <TimelineDot color="secondary">
-                                <ImportContactsIcon />
-                            </TimelineDot></Link>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    <TimelineSeparator onClick={handlePopup} style={style} topic='assembler'>
+                        <TimelineDot color="secondary" onClick={handlePopup} style={style} topic='assembler'>
+                            <ImportContactsIcon onClick={handlePopup} style={style} topic='assembler' />
+                        </TimelineDot>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='assembler' />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '10px', px: 2 }}>
-                        <Typography className='tl-text' variant="h6" component="span">
+                    <TimelineContent sx={{ py: '10px', px: 2 }} onClick={handlePopup} style={style} topic='assembler'>
+                        <Typography className='tl-text' variant="h6" component="span" onClick={handlePopup} style={style} topic='assembler'>
                             Master Software Development
                         </Typography>
-                        <Typography className='tl-text'>Assembler Institute of Technology</Typography>
+                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='assembler'>Assembler Institute of Technology</Typography>
                     </TimelineContent>
                 </TimelineItem>
-                <TimelineItem>
+                <TimelineItem onClick={handlePopup} style={style} topic='front'>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" className='tl-text'
+                        color="var(--color)" className='tl-text' onClick={handlePopup} style={style} topic='front'
                     >
                         Octubre 2022 - Abril 2023
                     </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-                        <Link to={`${url}/front`}>
-                            <TimelineDot color="secondary">
-                                <ImportContactsIcon />
-                            </TimelineDot></Link>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    <TimelineSeparator onClick={handlePopup} style={style} topic='front'>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='front' />
+
+                        <TimelineDot color="secondary" onClick={handlePopup} style={style} topic='front'>
+                            <ImportContactsIcon onClick={handlePopup} style={style} topic='front' />
+                        </TimelineDot>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='front' />
                     </TimelineSeparator>
                     <TimelineContent sx={{ py: '40px', px: 2 }}>
-                        <Typography className='tl-text' variant="h6" component="span">
+                        <Typography className='tl-text' variant="h6" component="span" onClick={handlePopup} style={style} topic='front'>
                             Front-End Development
                         </Typography>
-                        <Typography className='tl-text'>Tokio School</Typography>
+                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='front'>Tokio School</Typography>
                     </TimelineContent>
                 </TimelineItem>
-                <TimelineItem>
+                <TimelineItem onClick={handlePopup} style={style} topic='artifact'>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" className='tl-text'
+                        color="var(--color)" className='tl-text' onClick={handlePopup} style={style} topic='artifact'
                     >
                         Mayo 2022 - Octubre 2022
                     </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-                        <Link to={`${url}/artifact`}>
-                            <TimelineDot color="primary">
-                                <LaptopChromebookIcon />
-                            </TimelineDot></Link>
-                        <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
+                    <TimelineSeparator onClick={handlePopup} style={style} topic='artifact'>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='artifact' />
+
+                        <TimelineDot color="primary" onClick={handlePopup} style={style} topic='artifact'>
+                            <LaptopChromebookIcon onClick={handlePopup} style={style} topic='artifact' />
+                        </TimelineDot>
+                        <TimelineConnector sx={{ bgcolor: 'primary.main' }} onClick={handlePopup} style={style} topic='artifact' />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '20px', px: 2 }}>
-                        <Typography className='tl-text' variant="h6" component="span">
+                    <TimelineContent sx={{ py: '20px', px: 2 }} onClick={handlePopup} style={style} topic='artifact'>
+                        <Typography className='tl-text' variant="h6" component="span" onClick={handlePopup} style={style} topic='artifact'>
                             Artifact Consulting S.L
                         </Typography>
-                        <Typography className='tl-text'>Backend Developer</Typography>
+                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='artifact'>Backend Developer</Typography>
                     </TimelineContent>
                 </TimelineItem>
-                <TimelineItem>
+                <TimelineItem onClick={handlePopup} style={style} topic='java'>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" className='tl-text'
+                        color="var(--color)" className='tl-text' onClick={handlePopup} style={style} topic='java'
                     >
                         Diciembre 2021 - Mayo 2022
                     </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineConnector sx={{ bgcolor: 'primary.main' }} />
-                        <Link to={`${url}/java`}>
-                            <TimelineDot color="secondary">
-                                <ImportContactsIcon />
-                            </TimelineDot></Link>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    <TimelineSeparator onClick={handlePopup} style={style} topic='java'>
+                        <TimelineConnector sx={{ bgcolor: 'primary.main' }} onClick={handlePopup} style={style} topic='java' />
+                        <TimelineDot color="secondary" onClick={handlePopup} style={style} topic='java'>
+                            <ImportContactsIcon onClick={handlePopup} style={style} topic='java' />
+                        </TimelineDot>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='java' />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '40px', px: 2 }}>
-                        <Typography className='tl-text' variant="h6" component="span">
+                    <TimelineContent sx={{ py: '40px', px: 2 }} onClick={handlePopup} style={style} topic='java'>
+                        <Typography className='tl-text' variant="h6" component="span" onClick={handlePopup} style={style} topic='java'>
                             Java Backend Development
                         </Typography>
-                        <Typography className='tl-text'>Tokio School</Typography>
+                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='java'>Tokio School</Typography>
                     </TimelineContent>
                 </TimelineItem>
-                <TimelineItem>
+                <TimelineItem onClick={handlePopup} style={style} topic='sistemas'>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" className='tl-text'
+                        color="var(--color)" className='tl-text' onClick={handlePopup} style={style} topic='sistemas'
                     >
                         Julio 2017 - Marzo 2022
                     </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-                        <Link to={`${url}/sistemas`}>
-                            <TimelineDot color="success">
-                                <HeadsetMicIcon />
-                            </TimelineDot></Link>
-                        <TimelineConnector sx={{ bgcolor: 'success.main' }} />
+                    <TimelineSeparator onClick={handlePopup} style={style} topic='sistemas'>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='sistemas' />
+                        <TimelineDot color="success" onClick={handlePopup} style={style} topic='sistemas'>
+                            <HeadsetMicIcon onClick={handlePopup} style={style} topic='sistemas' />
+                        </TimelineDot>
+                        <TimelineConnector sx={{ bgcolor: 'success.main' }} onClick={handlePopup} style={style} topic='sistemas' />
                     </TimelineSeparator>
                     <TimelineContent
-                        sx={{ py: '80px', px: 2 }}>
+                        sx={{ py: '80px', px: 2 }} onClick={handlePopup} style={style} topic='sistemas'>
 
-                        <Typography variant="h6" component="span" className='tl-text'>
+                        <Typography variant="h6" component="span" className='tl-text' onClick={handlePopup} style={style} topic='sistemas'>
                             Sistemas 2 Valencia S.L
                         </Typography>
-                        <Typography className='tl-text'>Técnico de Sonido</Typography>
+                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='sistemas'>Técnico de Sonido</Typography>
                     </TimelineContent>
                 </TimelineItem>
-                <TimelineItem>
+                <TimelineItem onClick={handlePopup} style={style} topic='cisco'>
                     <TimelineOppositeContent className='tl-text'
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)"
+                        color="var(--color)" onClick={handlePopup} style={style} topic='cisco'
                     >
                         Junio 2017 - Julio 2017
                     </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineConnector sx={{ bgcolor: 'success.main' }} />
-                        <Link to={`${url}/cisco`}>
-                            <TimelineDot color="secondary">
-                                <ImportContactsIcon />
-                            </TimelineDot></Link>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    <TimelineSeparator onClick={handlePopup} style={style} topic='cisco'>
+                        <TimelineConnector sx={{ bgcolor: 'success.main' }} onClick={handlePopup} style={style} topic='cisco' />
+                        <TimelineDot color="secondary" onClick={handlePopup} style={style} topic='cisco' >
+                            <ImportContactsIcon onClick={handlePopup} style={style} topic='cisco' />
+                        </TimelineDot>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='cisco' />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '0px', px: 2 }}>
-                        <Typography variant="h6" component="span" className='tl-text'>Cisco NetAcad Academy</Typography>
-                        <Typography className='tl-text'>CCNA v1</Typography>
+                    <TimelineContent sx={{ py: '0px', px: 2 }} onClick={handlePopup} style={style} topic='cisco' >
+                        <Typography variant="h6" component="span" className='tl-text' onClick={handlePopup} style={style} topic='cisco'>Cisco NetAcad Academy</Typography>
+                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='cisco'>CCNA v1</Typography>
                     </TimelineContent>
                 </TimelineItem>
-                <TimelineItem>
+                <TimelineItem onClick={handlePopup} style={style} topic='fp'>
                     <TimelineOppositeContent className='tl-text'
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)"
+                        color="var(--color)" onClick={handlePopup} style={style} topic='fp'
                     >
                         Septiembre 2015 - Junio 2017
                     </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
-                        <Link to={`${url}/fp`}>
-                            <TimelineDot color="secondary">
-                                <ImportContactsIcon />
-                            </TimelineDot></Link>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} />
+                    <TimelineSeparator onClick={handlePopup} style={style} topic='fp'>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='fp' />
+                        <TimelineDot color="secondary" onClick={handlePopup} style={style} topic='fp'>
+                            <ImportContactsIcon onClick={handlePopup} style={style} topic='fp' />
+                        </TimelineDot>
+                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='fp' />
                     </TimelineSeparator>
                     <TimelineContent className='tl-text'
-                        sx={{ py: '20px', px: 2 }}
+                        sx={{ py: '20px', px: 2 }} onClick={handlePopup} style={style} topic='fp'
                     >
-                        <Typography className='tl-text' variant="h6" component="span">Ciclo Formativo Grado Superior
+                        <Typography className='tl-text' variant="h6" component="span" onClick={handlePopup} style={style} topic='fp'>Ciclo Formativo Grado Superior
                         </Typography>
-                        <Typography className='tl-text'>Sistemas Informáticos y Telecomunicaciones</Typography>
+                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='fp'>Sistemas Informáticos y Telecomunicaciones</Typography>
                     </TimelineContent>
                 </TimelineItem>
             </Timeline>

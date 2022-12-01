@@ -16,7 +16,6 @@ import BackendContact from '../components/Admin/BackendContact';
 import BackendHome from '../components/Admin/BackendHome';
 import Login from '../components/Admin/Login';
 import PrivateRoute from '../components/PrivateRoute';
-import SpecificCourse from '../components/ITTraining/SpecificCourse';
 
 const Address = () => {
 
@@ -24,9 +23,8 @@ const Address = () => {
         <HashRouter>
             <Switch>
                 <Route exact path='/' component={Home} />
-                <Route path='/cv' component={Curriculum} />
+                <Route exact path='/cv' component={Curriculum} />
                 <Route exact path='/courses' component={Courses} />
-                <Route path='/courses/:course/:id' component={SpecificCourse} />
 
                 <Route exact path='/projects' component={Projects} />
                 <Route path='/about' component={About} />
