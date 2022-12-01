@@ -193,4 +193,10 @@
   .features .hours {
     width: 70%;
   }
+  .actions {
+    width: 99%;
+  }
+  .actions .eye {
+    margin-right: 0;
+  }
 }
