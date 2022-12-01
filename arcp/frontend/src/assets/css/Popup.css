@@ -138,6 +138,7 @@
   @media screen and (max-width: 850px) {
     .popup {
       width: 60%;
+      height: 90%;
     }
   }
   @media screen and (max-width: 600px) {
