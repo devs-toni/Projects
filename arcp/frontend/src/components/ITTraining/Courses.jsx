@@ -32,6 +32,7 @@ const Courses = () => {
 
     const popupCloseHandler = (e) => {
         setVisibility(e);
+        setCourse({});
         document.querySelector('body').style.overflow = 'auto';
     };
 

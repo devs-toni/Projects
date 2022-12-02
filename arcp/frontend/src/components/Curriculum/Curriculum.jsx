@@ -16,6 +16,7 @@ const Curriculum = () => {
 
     const popupCloseHandler = (e) => {
         setVisibility(e);
+        setInfo({});
         document.querySelector('body').style.overflow = 'auto';
     };
     useEffect(() => {
