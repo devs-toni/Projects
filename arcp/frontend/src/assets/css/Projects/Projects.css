@@ -15,6 +15,7 @@
 
 .projects .info .title {
   font-size: var(--font-title-size);
+  margin-bottom: 20px;
 }
 
 .projects .info .description {

@@ -126,7 +126,7 @@
 
 @media screen and (max-width: 850px) {
   .about .title {
-    margin-bottom: 40px;
+
   }
   .about .me {
     flex-direction: column;

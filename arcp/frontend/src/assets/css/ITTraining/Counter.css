@@ -1,17 +1,25 @@
 .counter .hours {
-    color: var(--react-secondary-color-changing);
-    font-size: var(--font-enormous-size);
-    max-height: 200px;
+  color: var(--react-secondary-color-changing);
+  font-size: var(--font-enormous-size);
+  max-height: 200px;
 }
 
 .counter .p-hours {
-    color: var(--react-secondary-color-changing);
-    font-size: var(--font-title-size);
-    margin-left: 10px; 
+  color: var(--react-secondary-color-changing);
+  font-size: var(--font-title-size);
+  margin-left: 10px;
 }
 
 .counter .hours.main {
-    color: var(--react-secondary-color-changing);
-    margin-left: 0;
-    border: none;
-  }
+  color: var(--react-secondary-color-changing);
+  margin-left: 0;
+  border: none;
+}
+
+@media screen and (max-width: 400px) {
+    .counter .p-hours {
+        font-size: 1.5em;
+        margin-top: 100px;
+        margin-left: -1px;
+    }
+}
