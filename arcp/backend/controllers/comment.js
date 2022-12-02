@@ -2,11 +2,13 @@ let controller = {
 
     save: (req, res) => {
         let params = req.body;
+        console.log(params);
 
         req.getConnection((err, conn) => {
             if (err) next(err);
 
             conn.query('INSERT INTO comments (name, comment) VALUES (?, ?)', [params.name, params.comment], (err, commentStored) => {
+                console.log(err)
                 if (err || !commentStored) {
                     return res.status(404).send({
                         status: 'error',
@@ -25,6 +27,7 @@ let controller = {
 
     get: (req, res) => {
         let params = req.body;
+
         req.getConnection((err, conn) => {
             if (err) next(err);
 

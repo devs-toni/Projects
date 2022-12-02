@@ -30,7 +30,7 @@ router.delete('/deleteCourse/:id', Course.delete);
 router.post('/saveAboutMe', About.save);
 router.post('/getAboutMe', About.getAboutMe);
 
-router.post('saveComment', Comment.save)
+router.post('/saveComment', Comment.save)
 router.get('/getComments', Comment.get);
 
 router.post('/login', Login.login);
