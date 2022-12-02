@@ -66,7 +66,7 @@
 .features .eye {
   flex-grow: 1;
   text-align: end;
-  margin-right: 20px;
+  margin-right: 10px;
   color: #FFF;
   cursor: auto;
 }
@@ -84,6 +84,7 @@
 
 .features .eye .white {
   filter: var(--filter-fix);
+  border: none !important;;
 }
 
 @media screen and (max-width: 1990px) {
@@ -158,6 +159,10 @@
     padding-bottom: 15px;
   }
 
+  .features .actions {
+    padding-right: 20px;
+  }
+
   .features .hours {
     width: 20%;
     margin-left: 20px;
@@ -168,7 +173,7 @@
 
   .features .eye {
     width: 100%;
-    margin-left: 20px;
+    margin-left: 10px;
     margin-bottom: 10px;
   }
 }
