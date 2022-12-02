@@ -83,33 +83,37 @@
     margin-top: 20px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
   }
 
   .name .image-container .image {
+    padding: 0 40px;
     width: 80%;
     max-width: 440px;
     max-height: 440px;
     height: 80%;
     background-size: cover;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
   
   .name .text-name {
-    margin-bottom: 0;
+    padding: 0 40px;
     font-size: var(--font-title-size);
-    text-align: center;
+    text-align: start;
   }
   
   .name .school {
-    margin-bottom: 15px;
+    padding: 0 40px;
+    margin-bottom: 25px;
     font-size: var(--font-secondary-size);
-    text-align: center;
+    text-align: start;
   }
   
   .name .data {
-    text-align: center;
+    padding: 0 40px;
+    text-align: start;
+    margin-bottom: 30px;
     margin-left: 0;
     font-style: italic;
     font-size: var(--font-extras-title);
@@ -124,14 +128,17 @@
   
   .description .text-description {
     width: 100%;
-    padding-left: 0;
-    list-style-type: disc;
-    text-align: center;
+    padding: 0 40px;
+    list-style-type: none;
+    text-align: start;
   }
   
   .description .text-description .li {
-    margin-bottom: 10px;
-    line-height: 25px;
+    margin-bottom: 15px;
+    line-height: 30px;
+    font-size: 0.8em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.171);
   }
   
   
