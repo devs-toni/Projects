@@ -7,7 +7,7 @@ const Project = ({ id, project }) => {
   return (
     <div className='project'>
       <div className={id % 2 === 0 ? 'container reverse' : 'container'}>
-        <img className={id % 2 === 0 ? 'img' : 'img'} src={`${url}${project.image}`} alt={project.name} />
+        <div className="container-img"><img className={id % 2 === 0 ? 'img' : 'img'} src={`${url}${project.image}`} alt={project.name} /></div>
         <div className={`info ${id % 2 === 0 ? 'marginLeft' : ''}`}>
           <p className='name'>{project.name}</p>
           <p className='description'>{project.description}</p>
