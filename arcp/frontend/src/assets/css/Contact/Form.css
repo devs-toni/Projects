@@ -38,6 +38,9 @@
   border-radius: 5px;
   width: 51%;
   outline: none;
+  background-color: var(--input-color);
+  color: var(--input-font-color);
+  padding: 13px;
 }
 
 .contact .submit-container {

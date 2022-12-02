@@ -91,7 +91,7 @@
 .home .comentarios .comments input,
 .home .comentarios .comments textarea {
   font-size: 0.7em;
-  background-color: rgba(0, 0, 0, 0.377);
+  background-color: rgba(0, 0, 0, 0.377) !important;
   width: 95%;
   outline: none;
   border: none;
@@ -133,6 +133,19 @@
   width: 10%;
   cursor: pointer;
   margin: 10px 10px;
+}
+
+.comments input:-webkit-autofill,
+.comments input:-webkit-autofill:focus,
+.comments input:-webkit-autofill:hover,
+.comments textarea:-webkit-autofill,
+.comments textarea:-webkit-autofill:hover,
+.comments textarea:-webkit-autofill:focus {
+  outline: none;
+  border: none;
+  -webkit-text-fill-color: white !important;
+  box-shadow: 0 0 0px 1000px var(--input-home-bg-color) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 @media screen and (max-width: 820px) {

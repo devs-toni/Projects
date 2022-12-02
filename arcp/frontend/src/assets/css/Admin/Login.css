@@ -6,3 +6,29 @@
     flex-direction: column;
     align-items: center;
 }
+
+.login input {
+    background-color: white;
+    color: var(--react-color);
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important
+}
+
+.login input:hover {
+    background-color: var(--input-color) !important;
+    color: var(--input-font-color) !important;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important
+}
+
+.login input:-webkit-autofill,
+.login input:-webkit-autofill:hover,
+.login input:-webkit-autofill:focus {
+  outline: none;
+  border: none;
+  -webkit-text-fill-color: var(--react-color);
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
