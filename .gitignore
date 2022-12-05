@@ -10,3 +10,4 @@ arcp/frontend/cert.pem
 .gitignore
 arcp/backend/cert/arcp.pem
 arcp/backend/cert/arcp.key
+arcp/frontend/public/index.html
