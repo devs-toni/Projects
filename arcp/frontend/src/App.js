@@ -1,8 +1,11 @@
 import './App.css';
 import Layout from './page/Layout';
 import useLocalStorage from 'use-local-storage';
-import { useState } from 'react';
-import Login from './components/Admin/Login';
+import { useEffect, useState } from 'react';
+import ReactGA from 'react-ga';
+
+const TRACKING_ID = "G-CPMWR2W1F0"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
 
@@ -14,6 +17,10 @@ function App() {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
   }
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <div className='App' data-theme={theme}>
