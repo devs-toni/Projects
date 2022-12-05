@@ -2,7 +2,7 @@
     min-height: var(--main-height);
     background-color: var(--main-bg-color);
     color: var(--font-color);
-    width: 100vw;
+    width: 100%;
     margin: 0;
     padding-top: 60px;
 }

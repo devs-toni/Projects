@@ -16,9 +16,10 @@ router.post('/saveProject', upload.single('file'), Project.save);
 router.get('/getProjects', Project.get);
 router.delete('/deleteProject/:id', Project.delete);
 
-router.post('/saveCv', Curriculum.save);
+router.post('/saveCurriculum', Curriculum.save);
 router.post('/getCurriculum', Curriculum.get);
-router.delete('/deleteCv/:id', Curriculum.delete);
+router.get('/getCvs', Curriculum.getAllCvs);
+router.delete('/deleteCurriculum/:id', Curriculum.delete);
 
 router.get('/getSkills', Skill.get);
 
@@ -29,6 +30,8 @@ router.delete('/deleteCourse/:id', Course.delete);
 
 router.post('/saveAboutMe', About.save);
 router.post('/getAboutMe', About.getAboutMe);
+router.get('/getAllAbout', About.getAllAbout);
+router.delete('/deleteAbout/:id', About.delete);
 
 router.post('/saveComment', Comment.save)
 router.get('/getComments', Comment.get);

@@ -1,17 +1,19 @@
+const path = 'public/'
+
 let controller = {
 
     save: (req, res) => {
-        var params = req.body;
-
+        let params = req.body;
         req.getConnection((err, conn) => {
             if (err) next(err);
-            conn.query('INSERT INTO curriculum (name, center, date, description, topic) VALUES (?,?,?,?,?)',
+            conn.query('INSERT INTO curriculum (name, center, date, description, topic, image) VALUES (?,?,?,?,?,?)',
                 [
                     params.name,
                     params.center,
                     params.date,
                     params.topic,
-                    params.description
+                    params.description,
+                    `${path}${req.file.filename}`
                 ],
                 (err, cvStored) => {
                     if (err || !cvStored) {
@@ -50,6 +52,33 @@ let controller = {
                 return res.status(200).send({
                     status: 'success',
                     cv
+                })
+
+            });
+        }
+        );
+    },
+
+    getAllCvs: (req,res) => {
+        req.getConnection((err, conn) => {
+            if (err) next(err);
+
+            conn.query('SELECT * FROM curriculum', (err, cvs) => {
+                if (err) {
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error al extraer los datos'
+                    });
+                }
+                if (!cvs) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No hay datos para mostrar'
+                    });
+                }
+                return res.status(200).send({
+                    status: 'success',
+                    cvs
                 })
 
             });

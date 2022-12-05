@@ -1,4 +1,4 @@
-const path = '/public/'
+const path = 'public/'
 
 let controller = {
 
@@ -6,11 +6,12 @@ let controller = {
         var params = req.body;
 
         req.getConnection((err, conn) => {
-            conn.query('INSERT INTO projects (name, description, position, image) VALUES (?, ?, ?, ?)',
+            conn.query('INSERT INTO projects (name, description, position, link, image) VALUES (?, ?, ?, ?, ?)',
                 [
                     params.name,
                     params.description,
                     params.position,
+                    params.link,
                     `${path}${req.file.filename}`
                 ], 
                 (err, projectStored) => {

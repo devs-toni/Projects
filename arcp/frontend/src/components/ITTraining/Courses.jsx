@@ -17,6 +17,7 @@ const Courses = () => {
     const [techs, settechs] = useState([]);
     const [colors, setColors] = useState([]);
     const [borders, setBorders] = useState([]);
+    
     const handlePopup = (e) => {
         if (e.target.getAttribute('topic')) {
             axios.get(`${url}getCourse/${e.target.getAttribute('topic')}`).then(res => {

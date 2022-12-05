@@ -43,6 +43,53 @@ let controller = {
 
             });
         });
+    },
+    getAllAbout: (req, res) => {
+        req.getConnection((err, conn) => {
+            if (err) next(err);
+
+            conn.query('SELECT * FROM about', (err, allAbout) => {
+                if (err || !allAbout) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No hay datos'
+                    });
+                }
+
+                return res.status(200).send({
+                    status: 'success',
+                    allAbout
+                });
+
+            });
+        });
+    },
+
+    delete: (req, res) => {
+        let aboutId = req.params.id;
+        req.getConnection((err, conn) => {
+            if (err) next(err);
+            conn.query(`DELETE FROM about WHERE id=${aboutId}`, (err, aboutRemoved) => {
+                if (err) {
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error al eliminar la entrada'
+                    });
+                }
+
+                if (!aboutRemoved) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No se ha encontrado la entrada a eliminar'
+                    });
+                }
+
+                return res.status(200).send({
+                    status: 'success',
+                    aboutRemoved
+                });
+            });
+        });
     }
 }
 

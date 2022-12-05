@@ -1,4 +1,4 @@
-const path = '/public/'
+const path = 'public/'
 
 let controller = {
 
@@ -7,17 +7,23 @@ let controller = {
         req.getConnection((err, conn) => {
             if (err) next(err);
             
-            conn.query('INSERT INTO courses (name, center, hours, link, position, image) VALUES (?, ?, ?, ?, ?, ?)',
+            conn.query('INSERT INTO courses (name, center, hours, link, position, ref, description, technologies, color, border, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                 [
                     params.name,
                     params.center,
                     params.hours,
                     params.link,
                     params.position,
+                    params.ref,
+                    params.description,
+                    params. technologies,
+                    params.color,
+                    params.border,
                     `${path}${req.file.filename}`
                 ], 
                 (err, courseStored) => {
                     if (err || !courseStored) {
+
                         return res.status(404).send({
                             status: 'error',
                             message: 'El curso no se ha guardado'
