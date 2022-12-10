@@ -6,7 +6,7 @@ let controller = {
         var params = req.body;
         req.getConnection((err, conn) => {
             if (err) next(err);
-            
+
             conn.query('INSERT INTO courses (name, center, hours, link, position, ref, description, technologies, color, border, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                 [
                     params.name,
@@ -16,11 +16,11 @@ let controller = {
                     params.position,
                     params.ref,
                     params.description,
-                    params. technologies,
+                    params.technologies,
                     params.color,
                     params.border,
                     `${path}${req.file.filename}`
-                ], 
+                ],
                 (err, courseStored) => {
                     if (err || !courseStored) {
 
@@ -38,12 +38,15 @@ let controller = {
         });
     },
 
-    
-    get: (req, res) => {
-        req.getConnection((err, conn) => {
-            if (err) next(err);
 
+    get: (req, res) => {
+        console.log("1");
+        req.getConnection((err, conn) => {
+            console.log("2");
+            if (err) next(err);
+            console.log("3");
             conn.query('SELECT * FROM courses', (err, courses) => {
+                console.log("4");
                 if (err) {
                     return res.status(500).send({
                         status: 'error',

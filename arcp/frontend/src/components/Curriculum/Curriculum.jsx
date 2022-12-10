@@ -5,6 +5,8 @@ import DigitalSkill from './DigitalSkill';
 import Global from '../../Global';
 import axios from 'axios';
 import CustomPopup from '../Popup';
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 
 const Curriculum = () => {
 
@@ -13,6 +15,7 @@ const Curriculum = () => {
     const [info, setInfo] = useState(null);
     const [description, setDescription] = useState([]);
     const [visibility, setVisibility] = useState(false);
+    const {texts} = useContext(LanguageContext);
 
     const popupCloseHandler = (e) => {
         setVisibility(e);
@@ -58,8 +61,8 @@ const Curriculum = () => {
                 </div>
             </CustomPopup>}
             <div className='info'>
-                <h1 className='title'>Currículum</h1>
-                <p className='description'>En esta sección, podrás encontrar tanto mi perfil profesional como educativo, completo y temporalmente etiquetado.</p>
+                <h1 className='title'>{texts.title.curriculum}</h1>
+                <p className='description'>{texts.description.curriculum}</p>
             </div>
             <div className='cv' >
                 <Timegraphic handlePopup={handlePopup} />

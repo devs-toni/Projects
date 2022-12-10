@@ -1,0 +1,78 @@
+{
+    "es": {
+        "menu": {
+            "training": "Formación IT",
+            "curriculum": "Curriculum",
+            "projects": "Proyectos",
+            "about": "Sobre mí",
+            "contact": "Contacto"
+        },
+        "footer": {
+            "text": "Diseñado por ",
+            "name": "Antonio Rufino Casasus"
+        },
+        "title": {
+            "training": "Formación",
+            "curriculum": "Curriculum",
+            "projects": "Proyectos",
+            "about": "Sobre mí",
+            "contact": "Contacto"
+        },
+        "description": {
+            "training": "En esta sección podrás encontrar toda la formación en la que me he instruido desde mi inicio en la programación. En continua actualización",
+            "curriculum": "En esta sección podrás encontrar toda la información relacionada con mi perfil profesional además del educativo, ambos etiquetados temporalmente",
+            "projects": "Aquí puedes tomarte tu tiempo para echar un vistazo a los diferentes proyectos que he estado creando y mejorando desde que las habilidades que he ido adquiriendo me lo han permitido",
+            "about": "¿Quieres conocerme? Te lo contaré todo.",
+            "contact": "Por favor, contacta conmigo mediante el formulario o a través de cualquier otro método de contacto que te proporciono si tienes cualquier duda, inquietud o proposición"
+        },
+        "whoIAm" : "Desarrollador backend. Actualmente formándome en Assembler Institute of Technologies realizando un Master en Software Development.",
+        "whatAboutMe": "Que deseas saber sobre mi?",
+        "form": {
+            "name":"Nombre",
+            "phone":"Móvil",
+            "subject": "Tema",
+            "message": "Mensaje",
+            "location": "Ubicación",
+            "submit": "ENVIAR"
+        },
+        "empty": "Vacío"
+    },
+    "en": {
+        "menu": {
+            "training": "IT Training",
+            "curriculum": "Curriculum",
+            "projects": "Projects",
+            "about": "About Me",
+            "contact": "Contact"
+        },
+        "footer": {
+            "text": "Designed by ",
+            "name": "Anthony Rufino Casasus"
+        },
+        "title": {
+            "training": "Training",
+            "curriculum": "Curriculum",
+            "projects": "Projects",
+            "about": "About me",
+            "contact": "Contact"
+        },
+        "description": {
+            "training": "In this section you will find all the training in which I have been instructed since I started programming. It is continuously updated",
+            "curriculum": "In this section you will find all the information related to my professional profile as well as my educational profile, both labeled temporarily",
+            "projects": "Here you can take your time to take a look at the different projects I have been creating and improving since the skills I have been acquiring have allowed me to do so",
+            "about": "Do you want to meet me? I'll tell you everything!",
+            "contact": "Please contact me through the form or through any other contact method I provide if you have any questions, concerns or propositions"
+        },
+        "whoIAm" : "Backend developer. Currently training at Assembler Institute of Technologies doing a Master in Software Development.",
+        "form": {
+            "name":"Name",
+            "phone":"Phone",
+            "subject": "Subject",
+            "message": "Message",
+            "location": "Location",
+            "submit": "SEND"
+        },
+        "whatAboutMe": "What do you want to know about me?",
+        "empty": "Empty"
+    }
+}

@@ -6,19 +6,22 @@ import aficiones from '../../assets/img/About/aficiones.png';
 import historia from '../../assets/img/About/historia.png';
 import develop from '../../assets/img/About/develop.png';
 import AboutSection from './AboutSection';
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 
 const About = () => {
 
     const { path, url } = useRouteMatch();
     const [titleActive, setTitleActive] = useState(true);
+    const {texts} = useContext(LanguageContext);
 
     return (
         <div className='courses about'>
-            <h1 className='title'>Sobre Mí</h1>
-            <p className='description'>Quierés conocerme? Te lo cuento todo!</p>
+            <h1 className='title'>{texts.title.about}</h1>
+            <p className='description'>{texts.description.about}</p>
             <div className="me">
                 <img className='img' src={Me} alt="Me" />
-                <p>Backend developer. Actualmente formándome en Assembler Institute of Technologies realizando un Master en Software Development.</p>
+                <p>{texts.whoIAm}</p>
             </div>
             <div className="icons">
                 <div className='icons-int'>
@@ -34,7 +37,7 @@ const About = () => {
                 </div>
             </div>
             <div className="window">
-                {titleActive && <p>Que deseas saber sobre mi?</p>}
+                {titleActive && <p>{texts.whatAboutMe}</p>}
                 <Switch>
                     <Route path={`${path}/:topic`} component={AboutSection}></Route>
                 </Switch>

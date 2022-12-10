@@ -7,6 +7,8 @@ import { useState } from 'react';
 import Global from '../../Global';
 import axios from 'axios';
 import CustomPopup from '../Popup';
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 
 const Courses = () => {
     const url = Global.url;
@@ -17,7 +19,8 @@ const Courses = () => {
     const [techs, settechs] = useState([]);
     const [colors, setColors] = useState([]);
     const [borders, setBorders] = useState([]);
-    
+    const {texts} = useContext(LanguageContext);
+
     const handlePopup = (e) => {
         if (e.target.getAttribute('topic')) {
             axios.get(`${url}getCourse/${e.target.getAttribute('topic')}`).then(res => {
@@ -63,8 +66,8 @@ const Courses = () => {
                 <Counter hours={hours} />
             </div>
             <div className="left">
-                <h3 className='title-it'>Formación</h3>
-                <p className='description-it'>Sección dedicada a toda la formación en la que me he instruido desde que empecé a programar. En continua actualización.</p>
+                <h3 className='title-it'>{texts.title.training}</h3>
+                <p className='description-it'>{texts.description.training}</p>
             </div>
             <div className='boxes'>
                 {
@@ -82,7 +85,7 @@ const Courses = () => {
                                     )
                                 })
                         ) : (
-                            <h3 className=''>Any Trainings</h3>
+                            <h3 className='text-center'>{texts.empty}</h3>
                         )
                 }
             </div>

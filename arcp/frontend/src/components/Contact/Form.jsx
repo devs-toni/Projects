@@ -4,6 +4,8 @@ import '../../assets/css/Contact/Form.css';
 import { useForm } from '../../hooks/useForm';
 import Loader from '../Loader';
 import Message from '../Message';
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 
 const initialForm = {
   name: '',
@@ -52,26 +54,27 @@ const Form = () => {
     handleSubmit,
     handleBlur
   } = useForm(initialForm, validateForm);
+  const {texts} = useContext(LanguageContext);
 
   return (
     <>
       {loading ? <Loader /> : 
       <form action='f2834b9068e7ce4a793c0fa0d1519fd5' className='form' onSubmit={handleSubmit}>
         <div className="column">
-          <Input type='text' name='name' placeholder='Nombre'  blur={handleBlur} change={handleChange} val={form.name} required error={errors.name && errors.name} />
+          <Input type='text' name='name' placeholder={texts.form.name}  blur={handleBlur} change={handleChange} val={form.name} required error={errors.name && errors.name} />
           <Input type='email' name='email' placeholder='Email' blur={handleBlur} change={handleChange} val={form.email} required error={errors.email && errors.email} />
-          <Input type='text' name='phone' placeholder='Móvil' blur={handleBlur}  change={handleChange} val={form.phone} error={errors.phone && errors.phone} />
-          <Input type='text' name='subject' placeholder='Tema' blur={handleBlur} change={handleChange} val={form.subject} required error={errors.subject && errors.subject} />
+          <Input type='text' name='phone' placeholder={texts.form.phone}  blur={handleBlur}  change={handleChange} val={form.phone} error={errors.phone && errors.phone} />
+          <Input type='text' name='subject' placeholder={texts.form.subject}  blur={handleBlur} change={handleChange} val={form.subject} required error={errors.subject && errors.subject} />
         </div>
         <div className="comments-column">
           <div className="comments">
-            <label>Mensaje</label>
+            <label>{texts.form.message}</label>
             <textarea className='textarea' name='comments'  onBlur={handleBlur} onChange={handleChange} value={form.comments} required />
           </div>
           {errors.comments && (<p className='errorComments'>{errors.comments}</p>)}
         </div>
         <div className="submit-container">
-          <input type='submit' className='submit' value='ENVIAR' />
+          <input type='submit' className='submit' value={texts.form.submit} />
         </div>
       </form>}
       {response && (<Message msg='Los datos han sido enviados' bgColor='var(--react-secondary-color-changing)' />)}

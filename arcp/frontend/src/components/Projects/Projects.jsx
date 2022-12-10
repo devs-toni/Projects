@@ -3,11 +3,14 @@ import Project from './Project';
 import Global from '../../Global';
 import axios from 'axios';
 import { useEffect } from 'react';
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 
 const Projects = () => {
 
   const url = Global.url;
   const [projects, setProjects] = useState([]);
+  const {texts} = useContext(LanguageContext);
 
   useEffect(() => {
     getProjects();
@@ -23,8 +26,8 @@ const Projects = () => {
   return (
     <div className='courses projects'>
       <div className="info">
-        <h1 className='title'>Proyectos</h1>
-        <p className='description'>Aquí puedes tomarte tu tiempo para echar un vistazo a los diferentes proyectos que he estado creando y mejorando desde que las habilidades que he ido adquiriendo me lo han permitido.</p>
+        <h1 className='title'>{texts.title.projects}</h1>
+        <p className='description'>{texts.description.projects}</p>
       </div>
       {
         projects.length > 0
@@ -33,7 +36,7 @@ const Projects = () => {
               return (<Project key={index} id={index} project={project} />)
             })
           ) : (
-            <h3 className=''>No hay artículos</h3>
+            <h3 className=''>{texts.empty}</h3>
           )
       }
     </div>
