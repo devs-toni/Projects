@@ -5,6 +5,8 @@ import Global from '../../Global';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 
 const Home = () => {
 
@@ -12,6 +14,7 @@ const Home = () => {
         name: '',
         comment: ''
     }
+    const {texts} = useContext(LanguageContext)
     const url = Global.url;
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState(init);
@@ -49,18 +52,18 @@ const Home = () => {
                 <p className="job">Full Stack Developer</p>
             </div>
             <div className="welcome-div">
-                <span className='welcome'>`¡Bienvenido a mi $&#123; &lt; </span>
+                <span className='welcome'>`{texts.home.welcome} $&#123; </span>
                 <Transition className='welcome change' />
-                <span className='welcome'>&gt; &#125;!`, espero que lo disfrutes.</span>
+                <span className='welcome'> &#125;`, {texts.home.welcome2}</span>
             </div>
             <div className='container-description'>
-                <p className='description'>Aquí podrás encontrar información sobre mi perfil personal y laboral, además de los proyectos personales en los que estoy trabajando.</p>
+                <p className='description'>{texts.home.description}</p>
             </div>
             <div className="comentarios">
                 <form id='form'>
                     <div className="comments">
-                        <input type="text" name='name' id='name' placeholder='Escribe tu nombre' ref={refName} onChange={handleChange} />
-                        <textarea name="message" id='comment' placeholder='Dejame un comentario' ref={refComment} onChange={handleChange}></textarea>
+                        <input type="text" name='name' id='name' placeholder={texts.home.comments.name} ref={refName} onChange={handleChange} />
+                        <textarea name="message" id='comment' placeholder={texts.home.comments.comment} ref={refComment} onChange={handleChange}></textarea>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" onClick={handleSubmit} width="54" height="54" fill="currentColor" className="svg" viewBox="0 0 16 16">
                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />

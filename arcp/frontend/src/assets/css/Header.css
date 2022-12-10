@@ -50,9 +50,7 @@
   opacity: var(--opacity);
   cursor: pointer;
   border-radius: 30px;
-  background-color: var(--background-bright-btn);
-  box-shadow: var(--shadow);
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 .header button {
@@ -63,7 +61,7 @@
 }
 
 .header .language {
-  margin-left: 50px;
+  margin-left: 30px;
   border: none;
   outline: none;
   color: white;
@@ -122,11 +120,15 @@
     line-height: 50px;
   }
   .header .active {
-    height: 60vh;
+    height: 55vh;
     pointer-events: auto;
     z-index: 1;
     font-size: 1.5em;
     margin-right: 0;
+  }
+
+  .header .navigator .anchor {
+    margin: 0;
   }
 
   .header .hamburguer {
@@ -139,13 +141,22 @@
     opacity: 0.6;
   }
 
+  .header .navigator .options {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header .navigator .options button {
+    padding: 0;
+  }
+
   .bright {
     margin: 0 !important;
   }
 
   .header .language {
-    margin-left: 0;
-    margin-top: 15px;
+    margin: 15px 20px;
   }
 }
 

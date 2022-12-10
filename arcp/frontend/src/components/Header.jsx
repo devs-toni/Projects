@@ -33,12 +33,14 @@ const Header = ({ switchTheme, isNavShow, setIsNavShow }) => {
                     <Link className='anchor' to='/projects' onClick={closeMenu}>{texts.menu.projects}</Link>
                     <Link className='anchor' to='/about' onClick={closeMenu}>{texts.menu.about}</Link>
                     <Link className='anchor' to='/contact' onClick={closeMenu}>{texts.menu.contact}</Link>
-                    <Link className='anchor' to='/login' onClick={closeMenu}><i className="bi bi-box-arrow-in-right"></i></Link>
-                    <select name="language" id="language" className='language' onChange={handleLanguage}>
-                        <option selected value="es">ES</option>
-                        <option value="en">EN</option>
-                    </select>
-                    <button onClick={switchTheme}><BsSunFill className='bright' /></button>
+                    <div className="options">
+                        <Link className='anchor' to='/login' onClick={closeMenu}><i className="bi bi-box-arrow-in-right"></i></Link>
+                        <select name="language" id="language" className='language' onChange={handleLanguage}>
+                            <option selected value="es">ES</option>
+                            <option value="en">EN</option>
+                        </select>
+                        <button onClick={switchTheme}><BsSunFill className='bright' /></button>
+                    </div>
                 </nav>
                 <FiMenu className='hamburguer' onClick={openMenu} />
             </HashRouter>

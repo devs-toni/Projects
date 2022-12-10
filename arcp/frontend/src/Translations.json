@@ -35,6 +35,15 @@
             "location": "Ubicación",
             "submit": "ENVIAR"
         },
+        "home": {
+            "welcome": "Bienvenido a mi ",
+            "welcome2":"Espero que lo disfrutes.",
+            "description": "Aquí podrás encontrar información sobre mi perfil personal y laboral, además de los proyectos personales en los que estoy trabajando",
+            "comments": {
+                "name": "Introduce tu nombre",
+                "comment": "Dejame un comentario"
+            }
+        },
         "empty": "Vacío"
     },
     "en": {
@@ -47,7 +56,7 @@
         },
         "footer": {
             "text": "Designed by ",
-            "name": "Anthony Rufino Casasus"
+            "name": "Antonio Rufino Casasus"
         },
         "title": {
             "training": "Training",
@@ -73,6 +82,15 @@
             "submit": "SEND"
         },
         "whatAboutMe": "What do you want to know about me?",
+        "home": {
+            "welcome": "Welcome to my ",
+            "welcome2":"I hope you enjoy it.",
+            "description": "Here you could know further information about my personal working profile, apart from my personal projects that I'm working on.",
+            "comments": {
+                "name": "Enter your name",
+                "comment": "Leave me a comment"
+            }
+        },
         "empty": "Empty"
     }
 }
