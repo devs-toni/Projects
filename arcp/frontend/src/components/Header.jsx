@@ -6,7 +6,6 @@ import '../assets/css/Header.css';
 import Logo from './Logo';
 import { useContext } from 'react';
 import LanguageContext from '../context/LanguageContext';
-import { spain } from '../assets/img/spain.png';
 
 const Header = ({ switchTheme, isNavShow, setIsNavShow }) => {
 
