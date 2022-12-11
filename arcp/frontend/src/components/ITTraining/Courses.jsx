@@ -18,24 +18,24 @@ const Courses = () => {
     const [course, setCourse] = useState(null);
     const [description, setDescription] = useState([]);
     const [techs, settechs] = useState([]);
-    const [colors, setColors] = useState([]);
-    const [borders, setBorders] = useState([]);
     const { texts, language } = useContext(LanguageContext);
 
-    const handlePopup = (e) => {
+    const handlePopup = async(e) => {
+        let id = e.target.getAttribute('topic');
         if (e.target.getAttribute('topic')) {
-            axios.get(`${url}getCourse/${e.target.getAttribute('topic')}`).then(res => {
+            await axios.get(`${url}getCourse/${id}`).then(res => {
                 setCourse(res.data.course[0]);
-                settechs(res.data.course[0].technologies.split(','));
-                setColors(res.data.course[0].color.split(','));
-                setBorders(res.data.course[0].border.split(','));
                 setVisibility(!visibility);
                 document.querySelector('body').style.overflow = 'hidden';
-                let parseDescription = JSON.parse(res.data.course[0].description);
-                if (language === 'es') setDescription(parseDescription.es.split('~'));
-                else setDescription(parseDescription.en.split('~'));
+            });
+            await axios.get(`${url}getCourseDescription/${id}/${language}`).then(res => {
+                console.log(res.data);
+                setDescription(res.data.description);
             });
         }
+        await axios.get(`${url}getCourseTech/${id}`).then(res => {
+            settechs(res.data.tech);
+        });
     }
 
     const popupCloseHandler = (e) => {
@@ -107,18 +107,18 @@ const Courses = () => {
                             <p className='center'>{course.center}</p>
                             <ul className='description'>
                                 {description.map((line, key) =>
-                                    <li className='li' key={key}>{line}</li>
+                                    <li className='li' key={key}>{line.text}</li>
                                 )}
                             </ul>
                         </div>
                         <div className="technologies">
                             {
-                                techs.map((tech, index) => {
+                                techs.map(tech => {
                                     let style = {
-                                        backgroundColor: `${colors[index]}`, borderColor: `${borders[index]}`
+                                        backgroundColor: `${tech.bgColor}`, borderColor: `${tech.borderColor}`
                                     }
                                     if (tech !== '') {
-                                        return (<p key={index} className='tech' style={style} >{tech}</p>)
+                                        return (<p key={tech.id} className='tech' style={style} >{tech.technology}</p>)
                                     }
                                 })
                             }
