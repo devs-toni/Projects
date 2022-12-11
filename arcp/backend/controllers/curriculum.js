@@ -59,6 +59,64 @@ let controller = {
         );
     },
 
+    getCurriculumTechById: (req, res) => {
+        let id = req.params.id;
+        req.getConnection((err, conn) => {
+            if (err) next(err);
+
+            conn.query('SELECT * FROM curriculumtech WHERE curriculumId=?', id, (err, tech) => {
+                if (err) {
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error al extraer los datos'
+                    });
+                }
+                if (!tech) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No hay datos para mostrar'
+                    });
+                }
+                return res.status(200).send({
+                    status: 'success',
+                    tech
+                })
+
+            });
+        }
+        );
+    },
+
+    getCurriculumDescriptionById:(req, res) => {
+        let id = req.params.id;
+        let lang = req.params.lang;
+        req.getConnection((err, conn) => {
+            if (err) next(err);
+
+            conn.query('SELECT * FROM curriculumparagraphs WHERE curriculumId=? and lang=?',[id, lang], (err, description) => {
+                if (err) {
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error al extraer los datos'
+                    });
+                }
+                if (!description) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No hay datos para mostrar'
+                    });
+                }
+                return res.status(200).send({
+                    status: 'success',
+                    description
+                })
+
+            });
+        }
+        );
+    },
+
+
     getAllCvs: (req,res) => {
         req.getConnection((err, conn) => {
             if (err) next(err);

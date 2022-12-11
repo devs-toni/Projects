@@ -17,11 +17,11 @@ const Curriculum = () => {
     const [name, setName] = useState('');
     const [center, setCenter] = useState('');
     const [description, setDescription] = useState([]);
-    const [techs, settechs] = useState([]);
-    const [colors, setColors] = useState([]);
-    const [borders, setBorders] = useState([]);
+
     const [visibility, setVisibility] = useState(false);
-    const {texts, language} = useContext(LanguageContext);
+    const { texts, language } = useContext(LanguageContext);
+
+    const [techs, settechs] = useState([]);
 
     const popupCloseHandler = (e) => {
         setVisibility(e);
@@ -34,32 +34,33 @@ const Curriculum = () => {
         });
     }, []);
 
-    const handlePopup = (e) => {
-        console.log(e.target);
+    const handlePopup = async (e) => {
+        let id;
         if (e.target.getAttribute('topic')) {
             e.stopPropagation();
-            axios.post(`${backendUrl}getCurriculum`, { topic: e.target.getAttribute('topic') }).then(res => {
+
+            await axios.post(`${backendUrl}getCurriculum`, { topic: e.target.getAttribute('topic') }).then(res => {
                 setInfo(res.data.cv[0]);
-                if (res.data.cv[0].technologies) settechs(res.data.cv[0].technologies.split(','));
-                else settechs([]);
-                if (res.data.cv[0].color) setColors(res.data.cv[0].color.split(','));
-                else setColors([]);
-                if (res.data.cv[0].border) setBorders(res.data.cv[0].border.split(','));
-                else setBorders([]);
+                id = res.data.cv[0].id;
                 let parseName = JSON.parse(res.data.cv[0].name);
                 let parseCenter = JSON.parse(res.data.cv[0].center);
-                let parseDescription = JSON.parse(res.data.cv[0].description);
                 if (language === "es") {
                     setName(parseName.es);
                     setCenter(parseCenter.es);
-                    setDescription(parseDescription.es.split('~'));
                 } else {
                     setName(parseName.en);
                     setCenter(parseCenter.en);
-                    setDescription(parseDescription.en.split('~'));
                 }
                 setVisibility(!visibility);
                 document.querySelector('body').style.overflow = 'hidden';
+            });
+
+            await axios.get(`${backendUrl}getCurriculumDescription/${id}/${language}`).then(res => {
+                console.log(res.data);
+                setDescription(res.data.description);
+            });
+            await axios.get(`${backendUrl}getCurriculumTech/${id}`).then(res => {
+                settechs(res.data.tech);
             });
         }
     }
@@ -79,22 +80,22 @@ const Curriculum = () => {
                 <div className='description'>
                     <ul className='text-description'>
                         {description.map((line, key) =>
-                            <li className='li' key={key}>{line}</li>
+                            <li className='li' key={key}>{line.text}</li>
                         )}
                     </ul>
                 </div>
                 <div className="technologies">
-                            {
-                                techs.map((tech, index) => {
-                                    let style = {
-                                        backgroundColor: `${colors[index]}`, borderColor: `${borders[index]}`
-                                    }
-                                    if (tech !== '') {
-                                        return (<p key={index} className='tech' style={style} >{tech}</p>)
-                                    }
-                                })
+                    {
+                        techs.map((tech, index) => {
+                            let style = {
+                                backgroundColor: `${tech.bgColor}`, borderColor: `${tech.borderColor}`
                             }
-                        </div>
+                            if (tech !== '') {
+                                return (<p key={tech.id} className='tech' style={style} >{tech.technology}</p>)
+                            }
+                        })
+                    }
+                </div>
             </CustomPopup>}
             <div className='info'>
                 <h1 className='title'>{texts.curriculum.title}</h1>

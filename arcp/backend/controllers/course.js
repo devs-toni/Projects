@@ -40,13 +40,9 @@ let controller = {
 
 
     get: (req, res) => {
-        console.log("1");
         req.getConnection((err, conn) => {
-            console.log("2");
             if (err) next(err);
-            console.log("3");
             conn.query('SELECT * FROM courses', (err, courses) => {
-                console.log("4");
                 if (err) {
                     return res.status(500).send({
                         status: 'error',
@@ -89,6 +85,63 @@ let controller = {
                 return res.status(200).send({
                     status: 'success',
                     course
+                })
+
+            });
+        }
+        );
+    },
+    getCourseTechById: (req, res) => {
+        let idCourse = req.params.id;
+        req.getConnection((err, conn) => {
+            if (err) next(err);
+
+            conn.query('SELECT * FROM coursestech WHERE id=?', [idCourse], (err, tech) => {
+                if (err) {
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error al extraer los datos'
+                    });
+                }
+                if (!tech) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No hay curso para mostrar'
+                    });
+                }
+                return res.status(200).send({
+                    status: 'success',
+                    tech
+                })
+
+            });
+        }
+        );
+    },
+
+    getCourseDescriptionById: (req, res) => {
+        let idCourse = req.params.id;
+        let lang = req.params.lang;
+        console.log(lang, idCourse);
+        req.getConnection((err, conn) => {
+            if (err) next(err);
+
+            conn.query('SELECT * FROM coursesparagraphs WHERE courseId=? and lang=?', [idCourse, lang], (err, description) => {
+                if (err) {
+                    return res.status(500).send({
+                        status: 'error',
+                        message: 'Error al extraer los datos'
+                    });
+                }
+                if (!description) {
+                    return res.status(404).send({
+                        status: 'error',
+                        message: 'No hay curso para mostrar'
+                    });
+                }
+                return res.status(200).send({
+                    status: 'success',
+                    description
                 })
 
             });
