@@ -61,23 +61,23 @@ const Curriculum = () => {
                 </div>
             </CustomPopup>}
             <div className='info'>
-                <h1 className='title'>{texts.title.curriculum}</h1>
-                <p className='description'>{texts.description.curriculum}</p>
+                <h1 className='title'>{texts.curriculum.title}</h1>
+                <p className='description'>{texts.curriculum.description}</p>
             </div>
             <div className='cv' >
                 <Timegraphic handlePopup={handlePopup} />
                 <div className='skills'>
                     <div className="digital-skills">
-                        <p className="title">Habilidades digitales</p>
+                        <p className="title">{texts.curriculum.digital[0]}</p>
                         {skills.map(skill => skill.section === 'Digital' && <DigitalSkill key={skill.id} {...skill} />)}
                     </div>
                     <div className="other">
                         <div className="digital-skills">
-                            <p className="title">Idiomas</p>
+                            <p className="title">{texts.curriculum.digital[1]}</p>
                             {skills.map(skill => skill.section === 'Language' && <DigitalSkill key={skill.id} {...skill} />)}
                         </div>
                         <div className="digital-skills">
-                            <p className="title">Soft Skills</p>
+                            <p className="title">{texts.curriculum.digital[2]}</p>
                             {skills.map(skill => skill.section === 'Soft' && <DigitalSkill key={skill.id} {...skill} />)}
                         </div>
                     </div>

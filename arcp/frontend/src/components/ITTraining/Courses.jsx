@@ -63,11 +63,11 @@ const Courses = () => {
     return (
         <div className='courses'>
             <div className='right'>
-                <Counter hours={hours} />
+                <Counter hours={hours} text={texts.courses.hours} />
             </div>
             <div className="left">
-                <h3 className='title-it'>{texts.title.training}</h3>
-                <p className='description-it'>{texts.description.training}</p>
+                <h3 className='title-it'>{texts.courses.title}</h3>
+                <p className='description-it'>{texts.courses.description}</p>
             </div>
             <div className='boxes'>
                 {

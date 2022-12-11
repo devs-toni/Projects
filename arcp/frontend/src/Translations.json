@@ -11,37 +11,53 @@
             "text": "Diseñado por ",
             "name": "Antonio Rufino Casasus"
         },
-        "title": {
-            "training": "Formación",
-            "curriculum": "Curriculum",
-            "projects": "Proyectos",
-            "about": "Sobre mí",
-            "contact": "Contacto"
-        },
-        "description": {
-            "training": "En esta sección podrás encontrar toda la formación en la que me he instruido desde mi inicio en la programación. En continua actualización",
-            "curriculum": "En esta sección podrás encontrar toda la información relacionada con mi perfil profesional además del educativo, ambos etiquetados temporalmente",
-            "projects": "Aquí puedes tomarte tu tiempo para echar un vistazo a los diferentes proyectos que he estado creando y mejorando desde que las habilidades que he ido adquiriendo me lo han permitido",
-            "about": "¿Quieres conocerme? Te lo contaré todo.",
-            "contact": "Por favor, contacta conmigo mediante el formulario o a través de cualquier otro método de contacto que te proporciono si tienes cualquier duda, inquietud o proposición"
-        },
-        "whoIAm" : "Desarrollador backend. Actualmente formándome en Assembler Institute of Technologies realizando un Master en Software Development.",
-        "whatAboutMe": "Que deseas saber sobre mi?",
-        "form": {
-            "name":"Nombre",
-            "phone":"Móvil",
-            "subject": "Tema",
-            "message": "Mensaje",
-            "location": "Ubicación",
-            "submit": "ENVIAR"
-        },
         "home": {
             "welcome": "Bienvenido a mi ",
-            "welcome2":"Espero que lo disfrutes.",
+            "welcome2": "Espero que lo disfrutes.",
             "description": "Aquí podrás encontrar información sobre mi perfil personal y laboral, además de los proyectos personales en los que estoy trabajando",
             "comments": {
                 "name": "Introduce tu nombre",
                 "comment": "Dejame un comentario"
+            }
+        },
+        "courses": {
+            "title": "Formación",
+            "description": "En esta sección podrás encontrar toda la formación en la que me he instruido desde mi inicio en la programación. En continua actualización",
+            "hours": "Horas"
+        },
+        "curriculum": {
+            "title": "Curriculum",
+            "description": "En esta sección podrás encontrar toda la información relacionada con mi perfil profesional además del educativo, ambos etiquetados temporalmente",
+            "digital": [
+                "Habilidades digitales",
+                "Idiomas",
+                "Aptitudes"
+            ]
+        },
+        "projects": {
+            "title": "Proyectos",
+            "description": "Aquí puedes tomarte tu tiempo para echar un vistazo a los diferentes proyectos que he estado creando y mejorando desde que las habilidades que he ido adquiriendo me lo han permitido"
+        },
+        "about": {
+            "title": "Sobre mí",
+            "description": "¿Quieres conocerme? Te lo contaré todo.",
+            "whoIAm": "Desarrollador backend. Actualmente formándome en Assembler Institute of Technologies realizando un Master en Software Development.",
+            "topic": "Que deseas saber sobre mi?",
+            "history": "Nací en l'Alcúdia, un pueblo cercano a Valencia, donde he vivido casi todas mis experiencias hasta la adolescencia, donde decidí formarme en el mundo tecnológico en Valencia obteniendo así mi título superior. Trabajé en una empresa como técnico de sonido en Valencia durante aproximadamente 5 años. Finalmente decidí seguir formandome en tecnologías y acepté que mi destino está ligado a pasar largas y largas horas delante de la pantalla aprendiendo y picando código. Me mudé a Alicante y desde aquí empezé a estudiar programación. Basta decir que soy una persona con orígenes humildes, he sido educado para ser una persona cercana y honesta, a la vez que sencilla y competitiva, por lo que trabajar en equipo siempre me ha resultado fácil y satisfactorio.",
+            "hobbies": "Soy un apasionado del deporte, especialmente de la bicicleta de montaña y la natación, no hay nada que me haga desconectar tanto como respirar aire fresco y pasar tiempo inmerso en la naturaleza, ya si puede ser con algo de velocidad, que más se puede pedir? También suelo salir con mi motocicleta de ruta por los pueblos más remotos de la zona para así aprovechar y conocer la gastronomía de cada uno de ellos. Por otro lado, jamás diré que no a una quedada con los amigos para compartir con ellos aventuras, experiencias y conocimientos.",
+            "devs": "La tecnología es algo que siempre me ha causado curiosidad, y poco a poco siempre acaba convirtiendose en una obsesión, lo que me ha permitido obtener grandes conocimientos en muy poco tiempo, por lo que siempre he tenido claro que mi futuro trabajo tiene que estar estrechamente relacionado con la tecnología, gracias a mi profesor de `Hogar Digital` en la cual programamos una casa domótica con Arduino, me di cuenta que me apasionaban los retos que ofrece programar, a la par que la frustración y la posterior satisfacción que la sucede, lo que me animó a empezar a estudiar Java, y posteriormente un curso completo de Frontend y de ahí vi la necesidad de aprender por mi cuenta React, Node, MongoDB, ElasticSearch, Kafka, ... y la lista sería largísima. Ha sido una de las mejores decisiones que he tomado. Falta decir que estoy muy entusiasmado por empezar mi primer trabajo y demostrar mi valía, a la vez que me gustaría seguir aprendiendo para no dejar de crecer."
+        },
+        "contact": {
+            "title": "Contacto",
+            "description": "Por favor, contacta conmigo mediante el formulario o a través de cualquier otro método de contacto que te proporciono si tienes cualquier duda, inquietud o proposición",
+            "form": {
+                "name": "Nombre",
+                "phone": "Móvil",
+                "subject": "Tema",
+                "message": "Mensaje",
+                "location": "Ubicación",
+                "submit": "ENVIAR",
+                "msg": "El mensaje ha sido enviado"
             }
         },
         "empty": "Vacío"
@@ -58,37 +74,53 @@
             "text": "Designed by ",
             "name": "Antonio Rufino Casasus"
         },
-        "title": {
-            "training": "Training",
-            "curriculum": "Curriculum",
-            "projects": "Projects",
-            "about": "About me",
-            "contact": "Contact"
-        },
-        "description": {
-            "training": "In this section you will find all the training in which I have been instructed since I started programming. It is continuously updated",
-            "curriculum": "In this section you will find all the information related to my professional profile as well as my educational profile, both labeled temporarily",
-            "projects": "Here you can take your time to take a look at the different projects I have been creating and improving since the skills I have been acquiring have allowed me to do so",
-            "about": "Do you want to meet me? I'll tell you everything!",
-            "contact": "Please contact me through the form or through any other contact method I provide if you have any questions, concerns or propositions"
-        },
-        "whoIAm" : "Backend developer. Currently training at Assembler Institute of Technologies doing a Master in Software Development.",
-        "form": {
-            "name":"Name",
-            "phone":"Phone",
-            "subject": "Subject",
-            "message": "Message",
-            "location": "Location",
-            "submit": "SEND"
-        },
-        "whatAboutMe": "What do you want to know about me?",
         "home": {
             "welcome": "Welcome to my ",
-            "welcome2":"I hope you enjoy it.",
+            "welcome2": "I hope you enjoy it.",
             "description": "Here you could know further information about my personal working profile, apart from my personal projects that I'm working on.",
             "comments": {
                 "name": "Enter your name",
                 "comment": "Leave me a comment"
+            }
+        },
+        "courses": {
+            "title": "Training",
+            "description": "In this section you will find all the training in which I have been instructed since I started programming. It is continuously updated",
+            "hours": "Hours"
+        },
+        "curriculum": {
+            "title": "Curriculum",
+            "description": "In this section you will find all the information related to my professional profile as well as my educational profile, both labeled temporarily",
+            "digital": [
+                "Digital habilities",
+                "Languages",
+                "Soft Skills"
+            ]
+        },
+        "projects": {
+            "title": "Projects",
+            "description": "Here you can take your time to take a look at the different projects I have been creating and improving since the skills I have been acquiring have allowed me to do so"
+        },
+        "about": {
+            "title": "About me",
+            "description": "Do you want to meet me? I'll tell you everything!",
+            "whoIAm": "Backend developer. Currently training at Assembler Institute of Technologies doing a Master in Software Development.",
+            "topic": "What do you want to know about me?",
+            "history": "I was born in l'Alcúdia, a town near Valencia, where I have lived almost all my experiences until I was a teenager, where I decided to be professionally trained in the IT world in Valencia, obtaining my higher degree. I worked in a company as a sound technician in Valencia for about 5 years. Finally I decided to continue training in technology and I accepted that my destiny is linked to spend long and long hours in front of the screen learning and coding. I moved to Alicante and from here I started to study programming. Suffice to say that I am a person with humble origins, I have been raised to be a close , honest and competitive person, so working in a team has always been easy and satisfying for me.",
+            "hobbies": "I am passionate about sports, especially mountain biking and swimming, there is nothing that makes me disconnect as much as breathing fresh air and spending time immersed in nature, and if it can be with some speed, what more can you ask for? I also usually go out with my motorcycle on a route through the most remote villages of the area to take advantage and get to know the gastronomy of each one of them. On the other hand, I will never say no to a meeting with friends to share with them adventures, experiences and knowledge.",
+            "devs": "Technology is something that has always caused me curiosity, and little by little always ends up becoming an obsession, which has allowed me to obtain great knowledge in a very short time, so I have always been clear that my future work has to be closely related to technology. Thanks to my teacher of `Digital Home` in which we programmed a home automation with Arduino, I realized that I was passionate about the challenges that programming offers, as well as the frustration and the subsequent satisfaction that follows, which encouraged me to start studying Java, and later a complete course of Frontend, and from there I saw the need to learn on my own React, Node, MongoDB, ElasticSearch, Kafka, . . . and the list would be very long. It has been one of the best decisions I have ever made. Needless to say, I am very excited to start my first job and prove my worth, while I would like to continue learning to keep growing."
+        },
+        "contact": {
+            "title": "Contact",
+            "description": "Please contact me through the form or through any other contact method I provide if you have any questions, concerns or propositions",
+            "form": {
+                "name": "Name",
+                "phone": "Phone",
+                "subject": "Subject",
+                "message": "Message",
+                "location": "Location",
+                "submit": "SEND",
+                "msg": "The message was sent"
             }
         },
         "empty": "Empty"

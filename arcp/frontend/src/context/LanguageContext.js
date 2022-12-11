@@ -17,7 +17,7 @@ const LanguageProvider = ({ children }) => {
             setTexts(translations.en);
         }
     }
-    const data = { texts, handleLanguage };
+    const data = { texts, language, handleLanguage };
 
     return <LanguageContext.Provider value={data}>{children}</LanguageContext.Provider>
 }

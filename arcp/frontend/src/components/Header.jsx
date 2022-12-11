@@ -36,7 +36,7 @@ const Header = ({ switchTheme, isNavShow, setIsNavShow }) => {
                     <div className="options">
                         <Link className='anchor' to='/login' onClick={closeMenu}><i className="bi bi-box-arrow-in-right"></i></Link>
                         <select name="language" id="language" className='language' onChange={handleLanguage}>
-                            <option selected value="es">ES</option>
+                            <option value="es">ES</option>
                             <option value="en">EN</option>
                         </select>
                         <button onClick={switchTheme}><BsSunFill className='bright' /></button>

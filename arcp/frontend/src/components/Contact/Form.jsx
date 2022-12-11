@@ -61,23 +61,23 @@ const Form = () => {
       {loading ? <Loader /> : 
       <form action='f2834b9068e7ce4a793c0fa0d1519fd5' className='form' onSubmit={handleSubmit}>
         <div className="column">
-          <Input type='text' name='name' placeholder={texts.form.name}  blur={handleBlur} change={handleChange} val={form.name} required error={errors.name && errors.name} />
+          <Input type='text' name='name' placeholder={texts.contact.form.name}  blur={handleBlur} change={handleChange} val={form.name} required error={errors.name && errors.name} />
           <Input type='email' name='email' placeholder='Email' blur={handleBlur} change={handleChange} val={form.email} required error={errors.email && errors.email} />
-          <Input type='text' name='phone' placeholder={texts.form.phone}  blur={handleBlur}  change={handleChange} val={form.phone} error={errors.phone && errors.phone} />
-          <Input type='text' name='subject' placeholder={texts.form.subject}  blur={handleBlur} change={handleChange} val={form.subject} required error={errors.subject && errors.subject} />
+          <Input type='text' name='phone' placeholder={texts.contact.form.phone}  blur={handleBlur}  change={handleChange} val={form.phone} error={errors.phone && errors.phone} />
+          <Input type='text' name='subject' placeholder={texts.contact.form.subject}  blur={handleBlur} change={handleChange} val={form.subject} required error={errors.subject && errors.subject} />
         </div>
         <div className="comments-column">
           <div className="comments">
-            <label>{texts.form.message}</label>
+            <label>{texts.contact.form.message}</label>
             <textarea className='textarea' name='comments'  onBlur={handleBlur} onChange={handleChange} value={form.comments} required />
           </div>
           {errors.comments && (<p className='errorComments'>{errors.comments}</p>)}
         </div>
         <div className="submit-container">
-          <input type='submit' className='submit' value={texts.form.submit} />
+          <input type='submit' className='submit' value={texts.contact.form.submit} />
         </div>
       </form>}
-      {response && (<Message msg='Los datos han sido enviados' bgColor='var(--react-secondary-color-changing)' />)}
+      {response && (<Message msg={texts.contact.form.msg} bgColor='var(--react-secondary-color-changing)' />)}
     </>
   )
 }

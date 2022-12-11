@@ -9,7 +9,6 @@ import Err404 from '../components/Error404';
 import Home from '../components/Home/Home';
 import ConsoleAdmin from '../components/Admin/ConsoleAdmin';
 import BackendProjects from '../components/Admin/BackendProjects';
-import BackendAbout from '../components/Admin/BackendAbout';
 import BackendCurriculum from '../components/Admin/BackendCurriculum';
 import BackendITTraining from '../components/Admin/BackendITTraining';
 import BackendContact from '../components/Admin/BackendContact';
@@ -36,7 +35,6 @@ const Address = () => {
                 <PrivateRoute exact path='/admin/projects' component={BackendProjects} />
                 <PrivateRoute exact path='/admin/cv' component={BackendCurriculum} />
                 <PrivateRoute exact path='/admin/courses' component={BackendITTraining} />
-                <PrivateRoute exact path='/admin/about' component={BackendAbout} />
                 <PrivateRoute exact path='/admin/contact' component={BackendContact} />
                 <PrivateRoute exact path='/admin/home' component={BackendHome} />
 

@@ -10,24 +10,22 @@ const Projects = () => {
 
   const url = Global.url;
   const [projects, setProjects] = useState([]);
-  const {texts} = useContext(LanguageContext);
+  const { texts } = useContext(LanguageContext);
 
   useEffect(() => {
     getProjects();
+  }, []);
 
-  }, [projects.length]);
-
-  const getProjects = () => {
-    axios.get(url + 'getProjects').then(res => {
+  const getProjects = async () => {
+    await axios.get(url + 'getProjects').then(res => {
       setProjects(res.data.projects);
     });
   };
-
   return (
     <div className='courses projects'>
       <div className="info">
-        <h1 className='title'>{texts.title.projects}</h1>
-        <p className='description'>{texts.description.projects}</p>
+        <h1 className='title'>{texts.projects.title}</h1>
+        <p className='description'>{texts.projects.description}</p>
       </div>
       {
         projects.length > 0

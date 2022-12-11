@@ -5,7 +5,6 @@ let Curriculum = require('../controllers/curriculum');
 let Skill = require('../controllers/skill');
 let Course = require('../controllers/course');
 let Login = require('../controllers/login');
-let About = require('../controllers/about');
 let Comment = require('../controllers/comment');
 
 const upload = require('../libs/storage');
@@ -27,11 +26,6 @@ router.post('/saveCourse', upload.single('file'), Course.save);
 router.get('/getCourses', Course.get);
 router.get('/getCourse/:id', Course.getCourseById);
 router.delete('/deleteCourse/:id', Course.delete);
-
-router.post('/saveAboutMe', About.save);
-router.post('/getAboutMe', About.getAboutMe);
-router.get('/getAllAbout', About.getAllAbout);
-router.delete('/deleteAbout/:id', About.delete);
 
 router.post('/saveComment', Comment.save)
 router.get('/getComments', Comment.get);

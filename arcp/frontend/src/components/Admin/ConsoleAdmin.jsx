@@ -13,7 +13,6 @@ const ConsoleAdmin = () => {
                     <Link className='link' to={`${url}/projects`}>Gestionar PROYECTOS</Link>
                     <Link className='link' to={`${url}/courses`}>Gestionar CURSOS</Link>
                     <Link className='link' to={`${url}/cv`}>Gestionar CURRICULUM</Link>
-                    <Link className='link' to={`${url}/about`}>Gestionar SOBRE MÍ</Link>
                   {/*   <Link className='link' to={`${url}/contact`}>Ir a CONTACT</Link>
                     <Link className='link' to={`${url}/home`}>Ir a HOME</Link> */}
                 </div>

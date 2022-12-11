@@ -17,11 +17,11 @@ const About = () => {
 
     return (
         <div className='courses about'>
-            <h1 className='title'>{texts.title.about}</h1>
-            <p className='description'>{texts.description.about}</p>
+            <h1 className='title'>{texts.about.title}</h1>
+            <p className='description'>{texts.about.description}</p>
             <div className="me">
                 <img className='img' src={Me} alt="Me" />
-                <p>{texts.whoIAm}</p>
+                <p>{texts.about.whoIAm}</p>
             </div>
             <div className="icons">
                 <div className='icons-int'>
@@ -37,7 +37,7 @@ const About = () => {
                 </div>
             </div>
             <div className="window">
-                {titleActive && <p>{texts.whatAboutMe}</p>}
+                {titleActive && <p>{texts.about.topic}</p>}
                 <Switch>
                     <Route path={`${path}/:topic`} component={AboutSection}></Route>
                 </Switch>
