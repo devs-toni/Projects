@@ -96,7 +96,7 @@ let controller = {
         req.getConnection((err, conn) => {
             if (err) next(err);
 
-            conn.query('SELECT * FROM coursestech WHERE id=?', [idCourse], (err, tech) => {
+            conn.query('SELECT * FROM coursestech WHERE courseId=?', [idCourse], (err, tech) => {
                 if (err) {
                     return res.status(500).send({
                         status: 'error',
