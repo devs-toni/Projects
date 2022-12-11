@@ -32,7 +32,11 @@
                 "Habilidades digitales",
                 "Idiomas",
                 "Aptitudes"
-            ]
+            ],
+            "timeline": {
+                "fp": "Sistemas informáticos y telecomunicaciones",
+                "sistemas": "Técnico de Sonido"
+            }
         },
         "projects": {
             "title": "Proyectos",
@@ -95,7 +99,11 @@
                 "Digital habilities",
                 "Languages",
                 "Soft Skills"
-            ]
+            ],
+            "timeline": {
+                "fp": "Computer systems and telecommunications",
+                "sistemas": "Sound Technician"
+            }
         },
         "projects": {
             "title": "Projects",

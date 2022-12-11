@@ -10,177 +10,185 @@ import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import Typography from '@mui/material/Typography';
+import study from '../../assets/study.svg';
+import laptop from '../../assets/laptop.svg';
+import headset from '../../assets/headset.svg';
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
+
 
 export default function CustomizedTimeline({ handlePopup }) {
+    const { texts, language } = useContext(LanguageContext);
 
     let style = {
-        cursor: 'pointer'
+        cursor: 'pointer',
     }
+    let styleIcon = {
+        cursor: 'pointer',
+        filter: 'var(--filter)',
+        width: '30px',
+        height: '30px',
+        padding: '2px'
+    }
+    let styleMargin = {
+        marginTop: '0'
+    }
+    let styleMarginLow = {
+        marginTop: '0',
+        fontSize: '0.9em'
+    }
+    let color1 = {
+        backgroundColor: "#c633e4"
+    }
+    let color2 = {
+        backgroundColor: "#465ac9"
+    }
+
     return (
         <div className='tl'>
-            <Timeline position="left">
-                <TimelineItem onClick={handlePopup} style={style} topic='assembler'>
+            <Timeline position="alternate">
+                <TimelineItem>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" className='tl-text' onClick={handlePopup} style={style} topic='assembler'
+                        color="var(--color)"
+                        className='tl-text'
                     >
-                        Octubre 2022 - Junio 2023
+                        <Typography style={styleMargin}>Master Software Development</Typography>
+                        <Typography style={styleMarginLow}>Assembler Institute of Technology</Typography>
                     </TimelineOppositeContent>
-                    <TimelineSeparator onClick={handlePopup} style={style} topic='assembler'>
-                        <TimelineDot color="secondary" onClick={handlePopup} style={style} topic='assembler'>
-                            <ImportContactsIcon onClick={handlePopup} style={style} topic='assembler' />
+                    <TimelineSeparator>
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '15px' }} />
+                        <TimelineDot style={color1}>
+                            <img src={study} alt='study' onClick={handlePopup} style={styleIcon} topic='assembler' />
                         </TimelineDot>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='assembler' />
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '15px' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '10px', px: 2 }} onClick={handlePopup} style={style} topic='assembler'>
-                        <Typography className='tl-text' variant="h6" component="span" onClick={handlePopup} style={style} topic='assembler'>
-                            Master Software Development
-                        </Typography>
-                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='assembler'>Assembler Institute of Technology</Typography>
+                    <TimelineContent>
                     </TimelineContent>
                 </TimelineItem>
-                <TimelineItem onClick={handlePopup} style={style} topic='front'>
+                <TimelineItem>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" className='tl-text' onClick={handlePopup} style={style} topic='front'
+                        color="var(--color)"
+                        className='tl-text'
                     >
-                        Octubre 2022 - Abril 2023
+                        <Typography style={styleMargin}>Frontend Development</Typography>
+                        <Typography style={styleMarginLow}>Tokio School</Typography>
                     </TimelineOppositeContent>
-                    <TimelineSeparator onClick={handlePopup} style={style} topic='front'>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='front' />
-
-                        <TimelineDot color="secondary" onClick={handlePopup} style={style} topic='front'>
-                            <ImportContactsIcon onClick={handlePopup} style={style} topic='front' />
+                    <TimelineSeparator>
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '40px' }} />
+                        <TimelineDot style={color1} >
+                            <img src={study} alt='study' onClick={handlePopup} style={styleIcon} topic='front' />
                         </TimelineDot>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='front' />
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '40px' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '40px', px: 2 }}>
-                        <Typography className='tl-text' variant="h6" component="span" onClick={handlePopup} style={style} topic='front'>
-                            Front-End Development
-                        </Typography>
-                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='front'>Tokio School</Typography>
+                    <TimelineContent>
                     </TimelineContent>
                 </TimelineItem>
-                <TimelineItem onClick={handlePopup} style={style} topic='artifact'>
+                <TimelineItem>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" className='tl-text' onClick={handlePopup} style={style} topic='artifact'
+                        color="var(--color)"
+                        className='tl-text'
                     >
-                        Mayo 2022 - Octubre 2022
+                        <Typography style={styleMargin}>Backend</Typography>
+                        <Typography style={styleMarginLow}>Artifact Consulting S.L</Typography>
                     </TimelineOppositeContent>
-                    <TimelineSeparator onClick={handlePopup} style={style} topic='artifact'>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='artifact' />
-
-                        <TimelineDot color="primary" onClick={handlePopup} style={style} topic='artifact'>
-                            <LaptopChromebookIcon onClick={handlePopup} style={style} topic='artifact' />
+                    <TimelineSeparator >
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '5px' }} />
+                        <TimelineDot style={color2} >
+                            <img src={laptop} alt='study' onClick={handlePopup} style={styleIcon} topic='artifact' />
                         </TimelineDot>
-                        <TimelineConnector sx={{ bgcolor: 'primary.main' }} onClick={handlePopup} style={style} topic='artifact' />
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '5px' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '20px', px: 2 }} onClick={handlePopup} style={style} topic='artifact'>
-                        <Typography className='tl-text' variant="h6" component="span" onClick={handlePopup} style={style} topic='artifact'>
-                            Artifact Consulting S.L
-                        </Typography>
-                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='artifact'>Backend Developer</Typography>
+                    <TimelineContent>
                     </TimelineContent>
                 </TimelineItem>
-                <TimelineItem onClick={handlePopup} style={style} topic='java'>
+                <TimelineItem>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" className='tl-text' onClick={handlePopup} style={style} topic='java'
+                        color="var(--color)"
+                        className='tl-text'
                     >
-                        Diciembre 2021 - Mayo 2022
+                        <Typography style={styleMargin}>Backend</Typography>
+                        <Typography style={styleMarginLow}>Java</Typography>
                     </TimelineOppositeContent>
-                    <TimelineSeparator onClick={handlePopup} style={style} topic='java'>
-                        <TimelineConnector sx={{ bgcolor: 'primary.main' }} onClick={handlePopup} style={style} topic='java' />
-                        <TimelineDot color="secondary" onClick={handlePopup} style={style} topic='java'>
-                            <ImportContactsIcon onClick={handlePopup} style={style} topic='java' />
+                    <TimelineSeparator>
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '90px' }} />
+                        <TimelineDot style={color1}>
+                            <img src={study} alt='study' onClick={handlePopup} style={styleIcon} topic='java' />
                         </TimelineDot>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='java' />
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '90px' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '40px', px: 2 }} onClick={handlePopup} style={style} topic='java'>
-                        <Typography className='tl-text' variant="h6" component="span" onClick={handlePopup} style={style} topic='java'>
-                            Java Backend Development
-                        </Typography>
-                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='java'>Tokio School</Typography>
+                    <TimelineContent>
                     </TimelineContent>
                 </TimelineItem>
-                <TimelineItem onClick={handlePopup} style={style} topic='sistemas'>
+                <TimelineItem>
                     <TimelineOppositeContent
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" className='tl-text' onClick={handlePopup} style={style} topic='sistemas'
+                        color="var(--color)"
+                        className='tl-text'
                     >
-                        Julio 2017 - Marzo 2022
+                          <Typography style={styleMargin}>{texts.curriculum.timeline.sistemas}</Typography>
+                        <Typography style={styleMarginLow}>Sistemas2 Valencia</Typography>
                     </TimelineOppositeContent>
-                    <TimelineSeparator onClick={handlePopup} style={style} topic='sistemas'>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='sistemas' />
-                        <TimelineDot color="success" onClick={handlePopup} style={style} topic='sistemas'>
-                            <HeadsetMicIcon onClick={handlePopup} style={style} topic='sistemas' />
+                    <TimelineSeparator>
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '5px' }} />
+                        <TimelineDot style={color2}>
+                            <img src={headset} alt='study' onClick={handlePopup} style={styleIcon} topic='sistemas' />
                         </TimelineDot>
-                        <TimelineConnector sx={{ bgcolor: 'success.main' }} onClick={handlePopup} style={style} topic='sistemas' />
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '5px' }} />
                     </TimelineSeparator>
-                    <TimelineContent
-                        sx={{ py: '80px', px: 2 }} onClick={handlePopup} style={style} topic='sistemas'>
-
-                        <Typography variant="h6" component="span" className='tl-text' onClick={handlePopup} style={style} topic='sistemas'>
-                            Sistemas 2 Valencia S.L
-                        </Typography>
-                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='sistemas'>Técnico de Sonido</Typography>
+                    <TimelineContent>
                     </TimelineContent>
                 </TimelineItem>
-                <TimelineItem onClick={handlePopup} style={style} topic='cisco'>
+                <TimelineItem >
                     <TimelineOppositeContent className='tl-text'
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" onClick={handlePopup} style={style} topic='cisco'
+                        color="var(--color)"
                     >
-                        Junio 2017 - Julio 2017
+                        <Typography style={styleMargin}>Cisco CCNA1</Typography>
+                        <Typography style={styleMarginLow}>Netacad Academy</Typography>
                     </TimelineOppositeContent>
-                    <TimelineSeparator onClick={handlePopup} style={style} topic='cisco'>
-                        <TimelineConnector sx={{ bgcolor: 'success.main' }} onClick={handlePopup} style={style} topic='cisco' />
-                        <TimelineDot color="secondary" onClick={handlePopup} style={style} topic='cisco' >
-                            <ImportContactsIcon onClick={handlePopup} style={style} topic='cisco' />
+                    <TimelineSeparator >
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '5px' }} />
+                        <TimelineDot style={color1} >
+                            <img src={study} alt='study' onClick={handlePopup} style={styleIcon} topic='cisco' />
                         </TimelineDot>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='cisco' />
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '5px' }} />
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: '0px', px: 2 }} onClick={handlePopup} style={style} topic='cisco' >
-                        <Typography variant="h6" component="span" className='tl-text' onClick={handlePopup} style={style} topic='cisco'>Cisco NetAcad Academy</Typography>
-                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='cisco'>CCNA v1</Typography>
-                    </TimelineContent>
+                    <TimelineContent />
                 </TimelineItem>
-                <TimelineItem onClick={handlePopup} style={style} topic='fp'>
+                <TimelineItem>
                     <TimelineOppositeContent className='tl-text'
                         sx={{ m: 'auto 0' }}
                         align="right"
                         variant="body2"
-                        color="var(--color)" onClick={handlePopup} style={style} topic='fp'
+                        color="var(--color)"
                     >
-                        Septiembre 2015 - Junio 2017
+                        <Typography style={styleMargin}>{texts.curriculum.timeline.fp}</Typography>
+                        <Typography style={styleMarginLow}>Vicente Blasco Ibañez</Typography>
                     </TimelineOppositeContent>
-                    <TimelineSeparator onClick={handlePopup} style={style} topic='fp'>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='fp' />
-                        <TimelineDot color="secondary" onClick={handlePopup} style={style} topic='fp'>
-                            <ImportContactsIcon onClick={handlePopup} style={style} topic='fp' />
+                    <TimelineSeparator>
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '5px' }} />
+                        <TimelineDot style={color1} >
+                            <img src={study} alt='study' onClick={handlePopup} style={styleIcon} topic='fp' />
                         </TimelineDot>
-                        <TimelineConnector sx={{ bgcolor: 'secondary.main' }} onClick={handlePopup} style={style} topic='fp' />
+                        <TimelineConnector sx={{ bgcolor: 'var(--font-color)', height: '5px' }} />
                     </TimelineSeparator>
-                    <TimelineContent className='tl-text'
-                        sx={{ py: '20px', px: 2 }} onClick={handlePopup} style={style} topic='fp'
-                    >
-                        <Typography className='tl-text' variant="h6" component="span" onClick={handlePopup} style={style} topic='fp'>Ciclo Formativo Grado Superior
-                        </Typography>
-                        <Typography className='tl-text' onClick={handlePopup} style={style} topic='fp'>Sistemas Informáticos y Telecomunicaciones</Typography>
-                    </TimelineContent>
+                    <TimelineContent className='tl-text' />
                 </TimelineItem>
             </Timeline>
         </div>

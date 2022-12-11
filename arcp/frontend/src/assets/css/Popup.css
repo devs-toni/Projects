@@ -83,36 +83,35 @@
     margin-top: 20px;
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
   }
 
   .name .image-container .image {
-    padding: 0 40px;
     width: 80%;
-    max-width: 440px;
-    max-height: 440px;
+    max-width: 330px;
+    max-height: 330px;
     height: 80%;
     background-size: cover;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   
   .name .text-name {
     padding: 0 40px;
     font-size: var(--font-title-size);
-    text-align: start;
+    text-align: center;
   }
   
   .name .school {
     padding: 0 40px;
     margin-bottom: 25px;
     font-size: var(--font-secondary-size);
-    text-align: start;
+    text-align: center;
   }
   
   .name .data {
     padding: 0 40px;
-    text-align: start;
+    text-align: center;
     margin-bottom: 30px;
     margin-left: 0;
     font-style: italic;
@@ -130,7 +129,7 @@
     width: 100%;
     padding: 0 40px;
     list-style-type: none;
-    text-align: start;
+    text-align: center;
   }
   
   .description .text-description .li {
@@ -139,6 +138,26 @@
     font-size: 0.8em;
     padding-bottom: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.171);
+  }
+
+  .technologies {
+    display: flex;
+    width: 70%;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+  }
+  
+  .technologies .tech {
+    margin: 8px 7px;
+    color: black;
+    font-weight: bold;
+    border-radius: 30px;
+    border: 3px solid;
+    padding: 5px 10px;
+    max-height: 35px;
+    font-size: 0.7em;
   }
   
   

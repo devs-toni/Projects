@@ -13,9 +13,15 @@ const Curriculum = () => {
     const [skills, setSkills] = useState([])
     const backendUrl = Global.url;
     const [info, setInfo] = useState(null);
+
+    const [name, setName] = useState('');
+    const [center, setCenter] = useState('');
     const [description, setDescription] = useState([]);
+    const [techs, settechs] = useState([]);
+    const [colors, setColors] = useState([]);
+    const [borders, setBorders] = useState([]);
     const [visibility, setVisibility] = useState(false);
-    const {texts} = useContext(LanguageContext);
+    const {texts, language} = useContext(LanguageContext);
 
     const popupCloseHandler = (e) => {
         setVisibility(e);
@@ -29,11 +35,29 @@ const Curriculum = () => {
     }, []);
 
     const handlePopup = (e) => {
+        console.log(e.target);
         if (e.target.getAttribute('topic')) {
             e.stopPropagation();
             axios.post(`${backendUrl}getCurriculum`, { topic: e.target.getAttribute('topic') }).then(res => {
                 setInfo(res.data.cv[0]);
-                setDescription([...res.data.cv[0].description.split(',')]);
+                if (res.data.cv[0].technologies) settechs(res.data.cv[0].technologies.split(','));
+                else settechs([]);
+                if (res.data.cv[0].color) setColors(res.data.cv[0].color.split(','));
+                else setColors([]);
+                if (res.data.cv[0].border) setBorders(res.data.cv[0].border.split(','));
+                else setBorders([]);
+                let parseName = JSON.parse(res.data.cv[0].name);
+                let parseCenter = JSON.parse(res.data.cv[0].center);
+                let parseDescription = JSON.parse(res.data.cv[0].description);
+                if (language === "es") {
+                    setName(parseName.es);
+                    setCenter(parseCenter.es);
+                    setDescription(parseDescription.es.split('~'));
+                } else {
+                    setName(parseName.en);
+                    setCenter(parseCenter.en);
+                    setDescription(parseDescription.en.split('~'));
+                }
                 setVisibility(!visibility);
                 document.querySelector('body').style.overflow = 'hidden';
             });
@@ -48,8 +72,8 @@ const Curriculum = () => {
             >
                 <div className='name'>
                     <div className="image-container"><img className='image' src={`${backendUrl}${info.image}`} alt={info.name} /></div>
-                    <p className='text-name'>{info.name}</p>
-                    <p className='school'>{info.center}</p>
+                    <p className='text-name'>{name}</p>
+                    <p className='school'>{center}</p>
                     <p className='data'>{info.date}</p>
                 </div>
                 <div className='description'>
@@ -59,6 +83,18 @@ const Curriculum = () => {
                         )}
                     </ul>
                 </div>
+                <div className="technologies">
+                            {
+                                techs.map((tech, index) => {
+                                    let style = {
+                                        backgroundColor: `${colors[index]}`, borderColor: `${borders[index]}`
+                                    }
+                                    if (tech !== '') {
+                                        return (<p key={index} className='tech' style={style} >{tech}</p>)
+                                    }
+                                })
+                            }
+                        </div>
             </CustomPopup>}
             <div className='info'>
                 <h1 className='title'>{texts.curriculum.title}</h1>

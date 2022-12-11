@@ -16,10 +16,11 @@ const Courses = () => {
     const [hours, sethours] = useState(0);
     const [visibility, setVisibility] = useState(false);
     const [course, setCourse] = useState(null);
+    const [description, setDescription] = useState([]);
     const [techs, settechs] = useState([]);
     const [colors, setColors] = useState([]);
     const [borders, setBorders] = useState([]);
-    const {texts} = useContext(LanguageContext);
+    const { texts, language } = useContext(LanguageContext);
 
     const handlePopup = (e) => {
         if (e.target.getAttribute('topic')) {
@@ -30,6 +31,9 @@ const Courses = () => {
                 setBorders(res.data.course[0].border.split(','));
                 setVisibility(!visibility);
                 document.querySelector('body').style.overflow = 'hidden';
+                let parseDescription = JSON.parse(res.data.course[0].description);
+                if (language === 'es') setDescription(parseDescription.es.split('~'));
+                else setDescription(parseDescription.en.split('~'));
             });
         }
     }
@@ -101,7 +105,11 @@ const Courses = () => {
                         <div className='info'>
                             <p className='title'>{course.name}</p>
                             <p className='center'>{course.center}</p>
-                            <p className='description'>{course.description}</p>
+                            <ul className='description'>
+                                {description.map((line, key) =>
+                                    <li className='li' key={key}>{line}</li>
+                                )}
+                            </ul>
                         </div>
                         <div className="technologies">
                             {

@@ -4,7 +4,6 @@ import Global from '../../Global';
 const Course = ({ course, popup }) => {
   const backendUrl = Global.url;
 
-
   return (
     <div className='box'>
       <img className='img' src={`${backendUrl}${course.image}`} alt={course.name} />

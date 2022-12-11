@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import { useContext } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 
-
-
-const DigitalSkill = ({ name, level, color }) => {
+const DigitalSkill = ({ name, level, color, section }) => {
 
     const [completed, setCompleted] = useState(0);
+    const [skillName, setSkillName] = useState('');
+    const {language} = useContext(LanguageContext);
 
     useEffect(() => {
       setInterval(() => setCompleted(level), 30);
-    }, []);
+      if (section === "Soft") {
+        let parseName = JSON.parse(name);
+        if (language === "es") setSkillName(parseName.es);
+        else setSkillName(parseName.en);
+    }
+    }, [language]);
 
     const containerStyles = {
         height: 5,
@@ -37,7 +44,7 @@ const DigitalSkill = ({ name, level, color }) => {
 
     return (
         <div className='skill'>
-        <p className='name'>{name}</p>
+        <p className='name'>{section === 'Soft' ? skillName : name}</p>
             <div style={containerStyles} className='bar'>
                 <div style={fillerStyles}>
                     <span style={labelStyles}></span>

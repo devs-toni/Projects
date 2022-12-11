@@ -62,25 +62,31 @@
 .courses .specificCourse .info .description {
   font-size: var(--font-extras-size);
   margin-bottom: 30px;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.courses .specificCourse .info .description .li {
+  margin-bottom: 15px;
+  line-height: 30px;
+  font-size: 0.8em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.171);
 }
 
 .courses .specificCourse .technologies {
   display: flex;
   width: 70%;
-
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  margin: 50px auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.212);
-  padding-top: 30px;
+  margin: 0 auto 20px auto;
 }
 
 .courses .specificCourse .technologies .tech {
   margin: 8px 7px;
   color: black;
   font-weight: bold;
-
   border-radius: 30px;
   border: 3px solid;
   padding: 5px 10px;
