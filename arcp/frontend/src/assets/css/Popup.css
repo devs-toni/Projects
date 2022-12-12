@@ -2,7 +2,6 @@
 ::-webkit-scrollbar {
   width: 10px;
   padding: 15px;
-
 }
 
 /* Track */
@@ -28,163 +27,166 @@
 }
 
 .overlay {
-    visibility: hidden;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.452);
-    transition: opacity 500ms;
-    z-index: 10;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.452);
+  transition: opacity 500ms;
+  z-index: 10;
+}
+.popup {
+  margin: 3% auto;
+  padding: 20px 50px;
+  background-color: var(--main-bg-color);
+  color: var(--font-color);
+  width: 40%;
+  max-height: 90%;
+  position: relative;
+  transition: all 3s ease-in-out;
+  overflow-y: auto;
+  border-radius: 20px;
+}
 
-  }
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--font-color);
+}
+.popup .close:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+.popup .content {
+  max-height: 900px;
+}
+
+.name {
+  width: 100%;
+}
+
+.name .image-container {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name .image-container .image {
+  width: 80%;
+  max-width: 440px;
+  max-height: 440px;
+  height: 80%;
+  background-size: cover;
+  margin-bottom: 20px;
+}
+
+.name .text-name {
+  padding: 0 40px;
+  font-size: var(--font-title-size);
+  text-align: center;
+}
+
+.name .school {
+  padding: 0 40px;
+  margin-bottom: 25px;
+  font-size: var(--font-secondary-size);
+  text-align: center;
+}
+
+.name .data {
+  padding: 0 40px;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-left: 0;
+  font-style: italic;
+  font-size: var(--font-extras-title);
+}
+
+.description {
+  overflow: auto;
+  width: 100%;
+  margin-top: 20px;
+  font-size: var(--font-extras-title);
+}
+
+.description .text-description {
+  width: 100%;
+  padding: 0 40px;
+  list-style-type: none;
+  text-align: center;
+}
+
+.description .text-description .li {
+  margin-bottom: 15px;
+  line-height: 30px;
+  font-size: 0.8em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.171);
+}
+
+.technologies {
+  display: flex;
+  width: 70%;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px auto;
+}
+
+.technologies .tech {
+  margin: 8px 7px;
+  color: black;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 3px solid;
+  padding: 5px 10px;
+  max-height: 35px;
+  font-size: 0.7em;
+}
+
+@media screen and (max-width: 1450px) {
   .popup {
-    margin: 3% auto;
-    padding: 20px 50px;
-    background-color: var(--main-bg-color);
-    color: var(--font-color);
     width: 40%;
-    max-height: 90%;
-    position: relative;
-    transition: all 3s ease-in-out;
-    overflow-y:auto;
-    border-radius: 20px;
   }
-  
-  .popup h2 {
-    margin-top: 0;
-    color: #333;
-    font-family: Tahoma, Arial, sans-serif;
+}
+@media screen and (max-width: 1000px) {
+  .popup {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .popup {
+    width: 60%;
+    height: 90%;
+    margin: 7% auto;
+    padding: 20px 20px 0 20px;
   }
   .popup .close {
-    position: absolute;
-    top: 10px;
-    right: 30px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--font-color);
+    top: 3px;
+    right: 17px;
   }
-  .popup .close:hover {
-    cursor: pointer;
-    transform: scale(1.3);
-  }
-  .popup .content {
-    max-height: 900px;
-  }
-
-  .name {
-    width: 100%;
-  }
-
-  .name .image-container {
-    margin-top: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .name .image-container .image {
-    width: 80%;
-    max-width: 440px;
-    max-height: 440px;
-    height: 80%;
-    background-size: cover;
-    margin-bottom: 20px;
-  }
-  
-  .name .text-name {
-    padding: 0 40px;
-    font-size: var(--font-title-size);
-    text-align: center;
-  }
-  
-  .name .school {
-    padding: 0 40px;
-    margin-bottom: 25px;
-    font-size: var(--font-secondary-size);
-    text-align: center;
-  }
-  
-  .name .data {
-    padding: 0 40px;
-    text-align: center;
-    margin-bottom: 30px;
-    margin-left: 0;
-    font-style: italic;
-    font-size: var(--font-extras-title);
-  }
-  
-  .description {
-    overflow: auto;
-    width: 100%;
-    margin-top: 20px;
-    font-size: var(--font-extras-title);
-  }
-  
-  .description .text-description {
-    width: 100%;
-    padding: 0 40px;
-    list-style-type: none;
-    text-align: center;
-  }
-  
-  .description .text-description .li {
-    margin-bottom: 15px;
-    line-height: 30px;
-    font-size: 0.8em;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.171);
-  }
-
-  .technologies {
-    display: flex;
+}
+@media screen and (max-width: 600px) {
+  .popup {
     width: 70%;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 20px auto;
   }
-  
-  .technologies .tech {
-    margin: 8px 7px;
-    color: black;
-    font-weight: bold;
-    border-radius: 30px;
-    border: 3px solid;
-    padding: 5px 10px;
-    max-height: 35px;
-    font-size: 0.7em;
+}
+@media screen and (max-width: 470px) {
+  .popup {
+    width: 90%;
   }
-  
-  
-  @media screen and (max-width: 1450px) {
-    .popup {
-      width: 40%;
-    }
-  }
-  @media screen and (max-width: 1000px) {
-    .popup {
-      width: 50%;
-    }
-  }
-  @media screen and (max-width: 850px) {
-    .popup {
-      width: 60%;
-      height: 90%;
-      margin: 7% auto;
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .popup {
-      width: 70%;
-    }
-  }
-  @media screen and (max-width: 470px) {
-    .popup {
-      width: 90%;
-    }
-  }
+}

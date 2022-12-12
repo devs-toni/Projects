@@ -163,6 +163,13 @@
   .home .container-description {
     font-size: 0.6em;
   }
+  .home .comentarios .showComments .name {
+    font-size: 0.8em;
+  }
+  
+  .home .comentarios .showComments .message {
+    font-size: 0.6em;
+  }
 }
 
 @media screen and (max-width: 720px) {

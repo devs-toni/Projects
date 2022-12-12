@@ -51,7 +51,7 @@
   margin-bottom: 20px;
 }
 
-.courses .specificCourse .info .title{
+.courses .specificCourse .info .title {
   font-size: var(--font-title-size);
 }
 
@@ -119,6 +119,10 @@
     margin: 0 auto;
     width: 90%;
   }
+  .courses .specificCourse .technologies {
+    width: 100%;
+    padding-bottom: 30px;
+  }
 }
 
 @media screen and (max-width: 390px) {
@@ -126,7 +130,6 @@
     font-size: 0.8em;
     margin-top: 0px;
   }
-  
 }
 
 @media screen and (min-width: 1968px) {
