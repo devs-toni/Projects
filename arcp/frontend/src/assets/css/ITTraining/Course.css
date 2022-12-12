@@ -3,7 +3,7 @@
   display: flex;
   min-height: 150px;
   max-height: 150px;
-  width: 22.8vw;
+  width: 24.2vw;
   min-width: 450px;
   margin: 0 0.4% 1% 0.4%;
   box-shadow: black 0px 0px 10px;
@@ -89,19 +89,19 @@
 
 @media screen and (max-width: 1990px) {
   .box {
-    width: 32.3%;
+    width: 32.5%;
   }
 }
 
 @media screen and (max-width: 1503px) {
   .box {
-    width: 48.8%;
+    width: 49.1%;
   }
 }
 
 @media screen and (max-width: 1028px) {
   .box {
-    width: 98.7%;
+    width: 100%;
     margin-bottom: 15px;
   }
 }
