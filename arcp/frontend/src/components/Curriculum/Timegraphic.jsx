@@ -55,7 +55,7 @@ export default function CustomizedTimeline({ handlePopup }) {
                         color="var(--color)"
                         className='tl-text'
                     >
-                        <Typography style={styleMargin}>Master Software Development</Typography>
+                        <Typography className='tl-title' style={styleMargin}>Master Software Development</Typography>
                         <Typography style={styleMarginLow}>Assembler Institute of Technology</Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
@@ -76,7 +76,7 @@ export default function CustomizedTimeline({ handlePopup }) {
                         color="var(--color)"
                         className='tl-text'
                     >
-                        <Typography style={styleMargin}>Frontend Development</Typography>
+                        <Typography className='tl-title' style={styleMargin}>Frontend Development</Typography>
                         <Typography style={styleMarginLow}>Tokio School</Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
@@ -97,7 +97,7 @@ export default function CustomizedTimeline({ handlePopup }) {
                         color="var(--color)"
                         className='tl-text'
                     >
-                        <Typography style={styleMargin}>Backend</Typography>
+                        <Typography className='tl-title' style={styleMargin}>Backend</Typography>
                         <Typography style={styleMarginLow}>Artifact Consulting S.L</Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator >
@@ -118,7 +118,7 @@ export default function CustomizedTimeline({ handlePopup }) {
                         color="var(--color)"
                         className='tl-text'
                     >
-                        <Typography style={styleMargin}>Backend</Typography>
+                        <Typography className='tl-title' style={styleMargin}>Backend</Typography>
                         <Typography style={styleMarginLow}>Java</Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
@@ -139,7 +139,7 @@ export default function CustomizedTimeline({ handlePopup }) {
                         color="var(--color)"
                         className='tl-text'
                     >
-                          <Typography style={styleMargin}>{texts.curriculum.timeline.sistemas}</Typography>
+                          <Typography className='tl-title' style={styleMargin}>{texts.curriculum.timeline.sistemas}</Typography>
                         <Typography style={styleMarginLow}>Sistemas2 Valencia</Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
@@ -159,7 +159,7 @@ export default function CustomizedTimeline({ handlePopup }) {
                         variant="body2"
                         color="var(--color)"
                     >
-                        <Typography style={styleMargin}>Cisco CCNA1</Typography>
+                        <Typography className='tl-title' style={styleMargin}>Cisco CCNA1</Typography>
                         <Typography style={styleMarginLow}>Netacad Academy</Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator >
@@ -178,7 +178,7 @@ export default function CustomizedTimeline({ handlePopup }) {
                         variant="body2"
                         color="var(--color)"
                     >
-                        <Typography style={styleMargin}>{texts.curriculum.timeline.fp}</Typography>
+                        <Typography className='tl-title' style={styleMargin}>{texts.curriculum.timeline.fp}</Typography>
                         <Typography style={styleMarginLow}>Vicente Blasco Ibañez</Typography>
                     </TimelineOppositeContent>
                     <TimelineSeparator>
